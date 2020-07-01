@@ -1,0 +1,15 @@
+{
+  "name": "@mjpitz/libdevice42",
+  "version": "0.0.1",
+  "description": "Golang client library for Device42",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjpitz/libdevice42.git"
+  },
+  "author": "mjpitz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjpitz/libdevice42/issues"
+  },
+  "homepage": "https://github.com/mjpitz/libdevice42#readme"
+}
