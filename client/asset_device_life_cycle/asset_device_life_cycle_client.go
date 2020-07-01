@@ -27,9 +27,9 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetLifecycleEvent(params *GetLifecycleEventParams) (*GetLifecycleEventOK, error)
+	GetLifecycleEvent(params *GetLifecycleEventParams, authInfo runtime.ClientAuthInfoWriter) (*GetLifecycleEventOK, error)
 
-	PutLifecycleEvent(params *PutLifecycleEventParams) (*PutLifecycleEventOK, error)
+	PutLifecycleEvent(params *PutLifecycleEventParams, authInfo runtime.ClientAuthInfoWriter) (*PutLifecycleEventOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -39,7 +39,7 @@ type ClientService interface {
 
   Get Life Cycle Events
 */
-func (a *Client) GetLifecycleEvent(params *GetLifecycleEventParams) (*GetLifecycleEventOK, error) {
+func (a *Client) GetLifecycleEvent(params *GetLifecycleEventParams, authInfo runtime.ClientAuthInfoWriter) (*GetLifecycleEventOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetLifecycleEventParams()
@@ -54,6 +54,7 @@ func (a *Client) GetLifecycleEvent(params *GetLifecycleEventParams) (*GetLifecyc
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetLifecycleEventReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -75,7 +76,7 @@ func (a *Client) GetLifecycleEvent(params *GetLifecycleEventParams) (*GetLifecyc
 
   Use this API to create life cycle events for devices or assets. Use device, device_id, asset_no, serial_no, or asset_id to indicate the device or asset the event is to be created for.
 */
-func (a *Client) PutLifecycleEvent(params *PutLifecycleEventParams) (*PutLifecycleEventOK, error) {
+func (a *Client) PutLifecycleEvent(params *PutLifecycleEventParams, authInfo runtime.ClientAuthInfoWriter) (*PutLifecycleEventOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutLifecycleEventParams()
@@ -90,6 +91,7 @@ func (a *Client) PutLifecycleEvent(params *PutLifecycleEventParams) (*PutLifecyc
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutLifecycleEventReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

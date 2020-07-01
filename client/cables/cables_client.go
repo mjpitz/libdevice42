@@ -27,11 +27,11 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteCable(params *DeleteCableParams) (*DeleteCableOK, error)
+	DeleteCable(params *DeleteCableParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCableOK, error)
 
-	GetCables(params *GetCablesParams) (*GetCablesOK, error)
+	GetCables(params *GetCablesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCablesOK, error)
 
-	PostCables(params *PostCablesParams) (*PostCablesOK, error)
+	PostCables(params *PostCablesParams, authInfo runtime.ClientAuthInfoWriter) (*PostCablesOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,7 +41,7 @@ type ClientService interface {
 
   This API is used to delete the cable with the ID supplied as the required argument.
 */
-func (a *Client) DeleteCable(params *DeleteCableParams) (*DeleteCableOK, error) {
+func (a *Client) DeleteCable(params *DeleteCableParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteCableParams()
@@ -56,6 +56,7 @@ func (a *Client) DeleteCable(params *DeleteCableParams) (*DeleteCableOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteCableReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -77,7 +78,7 @@ func (a *Client) DeleteCable(params *DeleteCableParams) (*DeleteCableOK, error) 
 
   Get All Cables
 */
-func (a *Client) GetCables(params *GetCablesParams) (*GetCablesOK, error) {
+func (a *Client) GetCables(params *GetCablesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCablesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCablesParams()
@@ -92,6 +93,7 @@ func (a *Client) GetCables(params *GetCablesParams) (*GetCablesOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetCablesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetCables(params *GetCablesParams) (*GetCablesOK, error) {
 
   Create/Update Cable
 */
-func (a *Client) PostCables(params *PostCablesParams) (*PostCablesOK, error) {
+func (a *Client) PostCables(params *PostCablesParams, authInfo runtime.ClientAuthInfoWriter) (*PostCablesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostCablesParams()
@@ -128,6 +130,7 @@ func (a *Client) PostCables(params *PostCablesParams) (*PostCablesOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostCablesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

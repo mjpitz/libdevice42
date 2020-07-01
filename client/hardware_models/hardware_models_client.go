@@ -27,11 +27,11 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteHardwares(params *DeleteHardwaresParams) (*DeleteHardwaresOK, error)
+	DeleteHardwares(params *DeleteHardwaresParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteHardwaresOK, error)
 
-	GetHardwares(params *GetHardwaresParams) (*GetHardwaresOK, error)
+	GetHardwares(params *GetHardwaresParams, authInfo runtime.ClientAuthInfoWriter) (*GetHardwaresOK, error)
 
-	PostHardwares(params *PostHardwaresParams) (*PostHardwaresOK, error)
+	PostHardwares(params *PostHardwaresParams, authInfo runtime.ClientAuthInfoWriter) (*PostHardwaresOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,7 +41,7 @@ type ClientService interface {
 
   This API is used to delete the hardware model with the hardware model id supplied as the required argument.
 */
-func (a *Client) DeleteHardwares(params *DeleteHardwaresParams) (*DeleteHardwaresOK, error) {
+func (a *Client) DeleteHardwares(params *DeleteHardwaresParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteHardwaresOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteHardwaresParams()
@@ -56,6 +56,7 @@ func (a *Client) DeleteHardwares(params *DeleteHardwaresParams) (*DeleteHardware
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteHardwaresReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -77,7 +78,7 @@ func (a *Client) DeleteHardwares(params *DeleteHardwaresParams) (*DeleteHardware
 
   Get all hardware models
 */
-func (a *Client) GetHardwares(params *GetHardwaresParams) (*GetHardwaresOK, error) {
+func (a *Client) GetHardwares(params *GetHardwaresParams, authInfo runtime.ClientAuthInfoWriter) (*GetHardwaresOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetHardwaresParams()
@@ -92,6 +93,7 @@ func (a *Client) GetHardwares(params *GetHardwaresParams) (*GetHardwaresOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetHardwaresReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetHardwares(params *GetHardwaresParams) (*GetHardwaresOK, erro
 
   Create/update
 */
-func (a *Client) PostHardwares(params *PostHardwaresParams) (*PostHardwaresOK, error) {
+func (a *Client) PostHardwares(params *PostHardwaresParams, authInfo runtime.ClientAuthInfoWriter) (*PostHardwaresOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostHardwaresParams()
@@ -128,6 +130,7 @@ func (a *Client) PostHardwares(params *PostHardwaresParams) (*PostHardwaresOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostHardwaresReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

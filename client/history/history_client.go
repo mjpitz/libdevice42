@@ -27,9 +27,9 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetHistory(params *GetHistoryParams) (*GetHistoryOK, error)
+	GetHistory(params *GetHistoryParams, authInfo runtime.ClientAuthInfoWriter) (*GetHistoryOK, error)
 
-	GetHistoryNumberOfWeeks(params *GetHistoryNumberOfWeeksParams) (*GetHistoryNumberOfWeeksOK, error)
+	GetHistoryNumberOfWeeks(params *GetHistoryNumberOfWeeksParams, authInfo runtime.ClientAuthInfoWriter) (*GetHistoryNumberOfWeeksOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -39,7 +39,7 @@ type ClientService interface {
 
   Get History
 */
-func (a *Client) GetHistory(params *GetHistoryParams) (*GetHistoryOK, error) {
+func (a *Client) GetHistory(params *GetHistoryParams, authInfo runtime.ClientAuthInfoWriter) (*GetHistoryOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetHistoryParams()
@@ -54,6 +54,7 @@ func (a *Client) GetHistory(params *GetHistoryParams) (*GetHistoryOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetHistoryReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -75,7 +76,7 @@ func (a *Client) GetHistory(params *GetHistoryParams) (*GetHistoryOK, error) {
 
   Get History by # of Weeks
 */
-func (a *Client) GetHistoryNumberOfWeeks(params *GetHistoryNumberOfWeeksParams) (*GetHistoryNumberOfWeeksOK, error) {
+func (a *Client) GetHistoryNumberOfWeeks(params *GetHistoryNumberOfWeeksParams, authInfo runtime.ClientAuthInfoWriter) (*GetHistoryNumberOfWeeksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetHistoryNumberOfWeeksParams()
@@ -90,6 +91,7 @@ func (a *Client) GetHistoryNumberOfWeeks(params *GetHistoryNumberOfWeeksParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetHistoryNumberOfWeeksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

@@ -27,17 +27,17 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteAssets(params *DeleteAssetsParams) (*DeleteAssetsOK, error)
+	DeleteAssets(params *DeleteAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteAssetsOK, error)
 
-	GetAssets(params *GetAssetsParams) (*GetAssetsOK, error)
+	GetAssets(params *GetAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssetsOK, error)
 
-	GetAssetsAssetID(params *GetAssetsAssetIDParams) (*GetAssetsAssetIDOK, error)
+	GetAssetsAssetID(params *GetAssetsAssetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssetsAssetIDOK, error)
 
-	PostAssets(params *PostAssetsParams) (*PostAssetsOK, error)
+	PostAssets(params *PostAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*PostAssetsOK, error)
 
-	PutAssets(params *PutAssetsParams) (*PutAssetsOK, error)
+	PutAssets(params *PutAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*PutAssetsOK, error)
 
-	PutCustomFieldsAsset(params *PutCustomFieldsAssetParams) (*PutCustomFieldsAssetOK, error)
+	PutCustomFieldsAsset(params *PutCustomFieldsAssetParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsAssetOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -47,7 +47,7 @@ type ClientService interface {
 
   Delete Asset
 */
-func (a *Client) DeleteAssets(params *DeleteAssetsParams) (*DeleteAssetsOK, error) {
+func (a *Client) DeleteAssets(params *DeleteAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteAssetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteAssetsParams()
@@ -62,6 +62,7 @@ func (a *Client) DeleteAssets(params *DeleteAssetsParams) (*DeleteAssetsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteAssetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -83,7 +84,7 @@ func (a *Client) DeleteAssets(params *DeleteAssetsParams) (*DeleteAssetsOK, erro
 
   Get All Assets
 */
-func (a *Client) GetAssets(params *GetAssetsParams) (*GetAssetsOK, error) {
+func (a *Client) GetAssets(params *GetAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAssetsParams()
@@ -98,6 +99,7 @@ func (a *Client) GetAssets(params *GetAssetsParams) (*GetAssetsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAssetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -119,7 +121,7 @@ func (a *Client) GetAssets(params *GetAssetsParams) (*GetAssetsOK, error) {
 
   Get a Specific Asset
 */
-func (a *Client) GetAssetsAssetID(params *GetAssetsAssetIDParams) (*GetAssetsAssetIDOK, error) {
+func (a *Client) GetAssetsAssetID(params *GetAssetsAssetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetAssetsAssetIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAssetsAssetIDParams()
@@ -134,6 +136,7 @@ func (a *Client) GetAssetsAssetID(params *GetAssetsAssetIDParams) (*GetAssetsAss
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAssetsAssetIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -155,7 +158,7 @@ func (a *Client) GetAssetsAssetID(params *GetAssetsAssetIDParams) (*GetAssetsAss
 
   Create Assets
 */
-func (a *Client) PostAssets(params *PostAssetsParams) (*PostAssetsOK, error) {
+func (a *Client) PostAssets(params *PostAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*PostAssetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAssetsParams()
@@ -170,6 +173,7 @@ func (a *Client) PostAssets(params *PostAssetsParams) (*PostAssetsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAssetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -191,7 +195,7 @@ func (a *Client) PostAssets(params *PostAssetsParams) (*PostAssetsOK, error) {
 
   Modify Assets. Need either <b>Asset ID</b> or <b>Asset</b>
 */
-func (a *Client) PutAssets(params *PutAssetsParams) (*PutAssetsOK, error) {
+func (a *Client) PutAssets(params *PutAssetsParams, authInfo runtime.ClientAuthInfoWriter) (*PutAssetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAssetsParams()
@@ -206,6 +210,7 @@ func (a *Client) PutAssets(params *PutAssetsParams) (*PutAssetsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAssetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -227,7 +232,7 @@ func (a *Client) PutAssets(params *PutAssetsParams) (*PutAssetsOK, error) {
 
   Create or update custom fields for assets. "ID" or "name" of asset is needed even when value is not being changed
 */
-func (a *Client) PutCustomFieldsAsset(params *PutCustomFieldsAssetParams) (*PutCustomFieldsAssetOK, error) {
+func (a *Client) PutCustomFieldsAsset(params *PutCustomFieldsAssetParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsAssetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldsAssetParams()
@@ -242,6 +247,7 @@ func (a *Client) PutCustomFieldsAsset(params *PutCustomFieldsAssetParams) (*PutC
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldsAssetReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

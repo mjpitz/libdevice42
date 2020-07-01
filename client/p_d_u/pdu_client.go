@@ -27,29 +27,29 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeletePdus(params *DeletePdusParams) (*DeletePdusOK, error)
+	DeletePdus(params *DeletePdusParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePdusOK, error)
 
-	DeletePdusRack(params *DeletePdusRackParams) (*DeletePdusRackOK, error)
+	DeletePdusRack(params *DeletePdusRackParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePdusRackOK, error)
 
-	GetPduModels(params *GetPduModelsParams) (*GetPduModelsOK, error)
+	GetPduModels(params *GetPduModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPduModelsOK, error)
 
-	GetPdus(params *GetPdusParams) (*GetPdusOK, error)
+	GetPdus(params *GetPdusParams, authInfo runtime.ClientAuthInfoWriter) (*GetPdusOK, error)
 
-	GetPdusID(params *GetPdusIDParams) (*GetPdusIDOK, error)
+	GetPdusID(params *GetPdusIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetPdusIDOK, error)
 
-	PostPduModels(params *PostPduModelsParams) (*PostPduModelsOK, error)
+	PostPduModels(params *PostPduModelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPduModelsOK, error)
 
-	PostPduModelsPorts(params *PostPduModelsPortsParams) (*PostPduModelsPortsOK, error)
+	PostPduModelsPorts(params *PostPduModelsPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPduModelsPortsOK, error)
 
-	PostPdus(params *PostPdusParams) (*PostPdusOK, error)
+	PostPdus(params *PostPdusParams, authInfo runtime.ClientAuthInfoWriter) (*PostPdusOK, error)
 
-	PostPdusPorts(params *PostPdusPortsParams) (*PostPdusPortsOK, error)
+	PostPdusPorts(params *PostPdusPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPdusPortsOK, error)
 
-	PostPdusRack(params *PostPdusRackParams) (*PostPdusRackOK, error)
+	PostPdusRack(params *PostPdusRackParams, authInfo runtime.ClientAuthInfoWriter) (*PostPdusRackOK, error)
 
-	PutPdus(params *PutPdusParams) (*PutPdusOK, error)
+	PutPdus(params *PutPdusParams, authInfo runtime.ClientAuthInfoWriter) (*PutPdusOK, error)
 
-	PutPdusPorts(params *PutPdusPortsParams) (*PutPdusPortsOK, error)
+	PutPdusPorts(params *PutPdusPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PutPdusPortsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -59,7 +59,7 @@ type ClientService interface {
 
   This API is used to delete the pdu with the pdu id supplied as the required argument.
 */
-func (a *Client) DeletePdus(params *DeletePdusParams) (*DeletePdusOK, error) {
+func (a *Client) DeletePdus(params *DeletePdusParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePdusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePdusParams()
@@ -74,6 +74,7 @@ func (a *Client) DeletePdus(params *DeletePdusParams) (*DeletePdusOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePdusReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -95,7 +96,7 @@ func (a *Client) DeletePdus(params *DeletePdusParams) (*DeletePdusOK, error) {
 
   This API is used to delete from its rack the device with the device id supplied as the required argument. (The device itself is not deleted).
 */
-func (a *Client) DeletePdusRack(params *DeletePdusRackParams) (*DeletePdusRackOK, error) {
+func (a *Client) DeletePdusRack(params *DeletePdusRackParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePdusRackOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePdusRackParams()
@@ -110,6 +111,7 @@ func (a *Client) DeletePdusRack(params *DeletePdusRackParams) (*DeletePdusRackOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePdusRackReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -131,7 +133,7 @@ func (a *Client) DeletePdusRack(params *DeletePdusRackParams) (*DeletePdusRackOK
 
   Get all PDU Models
 */
-func (a *Client) GetPduModels(params *GetPduModelsParams) (*GetPduModelsOK, error) {
+func (a *Client) GetPduModels(params *GetPduModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPduModelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPduModelsParams()
@@ -146,6 +148,7 @@ func (a *Client) GetPduModels(params *GetPduModelsParams) (*GetPduModelsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPduModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -167,7 +170,7 @@ func (a *Client) GetPduModels(params *GetPduModelsParams) (*GetPduModelsOK, erro
 
   Get all PDUs
 */
-func (a *Client) GetPdus(params *GetPdusParams) (*GetPdusOK, error) {
+func (a *Client) GetPdus(params *GetPdusParams, authInfo runtime.ClientAuthInfoWriter) (*GetPdusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPdusParams()
@@ -182,6 +185,7 @@ func (a *Client) GetPdus(params *GetPdusParams) (*GetPdusOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPdusReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -203,7 +207,7 @@ func (a *Client) GetPdus(params *GetPdusParams) (*GetPdusOK, error) {
 
   Retrieve detailed information about a specific PDU by PDU ID. This also includes end point connections.
 */
-func (a *Client) GetPdusID(params *GetPdusIDParams) (*GetPdusIDOK, error) {
+func (a *Client) GetPdusID(params *GetPdusIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetPdusIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPdusIDParams()
@@ -218,6 +222,7 @@ func (a *Client) GetPdusID(params *GetPdusIDParams) (*GetPdusIDOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPdusIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -239,7 +244,7 @@ func (a *Client) GetPdusID(params *GetPdusIDParams) (*GetPdusIDOK, error) {
 
   Create / Update PDU Models
 */
-func (a *Client) PostPduModels(params *PostPduModelsParams) (*PostPduModelsOK, error) {
+func (a *Client) PostPduModels(params *PostPduModelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPduModelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPduModelsParams()
@@ -254,6 +259,7 @@ func (a *Client) PostPduModels(params *PostPduModelsParams) (*PostPduModelsOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPduModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -275,7 +281,7 @@ func (a *Client) PostPduModels(params *PostPduModelsParams) (*PostPduModelsOK, e
 
   Create PDU Model Ports. Required parameters: <ul><li>pdu_model_id <b>OR</b> pdu_model_name</li> <li>count</li> <li>type</li></ul>
 */
-func (a *Client) PostPduModelsPorts(params *PostPduModelsPortsParams) (*PostPduModelsPortsOK, error) {
+func (a *Client) PostPduModelsPorts(params *PostPduModelsPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPduModelsPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPduModelsPortsParams()
@@ -290,6 +296,7 @@ func (a *Client) PostPduModelsPorts(params *PostPduModelsPortsParams) (*PostPduM
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPduModelsPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -311,7 +318,7 @@ func (a *Client) PostPduModelsPorts(params *PostPduModelsPortsParams) (*PostPduM
 
   Create PDUs
 */
-func (a *Client) PostPdus(params *PostPdusParams) (*PostPdusOK, error) {
+func (a *Client) PostPdus(params *PostPdusParams, authInfo runtime.ClientAuthInfoWriter) (*PostPdusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPdusParams()
@@ -326,6 +333,7 @@ func (a *Client) PostPdus(params *PostPdusParams) (*PostPdusOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPdusReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -347,7 +355,7 @@ func (a *Client) PostPdus(params *PostPdusParams) (*PostPdusOK, error) {
 
   Assign a name and/or an object (see below) objects to a pdu port. It will pick the lowest port id # available (or first available port in order created).
 */
-func (a *Client) PostPdusPorts(params *PostPdusPortsParams) (*PostPdusPortsOK, error) {
+func (a *Client) PostPdusPorts(params *PostPdusPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPdusPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPdusPortsParams()
@@ -362,6 +370,7 @@ func (a *Client) PostPdusPorts(params *PostPdusPortsParams) (*PostPdusPortsOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPdusPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -383,7 +392,7 @@ func (a *Client) PostPdusPorts(params *PostPdusPortsParams) (*PostPdusPortsOK, e
 
   Add / Update PDUs in Racks
 */
-func (a *Client) PostPdusRack(params *PostPdusRackParams) (*PostPdusRackOK, error) {
+func (a *Client) PostPdusRack(params *PostPdusRackParams, authInfo runtime.ClientAuthInfoWriter) (*PostPdusRackOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPdusRackParams()
@@ -398,6 +407,7 @@ func (a *Client) PostPdusRack(params *PostPdusRackParams) (*PostPdusRackOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPdusRackReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -419,7 +429,7 @@ func (a *Client) PostPdusRack(params *PostPdusRackParams) (*PostPdusRackOK, erro
 
   This call will update existing PDUs. PDU ID or name required.
 */
-func (a *Client) PutPdus(params *PutPdusParams) (*PutPdusOK, error) {
+func (a *Client) PutPdus(params *PutPdusParams, authInfo runtime.ClientAuthInfoWriter) (*PutPdusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutPdusParams()
@@ -434,6 +444,7 @@ func (a *Client) PutPdus(params *PutPdusParams) (*PutPdusOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutPdusReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -455,7 +466,7 @@ func (a *Client) PutPdus(params *PutPdusParams) (*PutPdusOK, error) {
 
   This call requires the name of an existing pdu port and enables you to add new or edit existing values for that particular PDU port. Requires parent_pdu_id or parent_pdu
 */
-func (a *Client) PutPdusPorts(params *PutPdusPortsParams) (*PutPdusPortsOK, error) {
+func (a *Client) PutPdusPorts(params *PutPdusPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PutPdusPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutPdusPortsParams()
@@ -470,6 +481,7 @@ func (a *Client) PutPdusPorts(params *PutPdusPortsParams) (*PutPdusPortsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutPdusPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

@@ -27,69 +27,69 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteIgnoredServiceByID(params *DeleteIgnoredServiceByIDParams) (*DeleteIgnoredServiceByIDOK, error)
+	DeleteIgnoredServiceByID(params *DeleteIgnoredServiceByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIgnoredServiceByIDOK, error)
 
-	DeleteScheduledTasksByID(params *DeleteScheduledTasksByIDParams) (*DeleteScheduledTasksByIDOK, error)
+	DeleteScheduledTasksByID(params *DeleteScheduledTasksByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteScheduledTasksByIDOK, error)
 
-	DeleteServiceInstancesByID(params *DeleteServiceInstancesByIDParams) (*DeleteServiceInstancesByIDOK, error)
+	DeleteServiceInstancesByID(params *DeleteServiceInstancesByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServiceInstancesByIDOK, error)
 
-	DeleteServiceDetails(params *DeleteServiceDetailsParams) (*DeleteServiceDetailsOK, error)
+	DeleteServiceDetails(params *DeleteServiceDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServiceDetailsOK, error)
 
-	DeleteServicePorts(params *DeleteServicePortsParams) (*DeleteServicePortsOK, error)
+	DeleteServicePorts(params *DeleteServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServicePortsOK, error)
 
-	DeleteServices(params *DeleteServicesParams) (*DeleteServicesOK, error)
+	DeleteServices(params *DeleteServicesParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServicesOK, error)
 
-	DeleteServicesByID(params *DeleteServicesByIDParams) (*DeleteServicesByIDOK, error)
+	DeleteServicesByID(params *DeleteServicesByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServicesByIDOK, error)
 
-	GetIgnoredService(params *GetIgnoredServiceParams) (*GetIgnoredServiceOK, error)
+	GetIgnoredService(params *GetIgnoredServiceParams, authInfo runtime.ClientAuthInfoWriter) (*GetIgnoredServiceOK, error)
 
-	GetListenerConnectionStatsByID(params *GetListenerConnectionStatsByIDParams) (*GetListenerConnectionStatsByIDOK, error)
+	GetListenerConnectionStatsByID(params *GetListenerConnectionStatsByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetListenerConnectionStatsByIDOK, error)
 
-	GetListenerConnectionStatsV2(params *GetListenerConnectionStatsV2Params) (*GetListenerConnectionStatsV2OK, error)
+	GetListenerConnectionStatsV2(params *GetListenerConnectionStatsV2Params, authInfo runtime.ClientAuthInfoWriter) (*GetListenerConnectionStatsV2OK, error)
 
-	GetListenerConnectionStatsV1(params *GetListenerConnectionStatsV1Params) (*GetListenerConnectionStatsV1OK, error)
+	GetListenerConnectionStatsV1(params *GetListenerConnectionStatsV1Params, authInfo runtime.ClientAuthInfoWriter) (*GetListenerConnectionStatsV1OK, error)
 
-	GetNetworkShares(params *GetNetworkSharesParams) (*GetNetworkSharesOK, error)
+	GetNetworkShares(params *GetNetworkSharesParams, authInfo runtime.ClientAuthInfoWriter) (*GetNetworkSharesOK, error)
 
-	GetScheduledTasks(params *GetScheduledTasksParams) (*GetScheduledTasksOK, error)
+	GetScheduledTasks(params *GetScheduledTasksParams, authInfo runtime.ClientAuthInfoWriter) (*GetScheduledTasksOK, error)
 
-	GetScheduledTasksByID(params *GetScheduledTasksByIDParams) (*GetScheduledTasksByIDOK, error)
+	GetScheduledTasksByID(params *GetScheduledTasksByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetScheduledTasksByIDOK, error)
 
-	GetServiceClientConnections(params *GetServiceClientConnectionsParams) (*GetServiceClientConnectionsOK, error)
+	GetServiceClientConnections(params *GetServiceClientConnectionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceClientConnectionsOK, error)
 
-	GetServiceInstances(params *GetServiceInstancesParams) (*GetServiceInstancesOK, error)
+	GetServiceInstances(params *GetServiceInstancesParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceInstancesOK, error)
 
-	GetServiceInstancesByID(params *GetServiceInstancesByIDParams) (*GetServiceInstancesByIDOK, error)
+	GetServiceInstancesByID(params *GetServiceInstancesByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceInstancesByIDOK, error)
 
-	GetServiceListenerPorts(params *GetServiceListenerPortsParams) (*GetServiceListenerPortsOK, error)
+	GetServiceListenerPorts(params *GetServiceListenerPortsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceListenerPortsOK, error)
 
-	GetServiceListenerPortsByID(params *GetServiceListenerPortsByIDParams) (*GetServiceListenerPortsByIDOK, error)
+	GetServiceListenerPortsByID(params *GetServiceListenerPortsByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceListenerPortsByIDOK, error)
 
-	GetServiceDetails(params *GetServiceDetailsParams) (*GetServiceDetailsOK, error)
+	GetServiceDetails(params *GetServiceDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceDetailsOK, error)
 
-	GetServicePorts(params *GetServicePortsParams) (*GetServicePortsOK, error)
+	GetServicePorts(params *GetServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServicePortsOK, error)
 
-	GetServices(params *GetServicesParams) (*GetServicesOK, error)
+	GetServices(params *GetServicesParams, authInfo runtime.ClientAuthInfoWriter) (*GetServicesOK, error)
 
-	GetServices2(params *GetServices2Params) (*GetServices2OK, error)
+	GetServices2(params *GetServices2Params, authInfo runtime.ClientAuthInfoWriter) (*GetServices2OK, error)
 
-	PostIgnoredService(params *PostIgnoredServiceParams) (*PostIgnoredServiceOK, error)
+	PostIgnoredService(params *PostIgnoredServiceParams, authInfo runtime.ClientAuthInfoWriter) (*PostIgnoredServiceOK, error)
 
-	PostScheduledTasks(params *PostScheduledTasksParams) (*PostScheduledTasksOK, error)
+	PostScheduledTasks(params *PostScheduledTasksParams, authInfo runtime.ClientAuthInfoWriter) (*PostScheduledTasksOK, error)
 
-	PostServiceInstances(params *PostServiceInstancesParams) (*PostServiceInstancesOK, error)
+	PostServiceInstances(params *PostServiceInstancesParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceInstancesOK, error)
 
-	PostServiceListenerPorts(params *PostServiceListenerPortsParams) (*PostServiceListenerPortsOK, error)
+	PostServiceListenerPorts(params *PostServiceListenerPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceListenerPortsOK, error)
 
-	PostServiceDetails(params *PostServiceDetailsParams) (*PostServiceDetailsOK, error)
+	PostServiceDetails(params *PostServiceDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceDetailsOK, error)
 
-	PostServicePorts(params *PostServicePortsParams) (*PostServicePortsOK, error)
+	PostServicePorts(params *PostServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostServicePortsOK, error)
 
-	PostServices(params *PostServicesParams) (*PostServicesOK, error)
+	PostServices(params *PostServicesParams, authInfo runtime.ClientAuthInfoWriter) (*PostServicesOK, error)
 
-	PostServices2(params *PostServices2Params) (*PostServices2OK, error)
+	PostServices2(params *PostServices2Params, authInfo runtime.ClientAuthInfoWriter) (*PostServices2OK, error)
 
-	PutServiceListenerPorts(params *PutServiceListenerPortsParams) (*PutServiceListenerPortsOK, error)
+	PutServiceListenerPorts(params *PutServiceListenerPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PutServiceListenerPortsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -99,7 +99,7 @@ type ClientService interface {
 
   This API is used to delete the ignored service with the ignored service id supplied as the required argument. Note: You will only be able to delete the service if the supplied username has the correct permissions.
 */
-func (a *Client) DeleteIgnoredServiceByID(params *DeleteIgnoredServiceByIDParams) (*DeleteIgnoredServiceByIDOK, error) {
+func (a *Client) DeleteIgnoredServiceByID(params *DeleteIgnoredServiceByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIgnoredServiceByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIgnoredServiceByIDParams()
@@ -114,6 +114,7 @@ func (a *Client) DeleteIgnoredServiceByID(params *DeleteIgnoredServiceByIDParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIgnoredServiceByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -135,7 +136,7 @@ func (a *Client) DeleteIgnoredServiceByID(params *DeleteIgnoredServiceByIDParams
 
   Used to delete the scheduled task with the service schedule ID as the required argument. Note: You will only be able to delete the scheduled task if the supplied username has the correct permissions.
 */
-func (a *Client) DeleteScheduledTasksByID(params *DeleteScheduledTasksByIDParams) (*DeleteScheduledTasksByIDOK, error) {
+func (a *Client) DeleteScheduledTasksByID(params *DeleteScheduledTasksByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteScheduledTasksByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteScheduledTasksByIDParams()
@@ -150,6 +151,7 @@ func (a *Client) DeleteScheduledTasksByID(params *DeleteScheduledTasksByIDParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteScheduledTasksByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -171,7 +173,7 @@ func (a *Client) DeleteScheduledTasksByID(params *DeleteScheduledTasksByIDParams
 
   This API is used to delete the service detail with the service detail id supplied as the required argument. Note - You will only be able to delete the service if the supplied username has the correct permissions.
 */
-func (a *Client) DeleteServiceInstancesByID(params *DeleteServiceInstancesByIDParams) (*DeleteServiceInstancesByIDOK, error) {
+func (a *Client) DeleteServiceInstancesByID(params *DeleteServiceInstancesByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServiceInstancesByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServiceInstancesByIDParams()
@@ -186,6 +188,7 @@ func (a *Client) DeleteServiceInstancesByID(params *DeleteServiceInstancesByIDPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteServiceInstancesByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -207,7 +210,7 @@ func (a *Client) DeleteServiceInstancesByID(params *DeleteServiceInstancesByIDPa
 
   Delete Service detail
 */
-func (a *Client) DeleteServiceDetails(params *DeleteServiceDetailsParams) (*DeleteServiceDetailsOK, error) {
+func (a *Client) DeleteServiceDetails(params *DeleteServiceDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServiceDetailsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServiceDetailsParams()
@@ -222,6 +225,7 @@ func (a *Client) DeleteServiceDetails(params *DeleteServiceDetailsParams) (*Dele
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteServiceDetailsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -243,7 +247,7 @@ func (a *Client) DeleteServiceDetails(params *DeleteServiceDetailsParams) (*Dele
 
   Delete Service port
 */
-func (a *Client) DeleteServicePorts(params *DeleteServicePortsParams) (*DeleteServicePortsOK, error) {
+func (a *Client) DeleteServicePorts(params *DeleteServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServicePortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServicePortsParams()
@@ -258,6 +262,7 @@ func (a *Client) DeleteServicePorts(params *DeleteServicePortsParams) (*DeleteSe
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteServicePortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -279,7 +284,7 @@ func (a *Client) DeleteServicePorts(params *DeleteServicePortsParams) (*DeleteSe
 
   Delete Service
 */
-func (a *Client) DeleteServices(params *DeleteServicesParams) (*DeleteServicesOK, error) {
+func (a *Client) DeleteServices(params *DeleteServicesParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServicesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServicesParams()
@@ -294,6 +299,7 @@ func (a *Client) DeleteServices(params *DeleteServicesParams) (*DeleteServicesOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteServicesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -315,7 +321,7 @@ func (a *Client) DeleteServices(params *DeleteServicesParams) (*DeleteServicesOK
 
   This API is used to delete the service with the service id supplied as the required argument. Note: You will only be able to delete the service if the supplied username has the correct permissions. (Added in v6.3.4)
 */
-func (a *Client) DeleteServicesByID(params *DeleteServicesByIDParams) (*DeleteServicesByIDOK, error) {
+func (a *Client) DeleteServicesByID(params *DeleteServicesByIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteServicesByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServicesByIDParams()
@@ -330,6 +336,7 @@ func (a *Client) DeleteServicesByID(params *DeleteServicesByIDParams) (*DeleteSe
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteServicesByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -351,7 +358,7 @@ func (a *Client) DeleteServicesByID(params *DeleteServicesByIDParams) (*DeleteSe
 
   Retrieve list of Ignored Services; filter ignored service details by following parameters in query string
 */
-func (a *Client) GetIgnoredService(params *GetIgnoredServiceParams) (*GetIgnoredServiceOK, error) {
+func (a *Client) GetIgnoredService(params *GetIgnoredServiceParams, authInfo runtime.ClientAuthInfoWriter) (*GetIgnoredServiceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIgnoredServiceParams()
@@ -366,6 +373,7 @@ func (a *Client) GetIgnoredService(params *GetIgnoredServiceParams) (*GetIgnored
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIgnoredServiceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -387,7 +395,7 @@ func (a *Client) GetIgnoredService(params *GetIgnoredServiceParams) (*GetIgnored
 
   Get Listener Connection Statistics By ID
 */
-func (a *Client) GetListenerConnectionStatsByID(params *GetListenerConnectionStatsByIDParams) (*GetListenerConnectionStatsByIDOK, error) {
+func (a *Client) GetListenerConnectionStatsByID(params *GetListenerConnectionStatsByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetListenerConnectionStatsByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetListenerConnectionStatsByIDParams()
@@ -402,6 +410,7 @@ func (a *Client) GetListenerConnectionStatsByID(params *GetListenerConnectionSta
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetListenerConnectionStatsByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -423,7 +432,7 @@ func (a *Client) GetListenerConnectionStatsByID(params *GetListenerConnectionSta
 
   Get Listener Connection Statistics
 */
-func (a *Client) GetListenerConnectionStatsV2(params *GetListenerConnectionStatsV2Params) (*GetListenerConnectionStatsV2OK, error) {
+func (a *Client) GetListenerConnectionStatsV2(params *GetListenerConnectionStatsV2Params, authInfo runtime.ClientAuthInfoWriter) (*GetListenerConnectionStatsV2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetListenerConnectionStatsV2Params()
@@ -438,6 +447,7 @@ func (a *Client) GetListenerConnectionStatsV2(params *GetListenerConnectionStats
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetListenerConnectionStatsV2Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -457,7 +467,7 @@ func (a *Client) GetListenerConnectionStatsV2(params *GetListenerConnectionStats
 /*
   GetListenerConnectionStatsV1 Get Listener Connection Statistics
 */
-func (a *Client) GetListenerConnectionStatsV1(params *GetListenerConnectionStatsV1Params) (*GetListenerConnectionStatsV1OK, error) {
+func (a *Client) GetListenerConnectionStatsV1(params *GetListenerConnectionStatsV1Params, authInfo runtime.ClientAuthInfoWriter) (*GetListenerConnectionStatsV1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetListenerConnectionStatsV1Params()
@@ -472,6 +482,7 @@ func (a *Client) GetListenerConnectionStatsV1(params *GetListenerConnectionStats
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetListenerConnectionStatsV1Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -491,7 +502,7 @@ func (a *Client) GetListenerConnectionStatsV1(params *GetListenerConnectionStats
 /*
   GetNetworkShares Get Network Shares
 */
-func (a *Client) GetNetworkShares(params *GetNetworkSharesParams) (*GetNetworkSharesOK, error) {
+func (a *Client) GetNetworkShares(params *GetNetworkSharesParams, authInfo runtime.ClientAuthInfoWriter) (*GetNetworkSharesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetNetworkSharesParams()
@@ -506,6 +517,7 @@ func (a *Client) GetNetworkShares(params *GetNetworkSharesParams) (*GetNetworkSh
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetNetworkSharesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -527,7 +539,7 @@ func (a *Client) GetNetworkShares(params *GetNetworkSharesParams) (*GetNetworkSh
 
   Get Scheduled Tasks
 */
-func (a *Client) GetScheduledTasks(params *GetScheduledTasksParams) (*GetScheduledTasksOK, error) {
+func (a *Client) GetScheduledTasks(params *GetScheduledTasksParams, authInfo runtime.ClientAuthInfoWriter) (*GetScheduledTasksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetScheduledTasksParams()
@@ -542,6 +554,7 @@ func (a *Client) GetScheduledTasks(params *GetScheduledTasksParams) (*GetSchedul
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetScheduledTasksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -563,7 +576,7 @@ func (a *Client) GetScheduledTasks(params *GetScheduledTasksParams) (*GetSchedul
 
   Get scheduled task By ID
 */
-func (a *Client) GetScheduledTasksByID(params *GetScheduledTasksByIDParams) (*GetScheduledTasksByIDOK, error) {
+func (a *Client) GetScheduledTasksByID(params *GetScheduledTasksByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetScheduledTasksByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetScheduledTasksByIDParams()
@@ -578,6 +591,7 @@ func (a *Client) GetScheduledTasksByID(params *GetScheduledTasksByIDParams) (*Ge
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetScheduledTasksByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -599,7 +613,7 @@ func (a *Client) GetScheduledTasksByID(params *GetScheduledTasksByIDParams) (*Ge
 
   Get Service Client Connections
 */
-func (a *Client) GetServiceClientConnections(params *GetServiceClientConnectionsParams) (*GetServiceClientConnectionsOK, error) {
+func (a *Client) GetServiceClientConnections(params *GetServiceClientConnectionsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceClientConnectionsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceClientConnectionsParams()
@@ -614,6 +628,7 @@ func (a *Client) GetServiceClientConnections(params *GetServiceClientConnections
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceClientConnectionsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -635,7 +650,7 @@ func (a *Client) GetServiceClientConnections(params *GetServiceClientConnections
 
   You can filter service details by following parameters in the query string
 */
-func (a *Client) GetServiceInstances(params *GetServiceInstancesParams) (*GetServiceInstancesOK, error) {
+func (a *Client) GetServiceInstances(params *GetServiceInstancesParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceInstancesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceInstancesParams()
@@ -650,6 +665,7 @@ func (a *Client) GetServiceInstances(params *GetServiceInstancesParams) (*GetSer
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceInstancesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -671,7 +687,7 @@ func (a *Client) GetServiceInstances(params *GetServiceInstancesParams) (*GetSer
 
   Get Service Instances By ID
 */
-func (a *Client) GetServiceInstancesByID(params *GetServiceInstancesByIDParams) (*GetServiceInstancesByIDOK, error) {
+func (a *Client) GetServiceInstancesByID(params *GetServiceInstancesByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceInstancesByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceInstancesByIDParams()
@@ -686,6 +702,7 @@ func (a *Client) GetServiceInstancesByID(params *GetServiceInstancesByIDParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceInstancesByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -707,7 +724,7 @@ func (a *Client) GetServiceInstancesByID(params *GetServiceInstancesByIDParams) 
 
   You can filter service ports by following parameters in the query string
 */
-func (a *Client) GetServiceListenerPorts(params *GetServiceListenerPortsParams) (*GetServiceListenerPortsOK, error) {
+func (a *Client) GetServiceListenerPorts(params *GetServiceListenerPortsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceListenerPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceListenerPortsParams()
@@ -722,6 +739,7 @@ func (a *Client) GetServiceListenerPorts(params *GetServiceListenerPortsParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceListenerPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -743,7 +761,7 @@ func (a *Client) GetServiceListenerPorts(params *GetServiceListenerPortsParams) 
 
   Get Service Listener Ports By ID
 */
-func (a *Client) GetServiceListenerPortsByID(params *GetServiceListenerPortsByIDParams) (*GetServiceListenerPortsByIDOK, error) {
+func (a *Client) GetServiceListenerPortsByID(params *GetServiceListenerPortsByIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceListenerPortsByIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceListenerPortsByIDParams()
@@ -758,6 +776,7 @@ func (a *Client) GetServiceListenerPortsByID(params *GetServiceListenerPortsByID
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceListenerPortsByIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -777,7 +796,7 @@ func (a *Client) GetServiceListenerPortsByID(params *GetServiceListenerPortsByID
 /*
   GetServiceDetails Get Service details
 */
-func (a *Client) GetServiceDetails(params *GetServiceDetailsParams) (*GetServiceDetailsOK, error) {
+func (a *Client) GetServiceDetails(params *GetServiceDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceDetailsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceDetailsParams()
@@ -792,6 +811,7 @@ func (a *Client) GetServiceDetails(params *GetServiceDetailsParams) (*GetService
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceDetailsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -811,7 +831,7 @@ func (a *Client) GetServiceDetails(params *GetServiceDetailsParams) (*GetService
 /*
   GetServicePorts Get Service ports
 */
-func (a *Client) GetServicePorts(params *GetServicePortsParams) (*GetServicePortsOK, error) {
+func (a *Client) GetServicePorts(params *GetServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*GetServicePortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServicePortsParams()
@@ -826,6 +846,7 @@ func (a *Client) GetServicePorts(params *GetServicePortsParams) (*GetServicePort
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServicePortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -845,7 +866,7 @@ func (a *Client) GetServicePorts(params *GetServicePortsParams) (*GetServicePort
 /*
   GetServices Get Services
 */
-func (a *Client) GetServices(params *GetServicesParams) (*GetServicesOK, error) {
+func (a *Client) GetServices(params *GetServicesParams, authInfo runtime.ClientAuthInfoWriter) (*GetServicesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServicesParams()
@@ -860,6 +881,7 @@ func (a *Client) GetServices(params *GetServicesParams) (*GetServicesOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServicesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -881,7 +903,7 @@ func (a *Client) GetServices(params *GetServicesParams) (*GetServicesOK, error) 
 
   You can filter services by following parameters in the query string
 */
-func (a *Client) GetServices2(params *GetServices2Params) (*GetServices2OK, error) {
+func (a *Client) GetServices2(params *GetServices2Params, authInfo runtime.ClientAuthInfoWriter) (*GetServices2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServices2Params()
@@ -896,6 +918,7 @@ func (a *Client) GetServices2(params *GetServices2Params) (*GetServices2OK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServices2Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -917,7 +940,7 @@ func (a *Client) GetServices2(params *GetServices2Params) (*GetServices2OK, erro
 
   Post Ignored Service
 */
-func (a *Client) PostIgnoredService(params *PostIgnoredServiceParams) (*PostIgnoredServiceOK, error) {
+func (a *Client) PostIgnoredService(params *PostIgnoredServiceParams, authInfo runtime.ClientAuthInfoWriter) (*PostIgnoredServiceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIgnoredServiceParams()
@@ -932,6 +955,7 @@ func (a *Client) PostIgnoredService(params *PostIgnoredServiceParams) (*PostIgno
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIgnoredServiceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -953,7 +977,7 @@ func (a *Client) PostIgnoredService(params *PostIgnoredServiceParams) (*PostIgno
 
   Post Scheduled Tasks. 3 parameters are required: <ul><li>schedule_name <b>OR</b> service_name <b>OR</b> name</li> <li>device_id <b>OR</b> device</li> <li>caption</li>
 */
-func (a *Client) PostScheduledTasks(params *PostScheduledTasksParams) (*PostScheduledTasksOK, error) {
+func (a *Client) PostScheduledTasks(params *PostScheduledTasksParams, authInfo runtime.ClientAuthInfoWriter) (*PostScheduledTasksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostScheduledTasksParams()
@@ -968,6 +992,7 @@ func (a *Client) PostScheduledTasks(params *PostScheduledTasksParams) (*PostSche
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostScheduledTasksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -989,7 +1014,7 @@ func (a *Client) PostScheduledTasks(params *PostScheduledTasksParams) (*PostSche
 
   Post Service Instances. Required parameters are either: <li>service_name <b>OR</b> service_display_name <b>OR</b> service_id</li> <li> device <b>OR</b> device_id</li><p>------ OR ------<li>service_detail_id</li></ul>
 */
-func (a *Client) PostServiceInstances(params *PostServiceInstancesParams) (*PostServiceInstancesOK, error) {
+func (a *Client) PostServiceInstances(params *PostServiceInstancesParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceInstancesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServiceInstancesParams()
@@ -1004,6 +1029,7 @@ func (a *Client) PostServiceInstances(params *PostServiceInstancesParams) (*Post
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServiceInstancesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1025,7 +1051,7 @@ func (a *Client) PostServiceInstances(params *PostServiceInstancesParams) (*Post
 
   Post Service Listener Ports. Required parameters: <ul> <li>id</li></ul> <b>---------- OR ----------</b> <ul> <li>port</li> <li>device_name <b>OR</b> device_id</li> <li>listening_ip <b>OR</b> remote_ips</li> </ul>
 */
-func (a *Client) PostServiceListenerPorts(params *PostServiceListenerPortsParams) (*PostServiceListenerPortsOK, error) {
+func (a *Client) PostServiceListenerPorts(params *PostServiceListenerPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceListenerPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServiceListenerPortsParams()
@@ -1040,6 +1066,7 @@ func (a *Client) PostServiceListenerPorts(params *PostServiceListenerPortsParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServiceListenerPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1059,7 +1086,7 @@ func (a *Client) PostServiceListenerPorts(params *PostServiceListenerPortsParams
 /*
   PostServiceDetails Create / Update service details
 */
-func (a *Client) PostServiceDetails(params *PostServiceDetailsParams) (*PostServiceDetailsOK, error) {
+func (a *Client) PostServiceDetails(params *PostServiceDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceDetailsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServiceDetailsParams()
@@ -1074,6 +1101,7 @@ func (a *Client) PostServiceDetails(params *PostServiceDetailsParams) (*PostServ
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServiceDetailsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1093,7 +1121,7 @@ func (a *Client) PostServiceDetails(params *PostServiceDetailsParams) (*PostServ
 /*
   PostServicePorts Create / Update service ports
 */
-func (a *Client) PostServicePorts(params *PostServicePortsParams) (*PostServicePortsOK, error) {
+func (a *Client) PostServicePorts(params *PostServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostServicePortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServicePortsParams()
@@ -1108,6 +1136,7 @@ func (a *Client) PostServicePorts(params *PostServicePortsParams) (*PostServiceP
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServicePortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1127,7 +1156,7 @@ func (a *Client) PostServicePorts(params *PostServicePortsParams) (*PostServiceP
 /*
   PostServices Create / Update Services
 */
-func (a *Client) PostServices(params *PostServicesParams) (*PostServicesOK, error) {
+func (a *Client) PostServices(params *PostServicesParams, authInfo runtime.ClientAuthInfoWriter) (*PostServicesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServicesParams()
@@ -1142,6 +1171,7 @@ func (a *Client) PostServices(params *PostServicesParams) (*PostServicesOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServicesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1163,7 +1193,7 @@ func (a *Client) PostServices(params *PostServicesParams) (*PostServicesOK, erro
 
   Post a Service. Required parameters: <ul> <li>name <b>OR</b> display_name</li>
 */
-func (a *Client) PostServices2(params *PostServices2Params) (*PostServices2OK, error) {
+func (a *Client) PostServices2(params *PostServices2Params, authInfo runtime.ClientAuthInfoWriter) (*PostServices2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServices2Params()
@@ -1178,6 +1208,7 @@ func (a *Client) PostServices2(params *PostServices2Params) (*PostServices2OK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServices2Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1199,7 +1230,7 @@ func (a *Client) PostServices2(params *PostServices2Params) (*PostServices2OK, e
 
   Currently, in order to update a service port, id (path), device_name/device_id, and listening_ip/remote_ips are needed even if they are staying the same - we use those fields to identify the port.
 */
-func (a *Client) PutServiceListenerPorts(params *PutServiceListenerPortsParams) (*PutServiceListenerPortsOK, error) {
+func (a *Client) PutServiceListenerPorts(params *PutServiceListenerPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PutServiceListenerPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutServiceListenerPortsParams()
@@ -1214,6 +1245,7 @@ func (a *Client) PutServiceListenerPorts(params *PutServiceListenerPortsParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutServiceListenerPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

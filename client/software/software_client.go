@@ -27,23 +27,23 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteSoftwareComponent(params *DeleteSoftwareComponentParams) (*DeleteSoftwareComponentOK, error)
+	DeleteSoftwareComponent(params *DeleteSoftwareComponentParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSoftwareComponentOK, error)
 
-	DeleteSoftwareLicenseKeys(params *DeleteSoftwareLicenseKeysParams) (*DeleteSoftwareLicenseKeysOK, error)
+	DeleteSoftwareLicenseKeys(params *DeleteSoftwareLicenseKeysParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSoftwareLicenseKeysOK, error)
 
-	DeleteSoftwareDetail(params *DeleteSoftwareDetailParams) (*DeleteSoftwareDetailOK, error)
+	DeleteSoftwareDetail(params *DeleteSoftwareDetailParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSoftwareDetailOK, error)
 
-	GetSoftwareComponentDetails(params *GetSoftwareComponentDetailsParams) (*GetSoftwareComponentDetailsOK, error)
+	GetSoftwareComponentDetails(params *GetSoftwareComponentDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSoftwareComponentDetailsOK, error)
 
-	GetSoftwareLicenseKeys(params *GetSoftwareLicenseKeysParams) (*GetSoftwareLicenseKeysOK, error)
+	GetSoftwareLicenseKeys(params *GetSoftwareLicenseKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetSoftwareLicenseKeysOK, error)
 
-	GetSoftwareDetails(params *GetSoftwareDetailsParams) (*GetSoftwareDetailsOK, error)
+	GetSoftwareDetails(params *GetSoftwareDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSoftwareDetailsOK, error)
 
-	PostUpdateServicePorts(params *PostUpdateServicePortsParams) (*PostUpdateServicePortsOK, error)
+	PostUpdateServicePorts(params *PostUpdateServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateServicePortsOK, error)
 
-	PostUpdateSoftwareComponents(params *PostUpdateSoftwareComponentsParams) (*PostUpdateSoftwareComponentsOK, error)
+	PostUpdateSoftwareComponents(params *PostUpdateSoftwareComponentsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateSoftwareComponentsOK, error)
 
-	PostUpdateSoftwareLicenses(params *PostUpdateSoftwareLicensesParams) (*PostUpdateSoftwareLicensesOK, error)
+	PostUpdateSoftwareLicenses(params *PostUpdateSoftwareLicensesParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateSoftwareLicensesOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -53,7 +53,7 @@ type ClientService interface {
 
   This API is used to delete the software detail with the software detail id supplied as the required argument. Note: You will only be able to delete the software if the supplied username has the correct permissions.
 */
-func (a *Client) DeleteSoftwareComponent(params *DeleteSoftwareComponentParams) (*DeleteSoftwareComponentOK, error) {
+func (a *Client) DeleteSoftwareComponent(params *DeleteSoftwareComponentParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSoftwareComponentOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteSoftwareComponentParams()
@@ -68,6 +68,7 @@ func (a *Client) DeleteSoftwareComponent(params *DeleteSoftwareComponentParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteSoftwareComponentReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -89,7 +90,7 @@ func (a *Client) DeleteSoftwareComponent(params *DeleteSoftwareComponentParams) 
 
   This API is used to delete the software license key with the software license key id supplied as the required argument. Note: You will only be able to delete the software key if the supplied username has the correct permissions.
 */
-func (a *Client) DeleteSoftwareLicenseKeys(params *DeleteSoftwareLicenseKeysParams) (*DeleteSoftwareLicenseKeysOK, error) {
+func (a *Client) DeleteSoftwareLicenseKeys(params *DeleteSoftwareLicenseKeysParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSoftwareLicenseKeysOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteSoftwareLicenseKeysParams()
@@ -104,6 +105,7 @@ func (a *Client) DeleteSoftwareLicenseKeys(params *DeleteSoftwareLicenseKeysPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteSoftwareLicenseKeysReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -125,7 +127,7 @@ func (a *Client) DeleteSoftwareLicenseKeys(params *DeleteSoftwareLicenseKeysPara
 
   This API is used to delete the software detail with the software detail id supplied as the required argument. Note: You will only be able to delete the software if the supplied username has the correct permissions.
 */
-func (a *Client) DeleteSoftwareDetail(params *DeleteSoftwareDetailParams) (*DeleteSoftwareDetailOK, error) {
+func (a *Client) DeleteSoftwareDetail(params *DeleteSoftwareDetailParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteSoftwareDetailOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteSoftwareDetailParams()
@@ -140,6 +142,7 @@ func (a *Client) DeleteSoftwareDetail(params *DeleteSoftwareDetailParams) (*Dele
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteSoftwareDetailReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -161,7 +164,7 @@ func (a *Client) DeleteSoftwareDetail(params *DeleteSoftwareDetailParams) (*Dele
 
   You can filter software details by following parameters in the query string
 */
-func (a *Client) GetSoftwareComponentDetails(params *GetSoftwareComponentDetailsParams) (*GetSoftwareComponentDetailsOK, error) {
+func (a *Client) GetSoftwareComponentDetails(params *GetSoftwareComponentDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSoftwareComponentDetailsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetSoftwareComponentDetailsParams()
@@ -176,6 +179,7 @@ func (a *Client) GetSoftwareComponentDetails(params *GetSoftwareComponentDetails
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetSoftwareComponentDetailsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -197,7 +201,7 @@ func (a *Client) GetSoftwareComponentDetails(params *GetSoftwareComponentDetails
 
   You can filter software license keys by following parameters in the query string
 */
-func (a *Client) GetSoftwareLicenseKeys(params *GetSoftwareLicenseKeysParams) (*GetSoftwareLicenseKeysOK, error) {
+func (a *Client) GetSoftwareLicenseKeys(params *GetSoftwareLicenseKeysParams, authInfo runtime.ClientAuthInfoWriter) (*GetSoftwareLicenseKeysOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetSoftwareLicenseKeysParams()
@@ -212,6 +216,7 @@ func (a *Client) GetSoftwareLicenseKeys(params *GetSoftwareLicenseKeysParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetSoftwareLicenseKeysReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -231,7 +236,7 @@ func (a *Client) GetSoftwareLicenseKeys(params *GetSoftwareLicenseKeysParams) (*
 /*
   GetSoftwareDetails Get Software details
 */
-func (a *Client) GetSoftwareDetails(params *GetSoftwareDetailsParams) (*GetSoftwareDetailsOK, error) {
+func (a *Client) GetSoftwareDetails(params *GetSoftwareDetailsParams, authInfo runtime.ClientAuthInfoWriter) (*GetSoftwareDetailsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetSoftwareDetailsParams()
@@ -246,6 +251,7 @@ func (a *Client) GetSoftwareDetails(params *GetSoftwareDetailsParams) (*GetSoftw
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetSoftwareDetailsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -265,7 +271,7 @@ func (a *Client) GetSoftwareDetails(params *GetSoftwareDetailsParams) (*GetSoftw
 /*
   PostUpdateServicePorts Create / Update software details
 */
-func (a *Client) PostUpdateServicePorts(params *PostUpdateServicePortsParams) (*PostUpdateServicePortsOK, error) {
+func (a *Client) PostUpdateServicePorts(params *PostUpdateServicePortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateServicePortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdateServicePortsParams()
@@ -280,6 +286,7 @@ func (a *Client) PostUpdateServicePorts(params *PostUpdateServicePortsParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdateServicePortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -299,7 +306,7 @@ func (a *Client) PostUpdateServicePorts(params *PostUpdateServicePortsParams) (*
 /*
   PostUpdateSoftwareComponents Create / Update Software Components. Required parameters: <ul><li>name <b>OR</b> id</li> <li>licensing_model</li> <li>software_type</li>
 */
-func (a *Client) PostUpdateSoftwareComponents(params *PostUpdateSoftwareComponentsParams) (*PostUpdateSoftwareComponentsOK, error) {
+func (a *Client) PostUpdateSoftwareComponents(params *PostUpdateSoftwareComponentsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateSoftwareComponentsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdateSoftwareComponentsParams()
@@ -314,6 +321,7 @@ func (a *Client) PostUpdateSoftwareComponents(params *PostUpdateSoftwareComponen
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdateSoftwareComponentsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -333,7 +341,7 @@ func (a *Client) PostUpdateSoftwareComponents(params *PostUpdateSoftwareComponen
 /*
   PostUpdateSoftwareLicenses Create / Update Software Licenses. Required parameters: <ul><li>id <b>OR</b> software_id <b>OR</b> software_name</li>
 */
-func (a *Client) PostUpdateSoftwareLicenses(params *PostUpdateSoftwareLicensesParams) (*PostUpdateSoftwareLicensesOK, error) {
+func (a *Client) PostUpdateSoftwareLicenses(params *PostUpdateSoftwareLicensesParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateSoftwareLicensesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdateSoftwareLicensesParams()
@@ -348,6 +356,7 @@ func (a *Client) PostUpdateSoftwareLicenses(params *PostUpdateSoftwareLicensesPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdateSoftwareLicensesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

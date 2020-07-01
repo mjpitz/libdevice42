@@ -27,15 +27,15 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteCustomers(params *DeleteCustomersParams) (*DeleteCustomersOK, error)
+	DeleteCustomers(params *DeleteCustomersParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCustomersOK, error)
 
-	GetCustomers(params *GetCustomersParams) (*GetCustomersOK, error)
+	GetCustomers(params *GetCustomersParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomersOK, error)
 
-	PostCustomers(params *PostCustomersParams) (*PostCustomersOK, error)
+	PostCustomers(params *PostCustomersParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomersOK, error)
 
-	PostUpdateCustomerContacts(params *PostUpdateCustomerContactsParams) (*PostUpdateCustomerContactsOK, error)
+	PostUpdateCustomerContacts(params *PostUpdateCustomerContactsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateCustomerContactsOK, error)
 
-	PutCustomFields(params *PutCustomFieldsParams) (*PutCustomFieldsOK, error)
+	PutCustomFields(params *PutCustomFieldsParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -45,7 +45,7 @@ type ClientService interface {
 
   This API is used to delete the customer with the customer id supplied as the required argument.
 */
-func (a *Client) DeleteCustomers(params *DeleteCustomersParams) (*DeleteCustomersOK, error) {
+func (a *Client) DeleteCustomers(params *DeleteCustomersParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCustomersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteCustomersParams()
@@ -60,6 +60,7 @@ func (a *Client) DeleteCustomers(params *DeleteCustomersParams) (*DeleteCustomer
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteCustomersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -81,7 +82,7 @@ func (a *Client) DeleteCustomers(params *DeleteCustomersParams) (*DeleteCustomer
 
   Get all Customers
 */
-func (a *Client) GetCustomers(params *GetCustomersParams) (*GetCustomersOK, error) {
+func (a *Client) GetCustomers(params *GetCustomersParams, authInfo runtime.ClientAuthInfoWriter) (*GetCustomersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCustomersParams()
@@ -96,6 +97,7 @@ func (a *Client) GetCustomers(params *GetCustomersParams) (*GetCustomersOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetCustomersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -115,7 +117,7 @@ func (a *Client) GetCustomers(params *GetCustomersParams) (*GetCustomersOK, erro
 /*
   PostCustomers Create / Update Customers.
 */
-func (a *Client) PostCustomers(params *PostCustomersParams) (*PostCustomersOK, error) {
+func (a *Client) PostCustomers(params *PostCustomersParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostCustomersParams()
@@ -130,6 +132,7 @@ func (a *Client) PostCustomers(params *PostCustomersParams) (*PostCustomersOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostCustomersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -149,7 +152,7 @@ func (a *Client) PostCustomers(params *PostCustomersParams) (*PostCustomersOK, e
 /*
   PostUpdateCustomerContacts Create / Update Customer Contacts
 */
-func (a *Client) PostUpdateCustomerContacts(params *PostUpdateCustomerContactsParams) (*PostUpdateCustomerContactsOK, error) {
+func (a *Client) PostUpdateCustomerContacts(params *PostUpdateCustomerContactsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateCustomerContactsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdateCustomerContactsParams()
@@ -164,6 +167,7 @@ func (a *Client) PostUpdateCustomerContacts(params *PostUpdateCustomerContactsPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdateCustomerContactsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -183,7 +187,7 @@ func (a *Client) PostUpdateCustomerContacts(params *PostUpdateCustomerContactsPa
 /*
   PutCustomFields Custom Fields
 */
-func (a *Client) PutCustomFields(params *PutCustomFieldsParams) (*PutCustomFieldsOK, error) {
+func (a *Client) PutCustomFields(params *PutCustomFieldsParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldsParams()
@@ -198,6 +202,7 @@ func (a *Client) PutCustomFields(params *PutCustomFieldsParams) (*PutCustomField
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

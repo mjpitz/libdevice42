@@ -27,25 +27,25 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteAssetsRoom(params *DeleteAssetsRoomParams) (*DeleteAssetsRoomOK, error)
+	DeleteAssetsRoom(params *DeleteAssetsRoomParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteAssetsRoomOK, error)
 
-	DeleteDeviceRoom(params *DeleteDeviceRoomParams) (*DeleteDeviceRoomOK, error)
+	DeleteDeviceRoom(params *DeleteDeviceRoomParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceRoomOK, error)
 
-	DeleteRoomsID(params *DeleteRoomsIDParams) (*DeleteRoomsIDOK, error)
+	DeleteRoomsID(params *DeleteRoomsIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteRoomsIDOK, error)
 
-	GetRooms(params *GetRoomsParams) (*GetRoomsOK, error)
+	GetRooms(params *GetRoomsParams, authInfo runtime.ClientAuthInfoWriter) (*GetRoomsOK, error)
 
-	GetRoomsID(params *GetRoomsIDParams) (*GetRoomsIDOK, error)
+	GetRoomsID(params *GetRoomsIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetRoomsIDOK, error)
 
-	PostAssetsRoom(params *PostAssetsRoomParams) (*PostAssetsRoomOK, error)
+	PostAssetsRoom(params *PostAssetsRoomParams, authInfo runtime.ClientAuthInfoWriter) (*PostAssetsRoomOK, error)
 
-	PostDeviceRoom(params *PostDeviceRoomParams) (*PostDeviceRoomOK, error)
+	PostDeviceRoom(params *PostDeviceRoomParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceRoomOK, error)
 
-	PostRooms(params *PostRoomsParams) (*PostRoomsOK, error)
+	PostRooms(params *PostRoomsParams, authInfo runtime.ClientAuthInfoWriter) (*PostRoomsOK, error)
 
-	PutCustomFieldsRoom(params *PutCustomFieldsRoomParams) (*PutCustomFieldsRoomOK, error)
+	PutCustomFieldsRoom(params *PutCustomFieldsRoomParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsRoomOK, error)
 
-	PutRoomsID(params *PutRoomsIDParams) (*PutRoomsIDOK, error)
+	PutRoomsID(params *PutRoomsIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutRoomsIDOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -55,7 +55,7 @@ type ClientService interface {
 
   This API is used to delete the asset with the asset id supplied as the required argument from its room.
 */
-func (a *Client) DeleteAssetsRoom(params *DeleteAssetsRoomParams) (*DeleteAssetsRoomOK, error) {
+func (a *Client) DeleteAssetsRoom(params *DeleteAssetsRoomParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteAssetsRoomOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteAssetsRoomParams()
@@ -70,6 +70,7 @@ func (a *Client) DeleteAssetsRoom(params *DeleteAssetsRoomParams) (*DeleteAssets
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteAssetsRoomReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -91,7 +92,7 @@ func (a *Client) DeleteAssetsRoom(params *DeleteAssetsRoomParams) (*DeleteAssets
 
   This API is used to delete the device from its room with the device id supplied as the required argument.
 */
-func (a *Client) DeleteDeviceRoom(params *DeleteDeviceRoomParams) (*DeleteDeviceRoomOK, error) {
+func (a *Client) DeleteDeviceRoom(params *DeleteDeviceRoomParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceRoomOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDeviceRoomParams()
@@ -106,6 +107,7 @@ func (a *Client) DeleteDeviceRoom(params *DeleteDeviceRoomParams) (*DeleteDevice
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteDeviceRoomReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -127,7 +129,7 @@ func (a *Client) DeleteDeviceRoom(params *DeleteDeviceRoomParams) (*DeleteDevice
 
   This API is used to delete the room with the room id supplied as the required argument.
 */
-func (a *Client) DeleteRoomsID(params *DeleteRoomsIDParams) (*DeleteRoomsIDOK, error) {
+func (a *Client) DeleteRoomsID(params *DeleteRoomsIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteRoomsIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteRoomsIDParams()
@@ -142,6 +144,7 @@ func (a *Client) DeleteRoomsID(params *DeleteRoomsIDParams) (*DeleteRoomsIDOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteRoomsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -163,7 +166,7 @@ func (a *Client) DeleteRoomsID(params *DeleteRoomsIDParams) (*DeleteRoomsIDOK, e
 
   Get All Rooms
 */
-func (a *Client) GetRooms(params *GetRoomsParams) (*GetRoomsOK, error) {
+func (a *Client) GetRooms(params *GetRoomsParams, authInfo runtime.ClientAuthInfoWriter) (*GetRoomsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetRoomsParams()
@@ -178,6 +181,7 @@ func (a *Client) GetRooms(params *GetRoomsParams) (*GetRoomsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetRoomsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -199,7 +203,7 @@ func (a *Client) GetRooms(params *GetRoomsParams) (*GetRoomsOK, error) {
 
   Retrieve detailed information about a specific rooms includes racks, devices and objects directly related to that room.
 */
-func (a *Client) GetRoomsID(params *GetRoomsIDParams) (*GetRoomsIDOK, error) {
+func (a *Client) GetRoomsID(params *GetRoomsIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetRoomsIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetRoomsIDParams()
@@ -214,6 +218,7 @@ func (a *Client) GetRoomsID(params *GetRoomsIDParams) (*GetRoomsIDOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetRoomsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -235,7 +240,7 @@ func (a *Client) GetRoomsID(params *GetRoomsIDParams) (*GetRoomsIDOK, error) {
 
   Add asset to room
 */
-func (a *Client) PostAssetsRoom(params *PostAssetsRoomParams) (*PostAssetsRoomOK, error) {
+func (a *Client) PostAssetsRoom(params *PostAssetsRoomParams, authInfo runtime.ClientAuthInfoWriter) (*PostAssetsRoomOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAssetsRoomParams()
@@ -250,6 +255,7 @@ func (a *Client) PostAssetsRoom(params *PostAssetsRoomParams) (*PostAssetsRoomOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAssetsRoomReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -271,7 +277,7 @@ func (a *Client) PostAssetsRoom(params *PostAssetsRoomParams) (*PostAssetsRoomOK
 
   Add device to room
 */
-func (a *Client) PostDeviceRoom(params *PostDeviceRoomParams) (*PostDeviceRoomOK, error) {
+func (a *Client) PostDeviceRoom(params *PostDeviceRoomParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceRoomOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDeviceRoomParams()
@@ -286,6 +292,7 @@ func (a *Client) PostDeviceRoom(params *PostDeviceRoomParams) (*PostDeviceRoomOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostDeviceRoomReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -307,7 +314,7 @@ func (a *Client) PostDeviceRoom(params *PostDeviceRoomParams) (*PostDeviceRoomOK
 
   Create or update a Room. Required parameters: <ul><li>name</li> <li>building_id <b>OR</b> building</li>
 */
-func (a *Client) PostRooms(params *PostRoomsParams) (*PostRoomsOK, error) {
+func (a *Client) PostRooms(params *PostRoomsParams, authInfo runtime.ClientAuthInfoWriter) (*PostRoomsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostRoomsParams()
@@ -322,6 +329,7 @@ func (a *Client) PostRooms(params *PostRoomsParams) (*PostRoomsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostRoomsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -343,7 +351,7 @@ func (a *Client) PostRooms(params *PostRoomsParams) (*PostRoomsOK, error) {
 
   Create or update custom fields for rooms. "ID" or "name" of room is needed even when value is not being changed.
 */
-func (a *Client) PutCustomFieldsRoom(params *PutCustomFieldsRoomParams) (*PutCustomFieldsRoomOK, error) {
+func (a *Client) PutCustomFieldsRoom(params *PutCustomFieldsRoomParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsRoomOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldsRoomParams()
@@ -358,6 +366,7 @@ func (a *Client) PutCustomFieldsRoom(params *PutCustomFieldsRoomParams) (*PutCus
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldsRoomReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -379,7 +388,7 @@ func (a *Client) PutCustomFieldsRoom(params *PutCustomFieldsRoomParams) (*PutCus
 
   Update a Room
 */
-func (a *Client) PutRoomsID(params *PutRoomsIDParams) (*PutRoomsIDOK, error) {
+func (a *Client) PutRoomsID(params *PutRoomsIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutRoomsIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutRoomsIDParams()
@@ -394,6 +403,7 @@ func (a *Client) PutRoomsID(params *PutRoomsIDParams) (*PutRoomsIDOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutRoomsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

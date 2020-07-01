@@ -27,19 +27,19 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetPatchPanelID(params *GetPatchPanelIDParams) (*GetPatchPanelIDOK, error)
+	GetPatchPanelID(params *GetPatchPanelIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelIDOK, error)
 
-	GetPatchPanelModels(params *GetPatchPanelModelsParams) (*GetPatchPanelModelsOK, error)
+	GetPatchPanelModels(params *GetPatchPanelModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelModelsOK, error)
 
-	GetPatchPanelModuleModels(params *GetPatchPanelModuleModelsParams) (*GetPatchPanelModuleModelsOK, error)
+	GetPatchPanelModuleModels(params *GetPatchPanelModuleModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelModuleModelsOK, error)
 
-	GetPatchPanelPortsPatchPanelID(params *GetPatchPanelPortsPatchPanelIDParams) (*GetPatchPanelPortsPatchPanelIDOK, error)
+	GetPatchPanelPortsPatchPanelID(params *GetPatchPanelPortsPatchPanelIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelPortsPatchPanelIDOK, error)
 
-	PostPatchPanelModels(params *PostPatchPanelModelsParams) (*PostPatchPanelModelsOK, error)
+	PostPatchPanelModels(params *PostPatchPanelModelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPatchPanelModelsOK, error)
 
-	PostPatchPanelModuleModels(params *PostPatchPanelModuleModelsParams) (*PostPatchPanelModuleModelsOK, error)
+	PostPatchPanelModuleModels(params *PostPatchPanelModuleModelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPatchPanelModuleModelsOK, error)
 
-	PostPatchPanelPortsPatchPanelID(params *PostPatchPanelPortsPatchPanelIDParams) (*PostPatchPanelPortsPatchPanelIDOK, error)
+	PostPatchPanelPortsPatchPanelID(params *PostPatchPanelPortsPatchPanelIDParams, authInfo runtime.ClientAuthInfoWriter) (*PostPatchPanelPortsPatchPanelIDOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -49,7 +49,7 @@ type ClientService interface {
 
   Retrieve detailed information about a specific Patch Panel by Patch Panel ID. This also includes end point connections.
 */
-func (a *Client) GetPatchPanelID(params *GetPatchPanelIDParams) (*GetPatchPanelIDOK, error) {
+func (a *Client) GetPatchPanelID(params *GetPatchPanelIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPatchPanelIDParams()
@@ -64,6 +64,7 @@ func (a *Client) GetPatchPanelID(params *GetPatchPanelIDParams) (*GetPatchPanelI
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPatchPanelIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -85,7 +86,7 @@ func (a *Client) GetPatchPanelID(params *GetPatchPanelIDParams) (*GetPatchPanelI
 
   Get all Patch Panel Models
 */
-func (a *Client) GetPatchPanelModels(params *GetPatchPanelModelsParams) (*GetPatchPanelModelsOK, error) {
+func (a *Client) GetPatchPanelModels(params *GetPatchPanelModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelModelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPatchPanelModelsParams()
@@ -100,6 +101,7 @@ func (a *Client) GetPatchPanelModels(params *GetPatchPanelModelsParams) (*GetPat
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPatchPanelModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -121,7 +123,7 @@ func (a *Client) GetPatchPanelModels(params *GetPatchPanelModelsParams) (*GetPat
 
   Get all Patch Panel Module Models
 */
-func (a *Client) GetPatchPanelModuleModels(params *GetPatchPanelModuleModelsParams) (*GetPatchPanelModuleModelsOK, error) {
+func (a *Client) GetPatchPanelModuleModels(params *GetPatchPanelModuleModelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelModuleModelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPatchPanelModuleModelsParams()
@@ -136,6 +138,7 @@ func (a *Client) GetPatchPanelModuleModels(params *GetPatchPanelModuleModelsPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPatchPanelModuleModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -157,7 +160,7 @@ func (a *Client) GetPatchPanelModuleModels(params *GetPatchPanelModuleModelsPara
 
   Get all Patch Panel Ports
 */
-func (a *Client) GetPatchPanelPortsPatchPanelID(params *GetPatchPanelPortsPatchPanelIDParams) (*GetPatchPanelPortsPatchPanelIDOK, error) {
+func (a *Client) GetPatchPanelPortsPatchPanelID(params *GetPatchPanelPortsPatchPanelIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetPatchPanelPortsPatchPanelIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPatchPanelPortsPatchPanelIDParams()
@@ -172,6 +175,7 @@ func (a *Client) GetPatchPanelPortsPatchPanelID(params *GetPatchPanelPortsPatchP
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPatchPanelPortsPatchPanelIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -193,7 +197,7 @@ func (a *Client) GetPatchPanelPortsPatchPanelID(params *GetPatchPanelPortsPatchP
 
   Create/Update Patch Panel Model. Required parameters: <ul><li>patch_panel_model_id <b>OR</b> name</li>
 */
-func (a *Client) PostPatchPanelModels(params *PostPatchPanelModelsParams) (*PostPatchPanelModelsOK, error) {
+func (a *Client) PostPatchPanelModels(params *PostPatchPanelModelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPatchPanelModelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPatchPanelModelsParams()
@@ -208,6 +212,7 @@ func (a *Client) PostPatchPanelModels(params *PostPatchPanelModelsParams) (*Post
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPatchPanelModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -229,7 +234,7 @@ func (a *Client) PostPatchPanelModels(params *PostPatchPanelModelsParams) (*Post
 
   Create/Update Patch Panel Module Model. Required parameters: <ul><li>patch_panel_module_model_id <b>OR</b> name</li>
 */
-func (a *Client) PostPatchPanelModuleModels(params *PostPatchPanelModuleModelsParams) (*PostPatchPanelModuleModelsOK, error) {
+func (a *Client) PostPatchPanelModuleModels(params *PostPatchPanelModuleModelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPatchPanelModuleModelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPatchPanelModuleModelsParams()
@@ -244,6 +249,7 @@ func (a *Client) PostPatchPanelModuleModels(params *PostPatchPanelModuleModelsPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPatchPanelModuleModelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -265,7 +271,7 @@ func (a *Client) PostPatchPanelModuleModels(params *PostPatchPanelModuleModelsPa
 
   Update Patch Panel Ports. Requires the following parameters: <ul><li>patch_panel_id <b>OR</b> patch_panel</li> <li>number</li>
 */
-func (a *Client) PostPatchPanelPortsPatchPanelID(params *PostPatchPanelPortsPatchPanelIDParams) (*PostPatchPanelPortsPatchPanelIDOK, error) {
+func (a *Client) PostPatchPanelPortsPatchPanelID(params *PostPatchPanelPortsPatchPanelIDParams, authInfo runtime.ClientAuthInfoWriter) (*PostPatchPanelPortsPatchPanelIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPatchPanelPortsPatchPanelIDParams()
@@ -280,6 +286,7 @@ func (a *Client) PostPatchPanelPortsPatchPanelID(params *PostPatchPanelPortsPatc
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPatchPanelPortsPatchPanelIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

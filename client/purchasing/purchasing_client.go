@@ -27,13 +27,13 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeletePurchases(params *DeletePurchasesParams) (*DeletePurchasesOK, error)
+	DeletePurchases(params *DeletePurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePurchasesOK, error)
 
-	GetPurchases(params *GetPurchasesParams) (*GetPurchasesOK, error)
+	GetPurchases(params *GetPurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPurchasesOK, error)
 
-	PostPurchases(params *PostPurchasesParams) (*PostPurchasesOK, error)
+	PostPurchases(params *PostPurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*PostPurchasesOK, error)
 
-	PutCustomFieldPurchases(params *PutCustomFieldPurchasesParams) (*PutCustomFieldPurchasesOK, error)
+	PutCustomFieldPurchases(params *PutCustomFieldPurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldPurchasesOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -43,7 +43,7 @@ type ClientService interface {
 
   This API is used to delete the purchase order with the purchase order id supplied as the required argument.
 */
-func (a *Client) DeletePurchases(params *DeletePurchasesParams) (*DeletePurchasesOK, error) {
+func (a *Client) DeletePurchases(params *DeletePurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePurchasesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePurchasesParams()
@@ -58,6 +58,7 @@ func (a *Client) DeletePurchases(params *DeletePurchasesParams) (*DeletePurchase
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePurchasesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -79,7 +80,7 @@ func (a *Client) DeletePurchases(params *DeletePurchasesParams) (*DeletePurchase
 
   Get All Purchases
 */
-func (a *Client) GetPurchases(params *GetPurchasesParams) (*GetPurchasesOK, error) {
+func (a *Client) GetPurchases(params *GetPurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*GetPurchasesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPurchasesParams()
@@ -94,6 +95,7 @@ func (a *Client) GetPurchases(params *GetPurchasesParams) (*GetPurchasesOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPurchasesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -115,7 +117,7 @@ func (a *Client) GetPurchases(params *GetPurchasesParams) (*GetPurchasesOK, erro
 
   Create / Update Purchases. Required parameters: <ul><li>order_no <b>OR</b> purchase_id</li>
 */
-func (a *Client) PostPurchases(params *PostPurchasesParams) (*PostPurchasesOK, error) {
+func (a *Client) PostPurchases(params *PostPurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*PostPurchasesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPurchasesParams()
@@ -130,6 +132,7 @@ func (a *Client) PostPurchases(params *PostPurchasesParams) (*PostPurchasesOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPurchasesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -151,7 +154,7 @@ func (a *Client) PostPurchases(params *PostPurchasesParams) (*PostPurchasesOK, e
 
   Custom Fields
 */
-func (a *Client) PutCustomFieldPurchases(params *PutCustomFieldPurchasesParams) (*PutCustomFieldPurchasesOK, error) {
+func (a *Client) PutCustomFieldPurchases(params *PutCustomFieldPurchasesParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldPurchasesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldPurchasesParams()
@@ -166,6 +169,7 @@ func (a *Client) PutCustomFieldPurchases(params *PutCustomFieldPurchasesParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldPurchasesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

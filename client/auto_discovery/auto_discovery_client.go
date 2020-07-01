@@ -27,53 +27,53 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetAutoDiscoveryCertificate(params *GetAutoDiscoveryCertificateParams) (*GetAutoDiscoveryCertificateOK, error)
+	GetAutoDiscoveryCertificate(params *GetAutoDiscoveryCertificateParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryCertificateOK, error)
 
-	GetAutoDiscoveryDNS(params *GetAutoDiscoveryDNSParams) (*GetAutoDiscoveryDNSOK, error)
+	GetAutoDiscoveryDNS(params *GetAutoDiscoveryDNSParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryDNSOK, error)
 
-	GetAutoDiscoveryNetworks(params *GetAutoDiscoveryNetworksParams) (*GetAutoDiscoveryNetworksOK, error)
+	GetAutoDiscoveryNetworks(params *GetAutoDiscoveryNetworksParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryNetworksOK, error)
 
-	GetAutoDiscoveryPingsweep(params *GetAutoDiscoveryPingsweepParams) (*GetAutoDiscoveryPingsweepOK, error)
+	GetAutoDiscoveryPingsweep(params *GetAutoDiscoveryPingsweepParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryPingsweepOK, error)
 
-	PostAutoDiscoveryBladeDisc(params *PostAutoDiscoveryBladeDiscParams) (*PostAutoDiscoveryBladeDiscOK, error)
+	PostAutoDiscoveryBladeDisc(params *PostAutoDiscoveryBladeDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryBladeDiscOK, error)
 
-	PostAutoDiscoveryCertificate(params *PostAutoDiscoveryCertificateParams) (*PostAutoDiscoveryCertificateOK, error)
+	PostAutoDiscoveryCertificate(params *PostAutoDiscoveryCertificateParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryCertificateOK, error)
 
-	PostAutoDiscoveryCloudaccount(params *PostAutoDiscoveryCloudaccountParams) (*PostAutoDiscoveryCloudaccountOK, error)
+	PostAutoDiscoveryCloudaccount(params *PostAutoDiscoveryCloudaccountParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryCloudaccountOK, error)
 
-	PostAutoDiscoveryDNS(params *PostAutoDiscoveryDNSParams) (*PostAutoDiscoveryDNSOK, error)
+	PostAutoDiscoveryDNS(params *PostAutoDiscoveryDNSParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryDNSOK, error)
 
-	PostAutoDiscoveryIpmi(params *PostAutoDiscoveryIpmiParams) (*PostAutoDiscoveryIpmiOK, error)
+	PostAutoDiscoveryIpmi(params *PostAutoDiscoveryIpmiParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryIpmiOK, error)
 
-	PostAutoDiscoveryNetworks(params *PostAutoDiscoveryNetworksParams) (*PostAutoDiscoveryNetworksOK, error)
+	PostAutoDiscoveryNetworks(params *PostAutoDiscoveryNetworksParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryNetworksOK, error)
 
-	PostAutoDiscoveryPingsweep(params *PostAutoDiscoveryPingsweepParams) (*PostAutoDiscoveryPingsweepOK, error)
+	PostAutoDiscoveryPingsweep(params *PostAutoDiscoveryPingsweepParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryPingsweepOK, error)
 
-	PostAutoDiscoveryPowerDisc(params *PostAutoDiscoveryPowerDiscParams) (*PostAutoDiscoveryPowerDiscOK, error)
+	PostAutoDiscoveryPowerDisc(params *PostAutoDiscoveryPowerDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryPowerDiscOK, error)
 
-	PostAutoDiscoverySnmpDisc(params *PostAutoDiscoverySnmpDiscParams) (*PostAutoDiscoverySnmpDiscOK, error)
+	PostAutoDiscoverySnmpDisc(params *PostAutoDiscoverySnmpDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoverySnmpDiscOK, error)
 
-	PostAutoDiscoveryVserver(params *PostAutoDiscoveryVserverParams) (*PostAutoDiscoveryVserverOK, error)
+	PostAutoDiscoveryVserver(params *PostAutoDiscoveryVserverParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryVserverOK, error)
 
-	PutAutoDiscoveryBladeDisc(params *PutAutoDiscoveryBladeDiscParams) (*PutAutoDiscoveryBladeDiscOK, error)
+	PutAutoDiscoveryBladeDisc(params *PutAutoDiscoveryBladeDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryBladeDiscOK, error)
 
-	PutAutoDiscoveryCertificate(params *PutAutoDiscoveryCertificateParams) (*PutAutoDiscoveryCertificateOK, error)
+	PutAutoDiscoveryCertificate(params *PutAutoDiscoveryCertificateParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryCertificateOK, error)
 
-	PutAutoDiscoveryCloudaccount(params *PutAutoDiscoveryCloudaccountParams) (*PutAutoDiscoveryCloudaccountOK, error)
+	PutAutoDiscoveryCloudaccount(params *PutAutoDiscoveryCloudaccountParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryCloudaccountOK, error)
 
-	PutAutoDiscoveryDNS(params *PutAutoDiscoveryDNSParams) (*PutAutoDiscoveryDNSOK, error)
+	PutAutoDiscoveryDNS(params *PutAutoDiscoveryDNSParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryDNSOK, error)
 
-	PutAutoDiscoveryIpmi(params *PutAutoDiscoveryIpmiParams) (*PutAutoDiscoveryIpmiOK, error)
+	PutAutoDiscoveryIpmi(params *PutAutoDiscoveryIpmiParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryIpmiOK, error)
 
-	PutAutoDiscoveryNetworks(params *PutAutoDiscoveryNetworksParams) (*PutAutoDiscoveryNetworksOK, error)
+	PutAutoDiscoveryNetworks(params *PutAutoDiscoveryNetworksParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryNetworksOK, error)
 
-	PutAutoDiscoveryPingsweep(params *PutAutoDiscoveryPingsweepParams) (*PutAutoDiscoveryPingsweepOK, error)
+	PutAutoDiscoveryPingsweep(params *PutAutoDiscoveryPingsweepParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryPingsweepOK, error)
 
-	PutAutoDiscoveryPowerDisc(params *PutAutoDiscoveryPowerDiscParams) (*PutAutoDiscoveryPowerDiscOK, error)
+	PutAutoDiscoveryPowerDisc(params *PutAutoDiscoveryPowerDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryPowerDiscOK, error)
 
-	PutAutoDiscoverySnmpDisc(params *PutAutoDiscoverySnmpDiscParams) (*PutAutoDiscoverySnmpDiscOK, error)
+	PutAutoDiscoverySnmpDisc(params *PutAutoDiscoverySnmpDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoverySnmpDiscOK, error)
 
-	PutAutoDiscoveryVserver(params *PutAutoDiscoveryVserverParams) (*PutAutoDiscoveryVserverOK, error)
+	PutAutoDiscoveryVserver(params *PutAutoDiscoveryVserverParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryVserverOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -83,7 +83,7 @@ type ClientService interface {
 
   Get Certificate Auto Discovery Jobs
 */
-func (a *Client) GetAutoDiscoveryCertificate(params *GetAutoDiscoveryCertificateParams) (*GetAutoDiscoveryCertificateOK, error) {
+func (a *Client) GetAutoDiscoveryCertificate(params *GetAutoDiscoveryCertificateParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryCertificateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAutoDiscoveryCertificateParams()
@@ -98,6 +98,7 @@ func (a *Client) GetAutoDiscoveryCertificate(params *GetAutoDiscoveryCertificate
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAutoDiscoveryCertificateReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -119,7 +120,7 @@ func (a *Client) GetAutoDiscoveryCertificate(params *GetAutoDiscoveryCertificate
 
   Get DNS Auto Discovery Jobs
 */
-func (a *Client) GetAutoDiscoveryDNS(params *GetAutoDiscoveryDNSParams) (*GetAutoDiscoveryDNSOK, error) {
+func (a *Client) GetAutoDiscoveryDNS(params *GetAutoDiscoveryDNSParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryDNSOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAutoDiscoveryDNSParams()
@@ -134,6 +135,7 @@ func (a *Client) GetAutoDiscoveryDNS(params *GetAutoDiscoveryDNSParams) (*GetAut
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAutoDiscoveryDNSReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -155,7 +157,7 @@ func (a *Client) GetAutoDiscoveryDNS(params *GetAutoDiscoveryDNSParams) (*GetAut
 
   Get Network Jobs
 */
-func (a *Client) GetAutoDiscoveryNetworks(params *GetAutoDiscoveryNetworksParams) (*GetAutoDiscoveryNetworksOK, error) {
+func (a *Client) GetAutoDiscoveryNetworks(params *GetAutoDiscoveryNetworksParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryNetworksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAutoDiscoveryNetworksParams()
@@ -170,6 +172,7 @@ func (a *Client) GetAutoDiscoveryNetworks(params *GetAutoDiscoveryNetworksParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAutoDiscoveryNetworksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -191,7 +194,7 @@ func (a *Client) GetAutoDiscoveryNetworks(params *GetAutoDiscoveryNetworksParams
 
   Get Pingsweep Jobs
 */
-func (a *Client) GetAutoDiscoveryPingsweep(params *GetAutoDiscoveryPingsweepParams) (*GetAutoDiscoveryPingsweepOK, error) {
+func (a *Client) GetAutoDiscoveryPingsweep(params *GetAutoDiscoveryPingsweepParams, authInfo runtime.ClientAuthInfoWriter) (*GetAutoDiscoveryPingsweepOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAutoDiscoveryPingsweepParams()
@@ -206,6 +209,7 @@ func (a *Client) GetAutoDiscoveryPingsweep(params *GetAutoDiscoveryPingsweepPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAutoDiscoveryPingsweepReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -227,7 +231,7 @@ func (a *Client) GetAutoDiscoveryPingsweep(params *GetAutoDiscoveryPingsweepPara
 
   Add or update blade autodiscovery job
 */
-func (a *Client) PostAutoDiscoveryBladeDisc(params *PostAutoDiscoveryBladeDiscParams) (*PostAutoDiscoveryBladeDiscOK, error) {
+func (a *Client) PostAutoDiscoveryBladeDisc(params *PostAutoDiscoveryBladeDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryBladeDiscOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryBladeDiscParams()
@@ -242,6 +246,7 @@ func (a *Client) PostAutoDiscoveryBladeDisc(params *PostAutoDiscoveryBladeDiscPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryBladeDiscReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -263,7 +268,7 @@ func (a *Client) PostAutoDiscoveryBladeDisc(params *PostAutoDiscoveryBladeDiscPa
 
   Add Certificate Auto Discovery job
 */
-func (a *Client) PostAutoDiscoveryCertificate(params *PostAutoDiscoveryCertificateParams) (*PostAutoDiscoveryCertificateOK, error) {
+func (a *Client) PostAutoDiscoveryCertificate(params *PostAutoDiscoveryCertificateParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryCertificateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryCertificateParams()
@@ -278,6 +283,7 @@ func (a *Client) PostAutoDiscoveryCertificate(params *PostAutoDiscoveryCertifica
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryCertificateReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -299,7 +305,7 @@ func (a *Client) PostAutoDiscoveryCertificate(params *PostAutoDiscoveryCertifica
 
   Add or update cloud autodiscovery job. Required parameters: <ul><li>name</li><li>cloud_type</li> </ul><p>Required for Amazon: secret_key, account_id<br>Required for Azure: subscription_id<br>Required for CloudStack: url<br>Required for Linode: api_token<br> Required for OpenStack: ip, username, secret_key_id<br>Required for DigitalOcean: token_key
 */
-func (a *Client) PostAutoDiscoveryCloudaccount(params *PostAutoDiscoveryCloudaccountParams) (*PostAutoDiscoveryCloudaccountOK, error) {
+func (a *Client) PostAutoDiscoveryCloudaccount(params *PostAutoDiscoveryCloudaccountParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryCloudaccountOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryCloudaccountParams()
@@ -314,6 +320,7 @@ func (a *Client) PostAutoDiscoveryCloudaccount(params *PostAutoDiscoveryCloudacc
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryCloudaccountReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -335,7 +342,7 @@ func (a *Client) PostAutoDiscoveryCloudaccount(params *PostAutoDiscoveryCloudacc
 
   Add DNS Auto Discovery job
 */
-func (a *Client) PostAutoDiscoveryDNS(params *PostAutoDiscoveryDNSParams) (*PostAutoDiscoveryDNSOK, error) {
+func (a *Client) PostAutoDiscoveryDNS(params *PostAutoDiscoveryDNSParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryDNSOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryDNSParams()
@@ -350,6 +357,7 @@ func (a *Client) PostAutoDiscoveryDNS(params *PostAutoDiscoveryDNSParams) (*Post
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryDNSReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -371,7 +379,7 @@ func (a *Client) PostAutoDiscoveryDNS(params *PostAutoDiscoveryDNSParams) (*Post
 
   Add IPMI/Redfish Auto Discovery job
 */
-func (a *Client) PostAutoDiscoveryIpmi(params *PostAutoDiscoveryIpmiParams) (*PostAutoDiscoveryIpmiOK, error) {
+func (a *Client) PostAutoDiscoveryIpmi(params *PostAutoDiscoveryIpmiParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryIpmiOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryIpmiParams()
@@ -386,6 +394,7 @@ func (a *Client) PostAutoDiscoveryIpmi(params *PostAutoDiscoveryIpmiParams) (*Po
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryIpmiReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -405,7 +414,7 @@ func (a *Client) PostAutoDiscoveryIpmi(params *PostAutoDiscoveryIpmiParams) (*Po
 /*
   PostAutoDiscoveryNetworks Add or update network job
 */
-func (a *Client) PostAutoDiscoveryNetworks(params *PostAutoDiscoveryNetworksParams) (*PostAutoDiscoveryNetworksOK, error) {
+func (a *Client) PostAutoDiscoveryNetworks(params *PostAutoDiscoveryNetworksParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryNetworksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryNetworksParams()
@@ -420,6 +429,7 @@ func (a *Client) PostAutoDiscoveryNetworks(params *PostAutoDiscoveryNetworksPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryNetworksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -439,7 +449,7 @@ func (a *Client) PostAutoDiscoveryNetworks(params *PostAutoDiscoveryNetworksPara
 /*
   PostAutoDiscoveryPingsweep Add or update pingsweep job
 */
-func (a *Client) PostAutoDiscoveryPingsweep(params *PostAutoDiscoveryPingsweepParams) (*PostAutoDiscoveryPingsweepOK, error) {
+func (a *Client) PostAutoDiscoveryPingsweep(params *PostAutoDiscoveryPingsweepParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryPingsweepOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryPingsweepParams()
@@ -454,6 +464,7 @@ func (a *Client) PostAutoDiscoveryPingsweep(params *PostAutoDiscoveryPingsweepPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryPingsweepReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -475,7 +486,7 @@ func (a *Client) PostAutoDiscoveryPingsweep(params *PostAutoDiscoveryPingsweepPa
 
   Add or update power autodiscovery job
 */
-func (a *Client) PostAutoDiscoveryPowerDisc(params *PostAutoDiscoveryPowerDiscParams) (*PostAutoDiscoveryPowerDiscOK, error) {
+func (a *Client) PostAutoDiscoveryPowerDisc(params *PostAutoDiscoveryPowerDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryPowerDiscOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryPowerDiscParams()
@@ -490,6 +501,7 @@ func (a *Client) PostAutoDiscoveryPowerDisc(params *PostAutoDiscoveryPowerDiscPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryPowerDiscReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -511,7 +523,7 @@ func (a *Client) PostAutoDiscoveryPowerDisc(params *PostAutoDiscoveryPowerDiscPa
 
   Add or update other SNMP autodiscovery job
 */
-func (a *Client) PostAutoDiscoverySnmpDisc(params *PostAutoDiscoverySnmpDiscParams) (*PostAutoDiscoverySnmpDiscOK, error) {
+func (a *Client) PostAutoDiscoverySnmpDisc(params *PostAutoDiscoverySnmpDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoverySnmpDiscOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoverySnmpDiscParams()
@@ -526,6 +538,7 @@ func (a *Client) PostAutoDiscoverySnmpDisc(params *PostAutoDiscoverySnmpDiscPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoverySnmpDiscReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -547,7 +560,7 @@ func (a *Client) PostAutoDiscoverySnmpDisc(params *PostAutoDiscoverySnmpDiscPara
 
   Add or update vServer autodiscovery job
 */
-func (a *Client) PostAutoDiscoveryVserver(params *PostAutoDiscoveryVserverParams) (*PostAutoDiscoveryVserverOK, error) {
+func (a *Client) PostAutoDiscoveryVserver(params *PostAutoDiscoveryVserverParams, authInfo runtime.ClientAuthInfoWriter) (*PostAutoDiscoveryVserverOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAutoDiscoveryVserverParams()
@@ -562,6 +575,7 @@ func (a *Client) PostAutoDiscoveryVserver(params *PostAutoDiscoveryVserverParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAutoDiscoveryVserverReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -583,7 +597,7 @@ func (a *Client) PostAutoDiscoveryVserver(params *PostAutoDiscoveryVserverParams
 
   Execute blade autodiscovery job. Required parameters: name or job_id
 */
-func (a *Client) PutAutoDiscoveryBladeDisc(params *PutAutoDiscoveryBladeDiscParams) (*PutAutoDiscoveryBladeDiscOK, error) {
+func (a *Client) PutAutoDiscoveryBladeDisc(params *PutAutoDiscoveryBladeDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryBladeDiscOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryBladeDiscParams()
@@ -598,6 +612,7 @@ func (a *Client) PutAutoDiscoveryBladeDisc(params *PutAutoDiscoveryBladeDiscPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryBladeDiscReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -619,7 +634,7 @@ func (a *Client) PutAutoDiscoveryBladeDisc(params *PutAutoDiscoveryBladeDiscPara
 
   Execute Certificate Auto Discovery Job
 */
-func (a *Client) PutAutoDiscoveryCertificate(params *PutAutoDiscoveryCertificateParams) (*PutAutoDiscoveryCertificateOK, error) {
+func (a *Client) PutAutoDiscoveryCertificate(params *PutAutoDiscoveryCertificateParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryCertificateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryCertificateParams()
@@ -634,6 +649,7 @@ func (a *Client) PutAutoDiscoveryCertificate(params *PutAutoDiscoveryCertificate
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryCertificateReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -655,7 +671,7 @@ func (a *Client) PutAutoDiscoveryCertificate(params *PutAutoDiscoveryCertificate
 
   Execute Cloud job
 */
-func (a *Client) PutAutoDiscoveryCloudaccount(params *PutAutoDiscoveryCloudaccountParams) (*PutAutoDiscoveryCloudaccountOK, error) {
+func (a *Client) PutAutoDiscoveryCloudaccount(params *PutAutoDiscoveryCloudaccountParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryCloudaccountOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryCloudaccountParams()
@@ -670,6 +686,7 @@ func (a *Client) PutAutoDiscoveryCloudaccount(params *PutAutoDiscoveryCloudaccou
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryCloudaccountReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -691,7 +708,7 @@ func (a *Client) PutAutoDiscoveryCloudaccount(params *PutAutoDiscoveryCloudaccou
 
   Execute DNS Auto Discovery Job
 */
-func (a *Client) PutAutoDiscoveryDNS(params *PutAutoDiscoveryDNSParams) (*PutAutoDiscoveryDNSOK, error) {
+func (a *Client) PutAutoDiscoveryDNS(params *PutAutoDiscoveryDNSParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryDNSOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryDNSParams()
@@ -706,6 +723,7 @@ func (a *Client) PutAutoDiscoveryDNS(params *PutAutoDiscoveryDNSParams) (*PutAut
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryDNSReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -727,7 +745,7 @@ func (a *Client) PutAutoDiscoveryDNS(params *PutAutoDiscoveryDNSParams) (*PutAut
 
   Execute snmp autodiscovery job
 */
-func (a *Client) PutAutoDiscoveryIpmi(params *PutAutoDiscoveryIpmiParams) (*PutAutoDiscoveryIpmiOK, error) {
+func (a *Client) PutAutoDiscoveryIpmi(params *PutAutoDiscoveryIpmiParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryIpmiOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryIpmiParams()
@@ -742,6 +760,7 @@ func (a *Client) PutAutoDiscoveryIpmi(params *PutAutoDiscoveryIpmiParams) (*PutA
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryIpmiReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -763,7 +782,7 @@ func (a *Client) PutAutoDiscoveryIpmi(params *PutAutoDiscoveryIpmiParams) (*PutA
 
   Execute network job. Required parameters: name or job_id
 */
-func (a *Client) PutAutoDiscoveryNetworks(params *PutAutoDiscoveryNetworksParams) (*PutAutoDiscoveryNetworksOK, error) {
+func (a *Client) PutAutoDiscoveryNetworks(params *PutAutoDiscoveryNetworksParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryNetworksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryNetworksParams()
@@ -778,6 +797,7 @@ func (a *Client) PutAutoDiscoveryNetworks(params *PutAutoDiscoveryNetworksParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryNetworksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -799,7 +819,7 @@ func (a *Client) PutAutoDiscoveryNetworks(params *PutAutoDiscoveryNetworksParams
 
   Execute pingsweep job. Required parameters: name or job_id
 */
-func (a *Client) PutAutoDiscoveryPingsweep(params *PutAutoDiscoveryPingsweepParams) (*PutAutoDiscoveryPingsweepOK, error) {
+func (a *Client) PutAutoDiscoveryPingsweep(params *PutAutoDiscoveryPingsweepParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryPingsweepOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryPingsweepParams()
@@ -814,6 +834,7 @@ func (a *Client) PutAutoDiscoveryPingsweep(params *PutAutoDiscoveryPingsweepPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryPingsweepReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -835,7 +856,7 @@ func (a *Client) PutAutoDiscoveryPingsweep(params *PutAutoDiscoveryPingsweepPara
 
   Execute power autodiscovery job
 */
-func (a *Client) PutAutoDiscoveryPowerDisc(params *PutAutoDiscoveryPowerDiscParams) (*PutAutoDiscoveryPowerDiscOK, error) {
+func (a *Client) PutAutoDiscoveryPowerDisc(params *PutAutoDiscoveryPowerDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryPowerDiscOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryPowerDiscParams()
@@ -850,6 +871,7 @@ func (a *Client) PutAutoDiscoveryPowerDisc(params *PutAutoDiscoveryPowerDiscPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryPowerDiscReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -871,7 +893,7 @@ func (a *Client) PutAutoDiscoveryPowerDisc(params *PutAutoDiscoveryPowerDiscPara
 
   Execute snmp autodiscovery job
 */
-func (a *Client) PutAutoDiscoverySnmpDisc(params *PutAutoDiscoverySnmpDiscParams) (*PutAutoDiscoverySnmpDiscOK, error) {
+func (a *Client) PutAutoDiscoverySnmpDisc(params *PutAutoDiscoverySnmpDiscParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoverySnmpDiscOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoverySnmpDiscParams()
@@ -886,6 +908,7 @@ func (a *Client) PutAutoDiscoverySnmpDisc(params *PutAutoDiscoverySnmpDiscParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoverySnmpDiscReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -907,7 +930,7 @@ func (a *Client) PutAutoDiscoverySnmpDisc(params *PutAutoDiscoverySnmpDiscParams
 
   Execute VServer job
 */
-func (a *Client) PutAutoDiscoveryVserver(params *PutAutoDiscoveryVserverParams) (*PutAutoDiscoveryVserverOK, error) {
+func (a *Client) PutAutoDiscoveryVserver(params *PutAutoDiscoveryVserverParams, authInfo runtime.ClientAuthInfoWriter) (*PutAutoDiscoveryVserverOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutAutoDiscoveryVserverParams()
@@ -922,6 +945,7 @@ func (a *Client) PutAutoDiscoveryVserver(params *PutAutoDiscoveryVserverParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutAutoDiscoveryVserverReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

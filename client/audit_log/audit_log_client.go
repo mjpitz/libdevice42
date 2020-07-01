@@ -27,7 +27,7 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetAuditlogs(params *GetAuditlogsParams) (*GetAuditlogsOK, error)
+	GetAuditlogs(params *GetAuditlogsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAuditlogsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -37,7 +37,7 @@ type ClientService interface {
 
   Get Audit Logs
 */
-func (a *Client) GetAuditlogs(params *GetAuditlogsParams) (*GetAuditlogsOK, error) {
+func (a *Client) GetAuditlogs(params *GetAuditlogsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAuditlogsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAuditlogsParams()
@@ -52,6 +52,7 @@ func (a *Client) GetAuditlogs(params *GetAuditlogsParams) (*GetAuditlogsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAuditlogsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

@@ -27,15 +27,15 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteAppcomps(params *DeleteAppcompsParams) (*DeleteAppcompsOK, error)
+	DeleteAppcomps(params *DeleteAppcompsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteAppcompsOK, error)
 
-	GetAppcomps(params *GetAppcompsParams) (*GetAppcompsOK, error)
+	GetAppcomps(params *GetAppcompsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAppcompsOK, error)
 
-	GetAppcompsAppcompID(params *GetAppcompsAppcompIDParams) (*GetAppcompsAppcompIDOK, error)
+	GetAppcompsAppcompID(params *GetAppcompsAppcompIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetAppcompsAppcompIDOK, error)
 
-	PostAppcomps(params *PostAppcompsParams) (*PostAppcompsOK, error)
+	PostAppcomps(params *PostAppcompsParams, authInfo runtime.ClientAuthInfoWriter) (*PostAppcompsOK, error)
 
-	PutCustomFieldAppcomp(params *PutCustomFieldAppcompParams) (*PutCustomFieldAppcompOK, error)
+	PutCustomFieldAppcomp(params *PutCustomFieldAppcompParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldAppcompOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -45,7 +45,7 @@ type ClientService interface {
 
   This API is used to delete the application component with the application component id supplied as the required argument.
 */
-func (a *Client) DeleteAppcomps(params *DeleteAppcompsParams) (*DeleteAppcompsOK, error) {
+func (a *Client) DeleteAppcomps(params *DeleteAppcompsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteAppcompsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteAppcompsParams()
@@ -60,6 +60,7 @@ func (a *Client) DeleteAppcomps(params *DeleteAppcompsParams) (*DeleteAppcompsOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteAppcompsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -79,7 +80,7 @@ func (a *Client) DeleteAppcomps(params *DeleteAppcompsParams) (*DeleteAppcompsOK
 /*
   GetAppcomps Get Application Components
 */
-func (a *Client) GetAppcomps(params *GetAppcompsParams) (*GetAppcompsOK, error) {
+func (a *Client) GetAppcomps(params *GetAppcompsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAppcompsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAppcompsParams()
@@ -94,6 +95,7 @@ func (a *Client) GetAppcomps(params *GetAppcompsParams) (*GetAppcompsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAppcompsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetAppcomps(params *GetAppcompsParams) (*GetAppcompsOK, error) 
 /*
   GetAppcompsAppcompID Get Application Components by ID
 */
-func (a *Client) GetAppcompsAppcompID(params *GetAppcompsAppcompIDParams) (*GetAppcompsAppcompIDOK, error) {
+func (a *Client) GetAppcompsAppcompID(params *GetAppcompsAppcompIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetAppcompsAppcompIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAppcompsAppcompIDParams()
@@ -128,6 +130,7 @@ func (a *Client) GetAppcompsAppcompID(params *GetAppcompsAppcompIDParams) (*GetA
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAppcompsAppcompIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -147,7 +150,7 @@ func (a *Client) GetAppcompsAppcompID(params *GetAppcompsAppcompIDParams) (*GetA
 /*
   PostAppcomps Create / Update Application Components
 */
-func (a *Client) PostAppcomps(params *PostAppcompsParams) (*PostAppcompsOK, error) {
+func (a *Client) PostAppcomps(params *PostAppcompsParams, authInfo runtime.ClientAuthInfoWriter) (*PostAppcompsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAppcompsParams()
@@ -162,6 +165,7 @@ func (a *Client) PostAppcomps(params *PostAppcompsParams) (*PostAppcompsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAppcompsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -183,7 +187,7 @@ func (a *Client) PostAppcomps(params *PostAppcompsParams) (*PostAppcompsOK, erro
 
   Required parameters: <ul><li>id <b>OR</b> name</li> <li>key</li>
 */
-func (a *Client) PutCustomFieldAppcomp(params *PutCustomFieldAppcompParams) (*PutCustomFieldAppcompOK, error) {
+func (a *Client) PutCustomFieldAppcomp(params *PutCustomFieldAppcompParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldAppcompOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldAppcompParams()
@@ -198,6 +202,7 @@ func (a *Client) PutCustomFieldAppcomp(params *PutCustomFieldAppcompParams) (*Pu
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldAppcompReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

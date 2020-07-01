@@ -27,9 +27,9 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetServiceLevel(params *GetServiceLevelParams) (*GetServiceLevelOK, error)
+	GetServiceLevel(params *GetServiceLevelParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceLevelOK, error)
 
-	PostServiceLevel(params *PostServiceLevelParams) (*PostServiceLevelOK, error)
+	PostServiceLevel(params *PostServiceLevelParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceLevelOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -39,7 +39,7 @@ type ClientService interface {
 
   Get all Service Levels
 */
-func (a *Client) GetServiceLevel(params *GetServiceLevelParams) (*GetServiceLevelOK, error) {
+func (a *Client) GetServiceLevel(params *GetServiceLevelParams, authInfo runtime.ClientAuthInfoWriter) (*GetServiceLevelOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetServiceLevelParams()
@@ -54,6 +54,7 @@ func (a *Client) GetServiceLevel(params *GetServiceLevelParams) (*GetServiceLeve
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetServiceLevelReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -75,7 +76,7 @@ func (a *Client) GetServiceLevel(params *GetServiceLevelParams) (*GetServiceLeve
 
   Create Service Level
 */
-func (a *Client) PostServiceLevel(params *PostServiceLevelParams) (*PostServiceLevelOK, error) {
+func (a *Client) PostServiceLevel(params *PostServiceLevelParams, authInfo runtime.ClientAuthInfoWriter) (*PostServiceLevelOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostServiceLevelParams()
@@ -90,6 +91,7 @@ func (a *Client) PostServiceLevel(params *PostServiceLevelParams) (*PostServiceL
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostServiceLevelReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

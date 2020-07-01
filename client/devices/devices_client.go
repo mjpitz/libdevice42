@@ -27,53 +27,53 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteDeviceMountpoints(params *DeleteDeviceMountpointsParams) (*DeleteDeviceMountpointsOK, error)
+	DeleteDeviceMountpoints(params *DeleteDeviceMountpointsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceMountpointsOK, error)
 
-	DeleteDeviceRackDeviceID(params *DeleteDeviceRackDeviceIDParams) (*DeleteDeviceRackDeviceIDOK, error)
+	DeleteDeviceRackDeviceID(params *DeleteDeviceRackDeviceIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceRackDeviceIDOK, error)
 
-	DeleteDeviceURL(params *DeleteDeviceURLParams) (*DeleteDeviceURLOK, error)
+	DeleteDeviceURL(params *DeleteDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceURLOK, error)
 
-	DeleteDevicesID(params *DeleteDevicesIDParams) (*DeleteDevicesIDOK, error)
+	DeleteDevicesID(params *DeleteDevicesIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDevicesIDOK, error)
 
-	GetDeviceMountpoints(params *GetDeviceMountpointsParams) (*GetDeviceMountpointsOK, error)
+	GetDeviceMountpoints(params *GetDeviceMountpointsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDeviceMountpointsOK, error)
 
-	GetDeviceURL(params *GetDeviceURLParams) (*GetDeviceURLOK, error)
+	GetDeviceURL(params *GetDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*GetDeviceURLOK, error)
 
-	GetDevices(params *GetDevicesParams) (*GetDevicesOK, error)
+	GetDevices(params *GetDevicesParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesOK, error)
 
-	GetDevicesAll(params *GetDevicesAllParams) (*GetDevicesAllOK, error)
+	GetDevicesAll(params *GetDevicesAllParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesAllOK, error)
 
-	GetDevicesAsset(params *GetDevicesAssetParams) (*GetDevicesAssetOK, error)
+	GetDevicesAsset(params *GetDevicesAssetParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesAssetOK, error)
 
-	GetDevicesCustomerID(params *GetDevicesCustomerIDParams) (*GetDevicesCustomerIDOK, error)
+	GetDevicesCustomerID(params *GetDevicesCustomerIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesCustomerIDOK, error)
 
-	GetDevicesID(params *GetDevicesIDParams) (*GetDevicesIDOK, error)
+	GetDevicesID(params *GetDevicesIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesIDOK, error)
 
-	GetDevicesImpactlist(params *GetDevicesImpactlistParams) (*GetDevicesImpactlistOK, error)
+	GetDevicesImpactlist(params *GetDevicesImpactlistParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesImpactlistOK, error)
 
-	GetDevicesName(params *GetDevicesNameParams) (*GetDevicesNameOK, error)
+	GetDevicesName(params *GetDevicesNameParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesNameOK, error)
 
-	GetDevicesSerial(params *GetDevicesSerialParams) (*GetDevicesSerialOK, error)
+	GetDevicesSerial(params *GetDevicesSerialParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesSerialOK, error)
 
-	PostCloudInstanceDevice(params *PostCloudInstanceDeviceParams) (*PostCloudInstanceDeviceOK, error)
+	PostCloudInstanceDevice(params *PostCloudInstanceDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostCloudInstanceDeviceOK, error)
 
-	PostDevice(params *PostDeviceParams) (*PostDeviceOK, error)
+	PostDevice(params *PostDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceOK, error)
 
-	PostDeviceMountpoints(params *PostDeviceMountpointsParams) (*PostDeviceMountpointsOK, error)
+	PostDeviceMountpoints(params *PostDeviceMountpointsParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceMountpointsOK, error)
 
-	PostDeviceRack(params *PostDeviceRackParams) (*PostDeviceRackOK, error)
+	PostDeviceRack(params *PostDeviceRackParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceRackOK, error)
 
-	PostDeviceURL(params *PostDeviceURLParams) (*PostDeviceURLOK, error)
+	PostDeviceURL(params *PostDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceURLOK, error)
 
-	PostMultiNodeDevice(params *PostMultiNodeDeviceParams) (*PostMultiNodeDeviceOK, error)
+	PostMultiNodeDevice(params *PostMultiNodeDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostMultiNodeDeviceOK, error)
 
-	PostMultiSerialDevice(params *PostMultiSerialDeviceParams) (*PostMultiSerialDeviceOK, error)
+	PostMultiSerialDevice(params *PostMultiSerialDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostMultiSerialDeviceOK, error)
 
-	PutCustomField(params *PutCustomFieldParams) (*PutCustomFieldOK, error)
+	PutCustomField(params *PutCustomFieldParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldOK, error)
 
-	PutDevice(params *PutDeviceParams) (*PutDeviceOK, error)
+	PutDevice(params *PutDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PutDeviceOK, error)
 
-	PutDeviceURL(params *PutDeviceURLParams) (*PutDeviceURLOK, error)
+	PutDeviceURL(params *PutDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*PutDeviceURLOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -83,7 +83,7 @@ type ClientService interface {
 
   Delete Device Mountpoints
 */
-func (a *Client) DeleteDeviceMountpoints(params *DeleteDeviceMountpointsParams) (*DeleteDeviceMountpointsOK, error) {
+func (a *Client) DeleteDeviceMountpoints(params *DeleteDeviceMountpointsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceMountpointsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDeviceMountpointsParams()
@@ -98,6 +98,7 @@ func (a *Client) DeleteDeviceMountpoints(params *DeleteDeviceMountpointsParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteDeviceMountpointsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -119,7 +120,7 @@ func (a *Client) DeleteDeviceMountpoints(params *DeleteDeviceMountpointsParams) 
 
   This API call will remove/delete a device from a rack (Introduced in v6.3.2)
 */
-func (a *Client) DeleteDeviceRackDeviceID(params *DeleteDeviceRackDeviceIDParams) (*DeleteDeviceRackDeviceIDOK, error) {
+func (a *Client) DeleteDeviceRackDeviceID(params *DeleteDeviceRackDeviceIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceRackDeviceIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDeviceRackDeviceIDParams()
@@ -134,6 +135,7 @@ func (a *Client) DeleteDeviceRackDeviceID(params *DeleteDeviceRackDeviceIDParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteDeviceRackDeviceIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -155,7 +157,7 @@ func (a *Client) DeleteDeviceRackDeviceID(params *DeleteDeviceRackDeviceIDParams
 
   This API call will delete a device url (Introduced in v7.0.0)
 */
-func (a *Client) DeleteDeviceURL(params *DeleteDeviceURLParams) (*DeleteDeviceURLOK, error) {
+func (a *Client) DeleteDeviceURL(params *DeleteDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceURLOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDeviceURLParams()
@@ -170,6 +172,7 @@ func (a *Client) DeleteDeviceURL(params *DeleteDeviceURLParams) (*DeleteDeviceUR
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteDeviceURLReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -191,7 +194,7 @@ func (a *Client) DeleteDeviceURL(params *DeleteDeviceURLParams) (*DeleteDeviceUR
 
   This API is used to delete a device with the device id supplied as the required argument.
 */
-func (a *Client) DeleteDevicesID(params *DeleteDevicesIDParams) (*DeleteDevicesIDOK, error) {
+func (a *Client) DeleteDevicesID(params *DeleteDevicesIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDevicesIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDevicesIDParams()
@@ -206,6 +209,7 @@ func (a *Client) DeleteDevicesID(params *DeleteDevicesIDParams) (*DeleteDevicesI
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteDevicesIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -227,7 +231,7 @@ func (a *Client) DeleteDevicesID(params *DeleteDevicesIDParams) (*DeleteDevicesI
 
   Get Device Mountpoints
 */
-func (a *Client) GetDeviceMountpoints(params *GetDeviceMountpointsParams) (*GetDeviceMountpointsOK, error) {
+func (a *Client) GetDeviceMountpoints(params *GetDeviceMountpointsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDeviceMountpointsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDeviceMountpointsParams()
@@ -242,6 +246,7 @@ func (a *Client) GetDeviceMountpoints(params *GetDeviceMountpointsParams) (*GetD
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDeviceMountpointsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -263,7 +268,7 @@ func (a *Client) GetDeviceMountpoints(params *GetDeviceMountpointsParams) (*GetD
 
   Get Device URLs
 */
-func (a *Client) GetDeviceURL(params *GetDeviceURLParams) (*GetDeviceURLOK, error) {
+func (a *Client) GetDeviceURL(params *GetDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*GetDeviceURLOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDeviceURLParams()
@@ -278,6 +283,7 @@ func (a *Client) GetDeviceURL(params *GetDeviceURLParams) (*GetDeviceURLOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDeviceURLReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -299,7 +305,7 @@ func (a *Client) GetDeviceURL(params *GetDeviceURLParams) (*GetDeviceURLOK, erro
 
   Get All Devices With Brief Output
 */
-func (a *Client) GetDevices(params *GetDevicesParams) (*GetDevicesOK, error) {
+func (a *Client) GetDevices(params *GetDevicesParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesParams()
@@ -314,6 +320,7 @@ func (a *Client) GetDevices(params *GetDevicesParams) (*GetDevicesOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -335,7 +342,7 @@ func (a *Client) GetDevices(params *GetDevicesParams) (*GetDevicesOK, error) {
 
   Get All Devices With Detailed Output (added in v6.3.4)
 */
-func (a *Client) GetDevicesAll(params *GetDevicesAllParams) (*GetDevicesAllOK, error) {
+func (a *Client) GetDevicesAll(params *GetDevicesAllParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesAllOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesAllParams()
@@ -350,6 +357,7 @@ func (a *Client) GetDevicesAll(params *GetDevicesAllParams) (*GetDevicesAllOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesAllReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -371,7 +379,7 @@ func (a *Client) GetDevicesAll(params *GetDevicesAllParams) (*GetDevicesAllOK, e
 
   Retrieve detailed information about a specific device by device asset number.
 */
-func (a *Client) GetDevicesAsset(params *GetDevicesAssetParams) (*GetDevicesAssetOK, error) {
+func (a *Client) GetDevicesAsset(params *GetDevicesAssetParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesAssetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesAssetParams()
@@ -386,6 +394,7 @@ func (a *Client) GetDevicesAsset(params *GetDevicesAssetParams) (*GetDevicesAsse
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesAssetReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -407,7 +416,7 @@ func (a *Client) GetDevicesAsset(params *GetDevicesAssetParams) (*GetDevicesAsse
 
   Retrieve all devices associated with a specific customer.
 */
-func (a *Client) GetDevicesCustomerID(params *GetDevicesCustomerIDParams) (*GetDevicesCustomerIDOK, error) {
+func (a *Client) GetDevicesCustomerID(params *GetDevicesCustomerIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesCustomerIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesCustomerIDParams()
@@ -422,6 +431,7 @@ func (a *Client) GetDevicesCustomerID(params *GetDevicesCustomerIDParams) (*GetD
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesCustomerIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -443,7 +453,7 @@ func (a *Client) GetDevicesCustomerID(params *GetDevicesCustomerIDParams) (*GetD
 
   Retrieve detailed information about a specific device using device id.
 */
-func (a *Client) GetDevicesID(params *GetDevicesIDParams) (*GetDevicesIDOK, error) {
+func (a *Client) GetDevicesID(params *GetDevicesIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesIDParams()
@@ -458,6 +468,7 @@ func (a *Client) GetDevicesID(params *GetDevicesIDParams) (*GetDevicesIDOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -479,7 +490,7 @@ func (a *Client) GetDevicesID(params *GetDevicesIDParams) (*GetDevicesIDOK, erro
 
   Get Device Impact List
 */
-func (a *Client) GetDevicesImpactlist(params *GetDevicesImpactlistParams) (*GetDevicesImpactlistOK, error) {
+func (a *Client) GetDevicesImpactlist(params *GetDevicesImpactlistParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesImpactlistOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesImpactlistParams()
@@ -494,6 +505,7 @@ func (a *Client) GetDevicesImpactlist(params *GetDevicesImpactlistParams) (*GetD
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesImpactlistReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -515,7 +527,7 @@ func (a *Client) GetDevicesImpactlist(params *GetDevicesImpactlistParams) (*GetD
 
   Retrieve detailed information about a specific device by device name
 */
-func (a *Client) GetDevicesName(params *GetDevicesNameParams) (*GetDevicesNameOK, error) {
+func (a *Client) GetDevicesName(params *GetDevicesNameParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesNameOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesNameParams()
@@ -530,6 +542,7 @@ func (a *Client) GetDevicesName(params *GetDevicesNameParams) (*GetDevicesNameOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesNameReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -551,7 +564,7 @@ func (a *Client) GetDevicesName(params *GetDevicesNameParams) (*GetDevicesNameOK
 
   Retrieve detailed information about a specific device by device serial number.
 */
-func (a *Client) GetDevicesSerial(params *GetDevicesSerialParams) (*GetDevicesSerialOK, error) {
+func (a *Client) GetDevicesSerial(params *GetDevicesSerialParams, authInfo runtime.ClientAuthInfoWriter) (*GetDevicesSerialOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDevicesSerialParams()
@@ -566,6 +579,7 @@ func (a *Client) GetDevicesSerial(params *GetDevicesSerialParams) (*GetDevicesSe
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDevicesSerialReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -587,7 +601,7 @@ func (a *Client) GetDevicesSerial(params *GetDevicesSerialParams) (*GetDevicesSe
 
   Update cloud instance information for devices. Requires either device or device_id
 */
-func (a *Client) PostCloudInstanceDevice(params *PostCloudInstanceDeviceParams) (*PostCloudInstanceDeviceOK, error) {
+func (a *Client) PostCloudInstanceDevice(params *PostCloudInstanceDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostCloudInstanceDeviceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostCloudInstanceDeviceParams()
@@ -602,6 +616,7 @@ func (a *Client) PostCloudInstanceDevice(params *PostCloudInstanceDeviceParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostCloudInstanceDeviceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -623,7 +638,7 @@ func (a *Client) PostCloudInstanceDevice(params *PostCloudInstanceDeviceParams) 
 
   This API is used to create a new device with the name supplied as the required argument or update an existing device that has the name, serial # or uuid of the required argument. For information purposes, this is also the API that is used by the Device42 auto-discovery tool.
 */
-func (a *Client) PostDevice(params *PostDeviceParams) (*PostDeviceOK, error) {
+func (a *Client) PostDevice(params *PostDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDeviceParams()
@@ -638,6 +653,7 @@ func (a *Client) PostDevice(params *PostDeviceParams) (*PostDeviceOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostDeviceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -659,7 +675,7 @@ func (a *Client) PostDevice(params *PostDeviceParams) (*PostDeviceOK, error) {
 
   Create/Update Device Mountpoints
 */
-func (a *Client) PostDeviceMountpoints(params *PostDeviceMountpointsParams) (*PostDeviceMountpointsOK, error) {
+func (a *Client) PostDeviceMountpoints(params *PostDeviceMountpointsParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceMountpointsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDeviceMountpointsParams()
@@ -674,6 +690,7 @@ func (a *Client) PostDeviceMountpoints(params *PostDeviceMountpointsParams) (*Po
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostDeviceMountpointsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -695,7 +712,7 @@ func (a *Client) PostDeviceMountpoints(params *PostDeviceMountpointsParams) (*Po
 
   This API will add a new or existing device to a rack or will update an existing device that is already in the rack. (Introduced in v321)<br> Required parameters: <ul><li>device <b>OR</b> device_id <b>OR</b> serial_no <b>OR</b> asset_no</li> <li>rack_id <b>OR</b> rack (with building, room, or row to identify unique rack) <li>start_at</li>
 */
-func (a *Client) PostDeviceRack(params *PostDeviceRackParams) (*PostDeviceRackOK, error) {
+func (a *Client) PostDeviceRack(params *PostDeviceRackParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceRackOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDeviceRackParams()
@@ -710,6 +727,7 @@ func (a *Client) PostDeviceRack(params *PostDeviceRackParams) (*PostDeviceRackOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostDeviceRackReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -731,7 +749,7 @@ func (a *Client) PostDeviceRack(params *PostDeviceRackParams) (*PostDeviceRackOK
 
   Add Url to Device
 */
-func (a *Client) PostDeviceURL(params *PostDeviceURLParams) (*PostDeviceURLOK, error) {
+func (a *Client) PostDeviceURL(params *PostDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceURLOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDeviceURLParams()
@@ -746,6 +764,7 @@ func (a *Client) PostDeviceURL(params *PostDeviceURLParams) (*PostDeviceURLOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostDeviceURLReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -767,7 +786,7 @@ func (a *Client) PostDeviceURL(params *PostDeviceURLParams) (*PostDeviceURLOK, e
 
   This API is used to create a new device with the name supplied as the required argument or update an existing device that with that name. This is similar to /api/api/1.0/devices/ POST call - but you can add duplicate serial #s and UUID for high density servers that share the same serial # and/or UUID.
 */
-func (a *Client) PostMultiNodeDevice(params *PostMultiNodeDeviceParams) (*PostMultiNodeDeviceOK, error) {
+func (a *Client) PostMultiNodeDevice(params *PostMultiNodeDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostMultiNodeDeviceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostMultiNodeDeviceParams()
@@ -782,6 +801,7 @@ func (a *Client) PostMultiNodeDevice(params *PostMultiNodeDeviceParams) (*PostMu
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostMultiNodeDeviceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -803,7 +823,7 @@ func (a *Client) PostMultiNodeDevice(params *PostMultiNodeDeviceParams) (*PostMu
 
   This API is used to create a new device with the name supplied as the required argument or update an existing device that with that name. This is similar to /api/api/1.0/devices/ POST call - but you can add duplicate serial numberss and UUID for high density servers that share the same serial # and/or UUID.
 */
-func (a *Client) PostMultiSerialDevice(params *PostMultiSerialDeviceParams) (*PostMultiSerialDeviceOK, error) {
+func (a *Client) PostMultiSerialDevice(params *PostMultiSerialDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PostMultiSerialDeviceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostMultiSerialDeviceParams()
@@ -818,6 +838,7 @@ func (a *Client) PostMultiSerialDevice(params *PostMultiSerialDeviceParams) (*Po
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostMultiSerialDeviceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -839,7 +860,7 @@ func (a *Client) PostMultiSerialDevice(params *PostMultiSerialDeviceParams) (*Po
 
   One of the following parameters is required: name, id, asset, or serial
 */
-func (a *Client) PutCustomField(params *PutCustomFieldParams) (*PutCustomFieldOK, error) {
+func (a *Client) PutCustomField(params *PutCustomFieldParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldParams()
@@ -854,6 +875,7 @@ func (a *Client) PutCustomField(params *PutCustomFieldParams) (*PutCustomFieldOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -875,7 +897,7 @@ func (a *Client) PutCustomField(params *PutCustomFieldParams) (*PutCustomFieldOK
 
   Update Device by Name, ID, Serial or Asset. Requires one of the following parameters: name, serial, asset, device_id
 */
-func (a *Client) PutDevice(params *PutDeviceParams) (*PutDeviceOK, error) {
+func (a *Client) PutDevice(params *PutDeviceParams, authInfo runtime.ClientAuthInfoWriter) (*PutDeviceOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutDeviceParams()
@@ -890,6 +912,7 @@ func (a *Client) PutDevice(params *PutDeviceParams) (*PutDeviceOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutDeviceReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -911,7 +934,7 @@ func (a *Client) PutDevice(params *PutDeviceParams) (*PutDeviceOK, error) {
 
   Use this API to update and existing url (e.g. an http, https, or telnet url) with a device. Type and device are required if no ID is provided.
 */
-func (a *Client) PutDeviceURL(params *PutDeviceURLParams) (*PutDeviceURLOK, error) {
+func (a *Client) PutDeviceURL(params *PutDeviceURLParams, authInfo runtime.ClientAuthInfoWriter) (*PutDeviceURLOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutDeviceURLParams()
@@ -926,6 +949,7 @@ func (a *Client) PutDeviceURL(params *PutDeviceURLParams) (*PutDeviceURLOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutDeviceURLReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

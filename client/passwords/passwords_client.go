@@ -27,13 +27,13 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeletePassword(params *DeletePasswordParams) (*DeletePasswordOK, error)
+	DeletePassword(params *DeletePasswordParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePasswordOK, error)
 
-	GetPassword(params *GetPasswordParams) (*GetPasswordOK, error)
+	GetPassword(params *GetPasswordParams, authInfo runtime.ClientAuthInfoWriter) (*GetPasswordOK, error)
 
-	PostCustomFields(params *PostCustomFieldsParams) (*PostCustomFieldsOK, error)
+	PostCustomFields(params *PostCustomFieldsParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomFieldsOK, error)
 
-	PostUpdatePasswords(params *PostUpdatePasswordsParams) (*PostUpdatePasswordsOK, error)
+	PostUpdatePasswords(params *PostUpdatePasswordsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdatePasswordsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -43,7 +43,7 @@ type ClientService interface {
 
   This API is used to delete the password with the password id supplied as the required argument. Note: You will only be able to delete the password if the supplied username has the correct permissions.
 */
-func (a *Client) DeletePassword(params *DeletePasswordParams) (*DeletePasswordOK, error) {
+func (a *Client) DeletePassword(params *DeletePasswordParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePasswordOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePasswordParams()
@@ -58,6 +58,7 @@ func (a *Client) DeletePassword(params *DeletePasswordParams) (*DeletePasswordOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePasswordReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -79,7 +80,7 @@ func (a *Client) DeletePassword(params *DeletePasswordParams) (*DeletePasswordOK
 
   Get Usernames and Passwords
 */
-func (a *Client) GetPassword(params *GetPasswordParams) (*GetPasswordOK, error) {
+func (a *Client) GetPassword(params *GetPasswordParams, authInfo runtime.ClientAuthInfoWriter) (*GetPasswordOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPasswordParams()
@@ -94,6 +95,7 @@ func (a *Client) GetPassword(params *GetPasswordParams) (*GetPasswordOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPasswordReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetPassword(params *GetPasswordParams) (*GetPasswordOK, error) 
 /*
   PostCustomFields Custom Fields
 */
-func (a *Client) PostCustomFields(params *PostCustomFieldsParams) (*PostCustomFieldsOK, error) {
+func (a *Client) PostCustomFields(params *PostCustomFieldsParams, authInfo runtime.ClientAuthInfoWriter) (*PostCustomFieldsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostCustomFieldsParams()
@@ -128,6 +130,7 @@ func (a *Client) PostCustomFields(params *PostCustomFieldsParams) (*PostCustomFi
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostCustomFieldsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -147,7 +150,7 @@ func (a *Client) PostCustomFields(params *PostCustomFieldsParams) (*PostCustomFi
 /*
   PostUpdatePasswords Create / Update Passwords. Use id if updating existing password - else, username and password are required.
 */
-func (a *Client) PostUpdatePasswords(params *PostUpdatePasswordsParams) (*PostUpdatePasswordsOK, error) {
+func (a *Client) PostUpdatePasswords(params *PostUpdatePasswordsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdatePasswordsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdatePasswordsParams()
@@ -162,6 +165,7 @@ func (a *Client) PostUpdatePasswords(params *PostUpdatePasswordsParams) (*PostUp
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdatePasswordsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

@@ -27,21 +27,21 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeletePartmodels(params *DeletePartmodelsParams) (*DeletePartmodelsOK, error)
+	DeletePartmodels(params *DeletePartmodelsParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePartmodelsOK, error)
 
-	DeleteParts(params *DeletePartsParams) (*DeletePartsOK, error)
+	DeleteParts(params *DeletePartsParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePartsOK, error)
 
-	GetPartmodels(params *GetPartmodelsParams) (*GetPartmodelsOK, error)
+	GetPartmodels(params *GetPartmodelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPartmodelsOK, error)
 
-	GetParts(params *GetPartsParams) (*GetPartsOK, error)
+	GetParts(params *GetPartsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPartsOK, error)
 
-	PostPartmodels(params *PostPartmodelsParams) (*PostPartmodelsOK, error)
+	PostPartmodels(params *PostPartmodelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPartmodelsOK, error)
 
-	PostParts(params *PostPartsParams) (*PostPartsOK, error)
+	PostParts(params *PostPartsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPartsOK, error)
 
-	PutCustomFieldPart(params *PutCustomFieldPartParams) (*PutCustomFieldPartOK, error)
+	PutCustomFieldPart(params *PutCustomFieldPartParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldPartOK, error)
 
-	PutCustomFieldPartmodel(params *PutCustomFieldPartmodelParams) (*PutCustomFieldPartmodelOK, error)
+	PutCustomFieldPartmodel(params *PutCustomFieldPartmodelParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldPartmodelOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -51,7 +51,7 @@ type ClientService interface {
 
   This API is used to delete the part model with the part model id supplied as the required argument.
 */
-func (a *Client) DeletePartmodels(params *DeletePartmodelsParams) (*DeletePartmodelsOK, error) {
+func (a *Client) DeletePartmodels(params *DeletePartmodelsParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePartmodelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePartmodelsParams()
@@ -66,6 +66,7 @@ func (a *Client) DeletePartmodels(params *DeletePartmodelsParams) (*DeletePartmo
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePartmodelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -87,7 +88,7 @@ func (a *Client) DeletePartmodels(params *DeletePartmodelsParams) (*DeletePartmo
 
   This API is used to delete the part with the part id supplied as the required argument.
 */
-func (a *Client) DeleteParts(params *DeletePartsParams) (*DeletePartsOK, error) {
+func (a *Client) DeleteParts(params *DeletePartsParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePartsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePartsParams()
@@ -102,6 +103,7 @@ func (a *Client) DeleteParts(params *DeletePartsParams) (*DeletePartsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePartsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -123,7 +125,7 @@ func (a *Client) DeleteParts(params *DeletePartsParams) (*DeletePartsOK, error) 
 
   Get all Part Models
 */
-func (a *Client) GetPartmodels(params *GetPartmodelsParams) (*GetPartmodelsOK, error) {
+func (a *Client) GetPartmodels(params *GetPartmodelsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPartmodelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPartmodelsParams()
@@ -138,6 +140,7 @@ func (a *Client) GetPartmodels(params *GetPartmodelsParams) (*GetPartmodelsOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPartmodelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -159,7 +162,7 @@ func (a *Client) GetPartmodels(params *GetPartmodelsParams) (*GetPartmodelsOK, e
 
   Get all Parts
 */
-func (a *Client) GetParts(params *GetPartsParams) (*GetPartsOK, error) {
+func (a *Client) GetParts(params *GetPartsParams, authInfo runtime.ClientAuthInfoWriter) (*GetPartsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetPartsParams()
@@ -174,6 +177,7 @@ func (a *Client) GetParts(params *GetPartsParams) (*GetPartsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetPartsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -195,7 +199,7 @@ func (a *Client) GetParts(params *GetPartsParams) (*GetPartsOK, error) {
 
   Create / Update Part Models
 */
-func (a *Client) PostPartmodels(params *PostPartmodelsParams) (*PostPartmodelsOK, error) {
+func (a *Client) PostPartmodels(params *PostPartmodelsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPartmodelsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPartmodelsParams()
@@ -210,6 +214,7 @@ func (a *Client) PostPartmodels(params *PostPartmodelsParams) (*PostPartmodelsOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPartmodelsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -231,7 +236,7 @@ func (a *Client) PostPartmodels(params *PostPartmodelsParams) (*PostPartmodelsOK
 
   Create / Update Parts
 */
-func (a *Client) PostParts(params *PostPartsParams) (*PostPartsOK, error) {
+func (a *Client) PostParts(params *PostPartsParams, authInfo runtime.ClientAuthInfoWriter) (*PostPartsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostPartsParams()
@@ -246,6 +251,7 @@ func (a *Client) PostParts(params *PostPartsParams) (*PostPartsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostPartsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -267,7 +273,7 @@ func (a *Client) PostParts(params *PostPartsParams) (*PostPartsOK, error) {
 
   Create/updated custom fields for parts.
 */
-func (a *Client) PutCustomFieldPart(params *PutCustomFieldPartParams) (*PutCustomFieldPartOK, error) {
+func (a *Client) PutCustomFieldPart(params *PutCustomFieldPartParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldPartOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldPartParams()
@@ -282,6 +288,7 @@ func (a *Client) PutCustomFieldPart(params *PutCustomFieldPartParams) (*PutCusto
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldPartReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -303,7 +310,7 @@ func (a *Client) PutCustomFieldPart(params *PutCustomFieldPartParams) (*PutCusto
 
   Custom Fields
 */
-func (a *Client) PutCustomFieldPartmodel(params *PutCustomFieldPartmodelParams) (*PutCustomFieldPartmodelOK, error) {
+func (a *Client) PutCustomFieldPartmodel(params *PutCustomFieldPartmodelParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldPartmodelOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldPartmodelParams()
@@ -318,6 +325,7 @@ func (a *Client) PutCustomFieldPartmodel(params *PutCustomFieldPartmodelParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldPartmodelReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

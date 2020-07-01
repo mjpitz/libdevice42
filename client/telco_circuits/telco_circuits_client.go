@@ -27,13 +27,13 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteCircuit(params *DeleteCircuitParams) (*DeleteCircuitOK, error)
+	DeleteCircuit(params *DeleteCircuitParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCircuitOK, error)
 
-	GetCircuits(params *GetCircuitsParams) (*GetCircuitsOK, error)
+	GetCircuits(params *GetCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*GetCircuitsOK, error)
 
-	PostUpdateCircuits(params *PostUpdateCircuitsParams) (*PostUpdateCircuitsOK, error)
+	PostUpdateCircuits(params *PostUpdateCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateCircuitsOK, error)
 
-	PutCustomFields(params *PutCustomFieldsParams) (*PutCustomFieldsOK, error)
+	PutCustomFields(params *PutCustomFieldsParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -43,7 +43,7 @@ type ClientService interface {
 
   This API is used to delete the circuit with the circuit id supplied as the required argument.
 */
-func (a *Client) DeleteCircuit(params *DeleteCircuitParams) (*DeleteCircuitOK, error) {
+func (a *Client) DeleteCircuit(params *DeleteCircuitParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteCircuitOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteCircuitParams()
@@ -58,6 +58,7 @@ func (a *Client) DeleteCircuit(params *DeleteCircuitParams) (*DeleteCircuitOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteCircuitReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -79,7 +80,7 @@ func (a *Client) DeleteCircuit(params *DeleteCircuitParams) (*DeleteCircuitOK, e
 
   Get all Circuits
 */
-func (a *Client) GetCircuits(params *GetCircuitsParams) (*GetCircuitsOK, error) {
+func (a *Client) GetCircuits(params *GetCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*GetCircuitsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCircuitsParams()
@@ -94,6 +95,7 @@ func (a *Client) GetCircuits(params *GetCircuitsParams) (*GetCircuitsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetCircuitsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -115,7 +117,7 @@ func (a *Client) GetCircuits(params *GetCircuitsParams) (*GetCircuitsOK, error) 
 
   Create / Update Circuits
 */
-func (a *Client) PostUpdateCircuits(params *PostUpdateCircuitsParams) (*PostUpdateCircuitsOK, error) {
+func (a *Client) PostUpdateCircuits(params *PostUpdateCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateCircuitsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdateCircuitsParams()
@@ -130,6 +132,7 @@ func (a *Client) PostUpdateCircuits(params *PostUpdateCircuitsParams) (*PostUpda
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdateCircuitsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -151,7 +154,7 @@ func (a *Client) PostUpdateCircuits(params *PostUpdateCircuitsParams) (*PostUpda
 
   Custom Fields for circuits. Either ID or circuit_id is required.
 */
-func (a *Client) PutCustomFields(params *PutCustomFieldsParams) (*PutCustomFieldsOK, error) {
+func (a *Client) PutCustomFields(params *PutCustomFieldsParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldsParams()
@@ -166,6 +169,7 @@ func (a *Client) PutCustomFields(params *PutCustomFieldsParams) (*PutCustomField
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

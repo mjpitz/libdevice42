@@ -21,6 +21,16 @@
   "produces": [
     "application/json"
   ],
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
   "paths": {
     "/api/1.0/buildings/": {
       "get": {

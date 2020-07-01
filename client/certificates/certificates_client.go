@@ -27,9 +27,9 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetCertificates(params *GetCertificatesParams) (*GetCertificatesOK, error)
+	GetCertificates(params *GetCertificatesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCertificatesOK, error)
 
-	PostUpdateCertificates(params *PostUpdateCertificatesParams) (*PostUpdateCertificatesOK, error)
+	PostUpdateCertificates(params *PostUpdateCertificatesParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateCertificatesOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -39,7 +39,7 @@ type ClientService interface {
 
   This API is used to return the certificates you have added or discovered in Device42.
 */
-func (a *Client) GetCertificates(params *GetCertificatesParams) (*GetCertificatesOK, error) {
+func (a *Client) GetCertificates(params *GetCertificatesParams, authInfo runtime.ClientAuthInfoWriter) (*GetCertificatesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCertificatesParams()
@@ -54,6 +54,7 @@ func (a *Client) GetCertificates(params *GetCertificatesParams) (*GetCertificate
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetCertificatesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -75,7 +76,7 @@ func (a *Client) GetCertificates(params *GetCertificatesParams) (*GetCertificate
 
   This API is used to update or add new certificates in bulk. Note: If you enter the DNS for the certificate, that is the only required field. Otherwise issued_to, valid_from, valid_to, and subject are required.
 */
-func (a *Client) PostUpdateCertificates(params *PostUpdateCertificatesParams) (*PostUpdateCertificatesOK, error) {
+func (a *Client) PostUpdateCertificates(params *PostUpdateCertificatesParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdateCertificatesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdateCertificatesParams()
@@ -90,6 +91,7 @@ func (a *Client) PostUpdateCertificates(params *PostUpdateCertificatesParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdateCertificatesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

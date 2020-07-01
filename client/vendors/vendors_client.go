@@ -27,11 +27,11 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteVendors(params *DeleteVendorsParams) (*DeleteVendorsOK, error)
+	DeleteVendors(params *DeleteVendorsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteVendorsOK, error)
 
-	GetVendors(params *GetVendorsParams) (*GetVendorsOK, error)
+	GetVendors(params *GetVendorsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVendorsOK, error)
 
-	PostVendors(params *PostVendorsParams) (*PostVendorsOK, error)
+	PostVendors(params *PostVendorsParams, authInfo runtime.ClientAuthInfoWriter) (*PostVendorsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,7 +41,7 @@ type ClientService interface {
 
   This API is used to delete the vendor with the vendor id supplied as the required argument.
 */
-func (a *Client) DeleteVendors(params *DeleteVendorsParams) (*DeleteVendorsOK, error) {
+func (a *Client) DeleteVendors(params *DeleteVendorsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteVendorsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteVendorsParams()
@@ -56,6 +56,7 @@ func (a *Client) DeleteVendors(params *DeleteVendorsParams) (*DeleteVendorsOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteVendorsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -77,7 +78,7 @@ func (a *Client) DeleteVendors(params *DeleteVendorsParams) (*DeleteVendorsOK, e
 
   Get all Vendors
 */
-func (a *Client) GetVendors(params *GetVendorsParams) (*GetVendorsOK, error) {
+func (a *Client) GetVendors(params *GetVendorsParams, authInfo runtime.ClientAuthInfoWriter) (*GetVendorsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetVendorsParams()
@@ -92,6 +93,7 @@ func (a *Client) GetVendors(params *GetVendorsParams) (*GetVendorsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetVendorsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -111,7 +113,7 @@ func (a *Client) GetVendors(params *GetVendorsParams) (*GetVendorsOK, error) {
 /*
   PostVendors Create / Update Vendors
 */
-func (a *Client) PostVendors(params *PostVendorsParams) (*PostVendorsOK, error) {
+func (a *Client) PostVendors(params *PostVendorsParams, authInfo runtime.ClientAuthInfoWriter) (*PostVendorsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostVendorsParams()
@@ -126,6 +128,7 @@ func (a *Client) PostVendors(params *PostVendorsParams) (*PostVendorsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostVendorsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

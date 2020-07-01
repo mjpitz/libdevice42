@@ -27,7 +27,7 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetTags(params *GetTagsParams) (*GetTagsOK, error)
+	GetTags(params *GetTagsParams, authInfo runtime.ClientAuthInfoWriter) (*GetTagsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -37,7 +37,7 @@ type ClientService interface {
 
   Get all Tags
 */
-func (a *Client) GetTags(params *GetTagsParams) (*GetTagsOK, error) {
+func (a *Client) GetTags(params *GetTagsParams, authInfo runtime.ClientAuthInfoWriter) (*GetTagsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetTagsParams()
@@ -52,6 +52,7 @@ func (a *Client) GetTags(params *GetTagsParams) (*GetTagsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetTagsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

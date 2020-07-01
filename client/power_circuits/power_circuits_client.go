@@ -27,11 +27,11 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeletePowerCircuit(params *DeletePowerCircuitParams) (*DeletePowerCircuitOK, error)
+	DeletePowerCircuit(params *DeletePowerCircuitParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePowerCircuitOK, error)
 
-	GetAllPowerCircuits(params *GetAllPowerCircuitsParams) (*GetAllPowerCircuitsOK, error)
+	GetAllPowerCircuits(params *GetAllPowerCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAllPowerCircuitsOK, error)
 
-	PostUpdatePowerCircuits(params *PostUpdatePowerCircuitsParams) (*PostUpdatePowerCircuitsOK, error)
+	PostUpdatePowerCircuits(params *PostUpdatePowerCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdatePowerCircuitsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,7 +41,7 @@ type ClientService interface {
 
   This API is used to delete the power circuit with the ID supplied as the required argument.
 */
-func (a *Client) DeletePowerCircuit(params *DeletePowerCircuitParams) (*DeletePowerCircuitOK, error) {
+func (a *Client) DeletePowerCircuit(params *DeletePowerCircuitParams, authInfo runtime.ClientAuthInfoWriter) (*DeletePowerCircuitOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePowerCircuitParams()
@@ -56,6 +56,7 @@ func (a *Client) DeletePowerCircuit(params *DeletePowerCircuitParams) (*DeletePo
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeletePowerCircuitReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -77,7 +78,7 @@ func (a *Client) DeletePowerCircuit(params *DeletePowerCircuitParams) (*DeletePo
 
   Get All Power Circuits
 */
-func (a *Client) GetAllPowerCircuits(params *GetAllPowerCircuitsParams) (*GetAllPowerCircuitsOK, error) {
+func (a *Client) GetAllPowerCircuits(params *GetAllPowerCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAllPowerCircuitsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAllPowerCircuitsParams()
@@ -92,6 +93,7 @@ func (a *Client) GetAllPowerCircuits(params *GetAllPowerCircuitsParams) (*GetAll
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAllPowerCircuitsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetAllPowerCircuits(params *GetAllPowerCircuitsParams) (*GetAll
 
   Create/Update Power Circuit
 */
-func (a *Client) PostUpdatePowerCircuits(params *PostUpdatePowerCircuitsParams) (*PostUpdatePowerCircuitsOK, error) {
+func (a *Client) PostUpdatePowerCircuits(params *PostUpdatePowerCircuitsParams, authInfo runtime.ClientAuthInfoWriter) (*PostUpdatePowerCircuitsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostUpdatePowerCircuitsParams()
@@ -128,6 +130,7 @@ func (a *Client) PostUpdatePowerCircuits(params *PostUpdatePowerCircuitsParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostUpdatePowerCircuitsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

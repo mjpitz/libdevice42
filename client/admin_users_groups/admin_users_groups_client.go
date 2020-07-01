@@ -27,11 +27,11 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetAdmingroups(params *GetAdmingroupsParams) (*GetAdmingroupsOK, error)
+	GetAdmingroups(params *GetAdmingroupsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAdmingroupsOK, error)
 
-	GetAdminusers(params *GetAdminusersParams) (*GetAdminusersOK, error)
+	GetAdminusers(params *GetAdminusersParams, authInfo runtime.ClientAuthInfoWriter) (*GetAdminusersOK, error)
 
-	PostAdminUsers(params *PostAdminUsersParams) (*PostAdminUsersOK, error)
+	PostAdminUsers(params *PostAdminUsersParams, authInfo runtime.ClientAuthInfoWriter) (*PostAdminUsersOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,7 +41,7 @@ type ClientService interface {
 
   Get all Admin Groups
 */
-func (a *Client) GetAdmingroups(params *GetAdmingroupsParams) (*GetAdmingroupsOK, error) {
+func (a *Client) GetAdmingroups(params *GetAdmingroupsParams, authInfo runtime.ClientAuthInfoWriter) (*GetAdmingroupsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAdmingroupsParams()
@@ -56,6 +56,7 @@ func (a *Client) GetAdmingroups(params *GetAdmingroupsParams) (*GetAdmingroupsOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAdmingroupsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -77,7 +78,7 @@ func (a *Client) GetAdmingroups(params *GetAdmingroupsParams) (*GetAdmingroupsOK
 
   Get Admin Users
 */
-func (a *Client) GetAdminusers(params *GetAdminusersParams) (*GetAdminusersOK, error) {
+func (a *Client) GetAdminusers(params *GetAdminusersParams, authInfo runtime.ClientAuthInfoWriter) (*GetAdminusersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetAdminusersParams()
@@ -92,6 +93,7 @@ func (a *Client) GetAdminusers(params *GetAdminusersParams) (*GetAdminusersOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetAdminusersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetAdminusers(params *GetAdminusersParams) (*GetAdminusersOK, e
 
   Create/Edit Admin Users
 */
-func (a *Client) PostAdminUsers(params *PostAdminUsersParams) (*PostAdminUsersOK, error) {
+func (a *Client) PostAdminUsers(params *PostAdminUsersParams, authInfo runtime.ClientAuthInfoWriter) (*PostAdminUsersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostAdminUsersParams()
@@ -128,6 +130,7 @@ func (a *Client) PostAdminUsers(params *PostAdminUsersParams) (*PostAdminUsersOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostAdminUsersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

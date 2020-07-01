@@ -27,9 +27,9 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetObjectCategories(params *GetObjectCategoriesParams) (*GetObjectCategoriesOK, error)
+	GetObjectCategories(params *GetObjectCategoriesParams, authInfo runtime.ClientAuthInfoWriter) (*GetObjectCategoriesOK, error)
 
-	PostObjectCategories(params *PostObjectCategoriesParams) (*PostObjectCategoriesOK, error)
+	PostObjectCategories(params *PostObjectCategoriesParams, authInfo runtime.ClientAuthInfoWriter) (*PostObjectCategoriesOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -39,7 +39,7 @@ type ClientService interface {
 
   Get all Object Categories
 */
-func (a *Client) GetObjectCategories(params *GetObjectCategoriesParams) (*GetObjectCategoriesOK, error) {
+func (a *Client) GetObjectCategories(params *GetObjectCategoriesParams, authInfo runtime.ClientAuthInfoWriter) (*GetObjectCategoriesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetObjectCategoriesParams()
@@ -54,6 +54,7 @@ func (a *Client) GetObjectCategories(params *GetObjectCategoriesParams) (*GetObj
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetObjectCategoriesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -75,7 +76,7 @@ func (a *Client) GetObjectCategories(params *GetObjectCategoriesParams) (*GetObj
 
   Create/update Object Categories
 */
-func (a *Client) PostObjectCategories(params *PostObjectCategoriesParams) (*PostObjectCategoriesOK, error) {
+func (a *Client) PostObjectCategories(params *PostObjectCategoriesParams, authInfo runtime.ClientAuthInfoWriter) (*PostObjectCategoriesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostObjectCategoriesParams()
@@ -90,6 +91,7 @@ func (a *Client) PostObjectCategories(params *PostObjectCategoriesParams) (*Post
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostObjectCategoriesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

@@ -27,107 +27,107 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteIPAMDNSRecords(params *DeleteIPAMDNSRecordsParams) (*DeleteIPAMDNSRecordsOK, error)
+	DeleteIPAMDNSRecords(params *DeleteIPAMDNSRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMDNSRecordsOK, error)
 
-	DeleteIPAMIpnat(params *DeleteIPAMIpnatParams) (*DeleteIPAMIpnatOK, error)
+	DeleteIPAMIpnat(params *DeleteIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMIpnatOK, error)
 
-	DeleteIPAMIps(params *DeleteIPAMIpsParams) (*DeleteIPAMIpsOK, error)
+	DeleteIPAMIps(params *DeleteIPAMIpsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMIpsOK, error)
 
-	DeleteIPAMMacsID(params *DeleteIPAMMacsIDParams) (*DeleteIPAMMacsIDOK, error)
+	DeleteIPAMMacsID(params *DeleteIPAMMacsIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMMacsIDOK, error)
 
-	DeleteIPAMSwitchports(params *DeleteIPAMSwitchportsParams) (*DeleteIPAMSwitchportsOK, error)
+	DeleteIPAMSwitchports(params *DeleteIPAMSwitchportsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMSwitchportsOK, error)
 
-	DeleteIPAMsubnetcategory(params *DeleteIPAMsubnetcategoryParams) (*DeleteIPAMsubnetcategoryOK, error)
+	DeleteIPAMsubnetcategory(params *DeleteIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMsubnetcategoryOK, error)
 
-	DeleteIPAMsubnets(params *DeleteIPAMsubnetsParams) (*DeleteIPAMsubnetsOK, error)
+	DeleteIPAMsubnets(params *DeleteIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMsubnetsOK, error)
 
-	DeleteIPAMvlans(params *DeleteIPAMvlansParams) (*DeleteIPAMvlansOK, error)
+	DeleteIPAMvlans(params *DeleteIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMvlansOK, error)
 
-	DeleteIPAMvrfgroupID(params *DeleteIPAMvrfgroupIDParams) (*DeleteIPAMvrfgroupIDOK, error)
+	DeleteIPAMvrfgroupID(params *DeleteIPAMvrfgroupIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMvrfgroupIDOK, error)
 
-	GetIPAMCustomerID(params *GetIPAMCustomerIDParams) (*GetIPAMCustomerIDOK, error)
+	GetIPAMCustomerID(params *GetIPAMCustomerIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMCustomerIDOK, error)
 
-	GetIPAMDNSRecords(params *GetIPAMDNSRecordsParams) (*GetIPAMDNSRecordsOK, error)
+	GetIPAMDNSRecords(params *GetIPAMDNSRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMDNSRecordsOK, error)
 
-	GetIPAMIpnat(params *GetIPAMIpnatParams) (*GetIPAMIpnatOK, error)
+	GetIPAMIpnat(params *GetIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMIpnatOK, error)
 
-	GetIPAMIps(params *GetIPAMIpsParams) (*GetIPAMIpsOK, error)
+	GetIPAMIps(params *GetIPAMIpsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMIpsOK, error)
 
-	GetIPAMIpsSubnetID(params *GetIPAMIpsSubnetIDParams) (*GetIPAMIpsSubnetIDOK, error)
+	GetIPAMIpsSubnetID(params *GetIPAMIpsSubnetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMIpsSubnetIDOK, error)
 
-	GetIPAMMacs(params *GetIPAMMacsParams) (*GetIPAMMacsOK, error)
+	GetIPAMMacs(params *GetIPAMMacsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMMacsOK, error)
 
-	GetIPAMMacsID(params *GetIPAMMacsIDParams) (*GetIPAMMacsIDOK, error)
+	GetIPAMMacsID(params *GetIPAMMacsIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMMacsIDOK, error)
 
-	GetIPAMSearch(params *GetIPAMSearchParams) (*GetIPAMSearchOK, error)
+	GetIPAMSearch(params *GetIPAMSearchParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSearchOK, error)
 
-	GetIPAMSubnetID(params *GetIPAMSubnetIDParams) (*GetIPAMSubnetIDOK, error)
+	GetIPAMSubnetID(params *GetIPAMSubnetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSubnetIDOK, error)
 
-	GetIPAMSuggestIP(params *GetIPAMSuggestIPParams) (*GetIPAMSuggestIPOK, error)
+	GetIPAMSuggestIP(params *GetIPAMSuggestIPParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSuggestIPOK, error)
 
-	GetIPAMSuggestSubnetID(params *GetIPAMSuggestSubnetIDParams) (*GetIPAMSuggestSubnetIDOK, error)
+	GetIPAMSuggestSubnetID(params *GetIPAMSuggestSubnetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSuggestSubnetIDOK, error)
 
-	GetIPAMSwitchTemplates(params *GetIPAMSwitchTemplatesParams) (*GetIPAMSwitchTemplatesOK, error)
+	GetIPAMSwitchTemplates(params *GetIPAMSwitchTemplatesParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSwitchTemplatesOK, error)
 
-	GetIPAMSwitchports(params *GetIPAMSwitchportsParams) (*GetIPAMSwitchportsOK, error)
+	GetIPAMSwitchports(params *GetIPAMSwitchportsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSwitchportsOK, error)
 
-	GetIPAMTapPorts(params *GetIPAMTapPortsParams) (*GetIPAMTapPortsOK, error)
+	GetIPAMTapPorts(params *GetIPAMTapPortsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMTapPortsOK, error)
 
-	GetIPAMsubnetcategory(params *GetIPAMsubnetcategoryParams) (*GetIPAMsubnetcategoryOK, error)
+	GetIPAMsubnetcategory(params *GetIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMsubnetcategoryOK, error)
 
-	GetIPAMsubnets(params *GetIPAMsubnetsParams) (*GetIPAMsubnetsOK, error)
+	GetIPAMsubnets(params *GetIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMsubnetsOK, error)
 
-	GetIPAMvlans(params *GetIPAMvlansParams) (*GetIPAMvlansOK, error)
+	GetIPAMvlans(params *GetIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMvlansOK, error)
 
-	GetIPAMvlansID(params *GetIPAMvlansIDParams) (*GetIPAMvlansIDOK, error)
+	GetIPAMvlansID(params *GetIPAMvlansIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMvlansIDOK, error)
 
-	GetIPAMvrfgroup(params *GetIPAMvrfgroupParams) (*GetIPAMvrfgroupOK, error)
+	GetIPAMvrfgroup(params *GetIPAMvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMvrfgroupOK, error)
 
-	PostIPAMDNSRecords(params *PostIPAMDNSRecordsParams) (*PostIPAMDNSRecordsOK, error)
+	PostIPAMDNSRecords(params *PostIPAMDNSRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMDNSRecordsOK, error)
 
-	PostIPAMDNSZones(params *PostIPAMDNSZonesParams) (*PostIPAMDNSZonesOK, error)
+	PostIPAMDNSZones(params *PostIPAMDNSZonesParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMDNSZonesOK, error)
 
-	PostIPAMIpnat(params *PostIPAMIpnatParams) (*PostIPAMIpnatOK, error)
+	PostIPAMIpnat(params *PostIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMIpnatOK, error)
 
-	PostIPAMIps(params *PostIPAMIpsParams) (*PostIPAMIpsOK, error)
+	PostIPAMIps(params *PostIPAMIpsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMIpsOK, error)
 
-	PostIPAMMacs(params *PostIPAMMacsParams) (*PostIPAMMacsOK, error)
+	PostIPAMMacs(params *PostIPAMMacsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMMacsOK, error)
 
-	PostIPAMSubnetsCreateChild(params *PostIPAMSubnetsCreateChildParams) (*PostIPAMSubnetsCreateChildOK, error)
+	PostIPAMSubnetsCreateChild(params *PostIPAMSubnetsCreateChildParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMSubnetsCreateChildOK, error)
 
-	PostIPAMSwitches(params *PostIPAMSwitchesParams) (*PostIPAMSwitchesOK, error)
+	PostIPAMSwitches(params *PostIPAMSwitchesParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMSwitchesOK, error)
 
-	PostIPAMSwitchports(params *PostIPAMSwitchportsParams) (*PostIPAMSwitchportsOK, error)
+	PostIPAMSwitchports(params *PostIPAMSwitchportsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMSwitchportsOK, error)
 
-	PostIPAMTapPorts(params *PostIPAMTapPortsParams) (*PostIPAMTapPortsOK, error)
+	PostIPAMTapPorts(params *PostIPAMTapPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMTapPortsOK, error)
 
-	PostIPAMsubnetcategory(params *PostIPAMsubnetcategoryParams) (*PostIPAMsubnetcategoryOK, error)
+	PostIPAMsubnetcategory(params *PostIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMsubnetcategoryOK, error)
 
-	PostIPAMsubnets(params *PostIPAMsubnetsParams) (*PostIPAMsubnetsOK, error)
+	PostIPAMsubnets(params *PostIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMsubnetsOK, error)
 
-	PostIPAMvlans(params *PostIPAMvlansParams) (*PostIPAMvlansOK, error)
+	PostIPAMvlans(params *PostIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMvlansOK, error)
 
-	PostIPAMvlansSmartMergeAll(params *PostIPAMvlansSmartMergeAllParams) (*PostIPAMvlansSmartMergeAllOK, error)
+	PostIPAMvlansSmartMergeAll(params *PostIPAMvlansSmartMergeAllParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMvlansSmartMergeAllOK, error)
 
-	PostIPAMvrfgroup(params *PostIPAMvrfgroupParams) (*PostIPAMvrfgroupOK, error)
+	PostIPAMvrfgroup(params *PostIPAMvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMvrfgroupOK, error)
 
-	PutIPAMCustomFIipAddress(params *PutIPAMCustomFIipAddressParams) (*PutIPAMCustomFIipAddressOK, error)
+	PutIPAMCustomFIipAddress(params *PutIPAMCustomFIipAddressParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIipAddressOK, error)
 
-	PutIPAMCustomFIsubnet(params *PutIPAMCustomFIsubnetParams) (*PutIPAMCustomFIsubnetOK, error)
+	PutIPAMCustomFIsubnet(params *PutIPAMCustomFIsubnetParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIsubnetOK, error)
 
-	PutIPAMCustomFIswitchport(params *PutIPAMCustomFIswitchportParams) (*PutIPAMCustomFIswitchportOK, error)
+	PutIPAMCustomFIswitchport(params *PutIPAMCustomFIswitchportParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIswitchportOK, error)
 
-	PutIPAMCustomFIvrfgroup(params *PutIPAMCustomFIvrfgroupParams) (*PutIPAMCustomFIvrfgroupOK, error)
+	PutIPAMCustomFIvrfgroup(params *PutIPAMCustomFIvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIvrfgroupOK, error)
 
-	PutIPAMIpnat(params *PutIPAMIpnatParams) (*PutIPAMIpnatOK, error)
+	PutIPAMIpnat(params *PutIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMIpnatOK, error)
 
-	PutIPAMsubnetcategory(params *PutIPAMsubnetcategoryParams) (*PutIPAMsubnetcategoryOK, error)
+	PutIPAMsubnetcategory(params *PutIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMsubnetcategoryOK, error)
 
-	PutIPAMsubnets(params *PutIPAMsubnetsParams) (*PutIPAMsubnetsOK, error)
+	PutIPAMsubnets(params *PutIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMsubnetsOK, error)
 
-	PutIPAMvlans(params *PutIPAMvlansParams) (*PutIPAMvlansOK, error)
+	PutIPAMvlans(params *PutIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMvlansOK, error)
 
-	PutIPAMvrfgroup(params *PutIPAMvrfgroupParams) (*PutIPAMvrfgroupOK, error)
+	PutIPAMvrfgroup(params *PutIPAMvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMvrfgroupOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -137,7 +137,7 @@ type ClientService interface {
 
   This API is used to delete the DNS record with the DNS Record id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMDNSRecords(params *DeleteIPAMDNSRecordsParams) (*DeleteIPAMDNSRecordsOK, error) {
+func (a *Client) DeleteIPAMDNSRecords(params *DeleteIPAMDNSRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMDNSRecordsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMDNSRecordsParams()
@@ -152,6 +152,7 @@ func (a *Client) DeleteIPAMDNSRecords(params *DeleteIPAMDNSRecordsParams) (*Dele
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMDNSRecordsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -173,7 +174,7 @@ func (a *Client) DeleteIPAMDNSRecords(params *DeleteIPAMDNSRecordsParams) (*Dele
 
   Delete IP NAT
 */
-func (a *Client) DeleteIPAMIpnat(params *DeleteIPAMIpnatParams) (*DeleteIPAMIpnatOK, error) {
+func (a *Client) DeleteIPAMIpnat(params *DeleteIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMIpnatOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMIpnatParams()
@@ -188,6 +189,7 @@ func (a *Client) DeleteIPAMIpnat(params *DeleteIPAMIpnatParams) (*DeleteIPAMIpna
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMIpnatReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -209,7 +211,7 @@ func (a *Client) DeleteIPAMIpnat(params *DeleteIPAMIpnatParams) (*DeleteIPAMIpna
 
   This API is used to delete an IP Address with the IP Address id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMIps(params *DeleteIPAMIpsParams) (*DeleteIPAMIpsOK, error) {
+func (a *Client) DeleteIPAMIps(params *DeleteIPAMIpsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMIpsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMIpsParams()
@@ -224,6 +226,7 @@ func (a *Client) DeleteIPAMIps(params *DeleteIPAMIpsParams) (*DeleteIPAMIpsOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMIpsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -245,7 +248,7 @@ func (a *Client) DeleteIPAMIps(params *DeleteIPAMIpsParams) (*DeleteIPAMIpsOK, e
 
   This API is used to delete the mac address with the mac address id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMMacsID(params *DeleteIPAMMacsIDParams) (*DeleteIPAMMacsIDOK, error) {
+func (a *Client) DeleteIPAMMacsID(params *DeleteIPAMMacsIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMMacsIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMMacsIDParams()
@@ -260,6 +263,7 @@ func (a *Client) DeleteIPAMMacsID(params *DeleteIPAMMacsIDParams) (*DeleteIPAMMa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMMacsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -281,7 +285,7 @@ func (a *Client) DeleteIPAMMacsID(params *DeleteIPAMMacsIDParams) (*DeleteIPAMMa
 
   This API is used to delete the switch port with the switch port id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMSwitchports(params *DeleteIPAMSwitchportsParams) (*DeleteIPAMSwitchportsOK, error) {
+func (a *Client) DeleteIPAMSwitchports(params *DeleteIPAMSwitchportsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMSwitchportsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMSwitchportsParams()
@@ -296,6 +300,7 @@ func (a *Client) DeleteIPAMSwitchports(params *DeleteIPAMSwitchportsParams) (*De
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMSwitchportsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -317,7 +322,7 @@ func (a *Client) DeleteIPAMSwitchports(params *DeleteIPAMSwitchportsParams) (*De
 
   This API is used to delete the subnet category with the subnet category id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMsubnetcategory(params *DeleteIPAMsubnetcategoryParams) (*DeleteIPAMsubnetcategoryOK, error) {
+func (a *Client) DeleteIPAMsubnetcategory(params *DeleteIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMsubnetcategoryOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMsubnetcategoryParams()
@@ -332,6 +337,7 @@ func (a *Client) DeleteIPAMsubnetcategory(params *DeleteIPAMsubnetcategoryParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMsubnetcategoryReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -353,7 +359,7 @@ func (a *Client) DeleteIPAMsubnetcategory(params *DeleteIPAMsubnetcategoryParams
 
   This API is used to delete the subnet with the subnet id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMsubnets(params *DeleteIPAMsubnetsParams) (*DeleteIPAMsubnetsOK, error) {
+func (a *Client) DeleteIPAMsubnets(params *DeleteIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMsubnetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMsubnetsParams()
@@ -368,6 +374,7 @@ func (a *Client) DeleteIPAMsubnets(params *DeleteIPAMsubnetsParams) (*DeleteIPAM
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMsubnetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -389,7 +396,7 @@ func (a *Client) DeleteIPAMsubnets(params *DeleteIPAMsubnetsParams) (*DeleteIPAM
 
   This API is used to delete the vlan with the vlan id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMvlans(params *DeleteIPAMvlansParams) (*DeleteIPAMvlansOK, error) {
+func (a *Client) DeleteIPAMvlans(params *DeleteIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMvlansOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMvlansParams()
@@ -404,6 +411,7 @@ func (a *Client) DeleteIPAMvlans(params *DeleteIPAMvlansParams) (*DeleteIPAMvlan
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMvlansReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -425,7 +433,7 @@ func (a *Client) DeleteIPAMvlans(params *DeleteIPAMvlansParams) (*DeleteIPAMvlan
 
   This API is used to delete the vrf group with the vrf group id supplied as the required argument.
 */
-func (a *Client) DeleteIPAMvrfgroupID(params *DeleteIPAMvrfgroupIDParams) (*DeleteIPAMvrfgroupIDOK, error) {
+func (a *Client) DeleteIPAMvrfgroupID(params *DeleteIPAMvrfgroupIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteIPAMvrfgroupIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIPAMvrfgroupIDParams()
@@ -440,6 +448,7 @@ func (a *Client) DeleteIPAMvrfgroupID(params *DeleteIPAMvrfgroupIDParams) (*Dele
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteIPAMvrfgroupIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -461,7 +470,7 @@ func (a *Client) DeleteIPAMvrfgroupID(params *DeleteIPAMvrfgroupIDParams) (*Dele
 
   Get all Subnets by Customer
 */
-func (a *Client) GetIPAMCustomerID(params *GetIPAMCustomerIDParams) (*GetIPAMCustomerIDOK, error) {
+func (a *Client) GetIPAMCustomerID(params *GetIPAMCustomerIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMCustomerIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMCustomerIDParams()
@@ -476,6 +485,7 @@ func (a *Client) GetIPAMCustomerID(params *GetIPAMCustomerIDParams) (*GetIPAMCus
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMCustomerIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -497,7 +507,7 @@ func (a *Client) GetIPAMCustomerID(params *GetIPAMCustomerIDParams) (*GetIPAMCus
 
   Get DNS Records
 */
-func (a *Client) GetIPAMDNSRecords(params *GetIPAMDNSRecordsParams) (*GetIPAMDNSRecordsOK, error) {
+func (a *Client) GetIPAMDNSRecords(params *GetIPAMDNSRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMDNSRecordsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMDNSRecordsParams()
@@ -512,6 +522,7 @@ func (a *Client) GetIPAMDNSRecords(params *GetIPAMDNSRecordsParams) (*GetIPAMDNS
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMDNSRecordsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -533,7 +544,7 @@ func (a *Client) GetIPAMDNSRecords(params *GetIPAMDNSRecordsParams) (*GetIPAMDNS
 
   Get all IP NAT Records
 */
-func (a *Client) GetIPAMIpnat(params *GetIPAMIpnatParams) (*GetIPAMIpnatOK, error) {
+func (a *Client) GetIPAMIpnat(params *GetIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMIpnatOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMIpnatParams()
@@ -548,6 +559,7 @@ func (a *Client) GetIPAMIpnat(params *GetIPAMIpnatParams) (*GetIPAMIpnatOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMIpnatReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -569,7 +581,7 @@ func (a *Client) GetIPAMIpnat(params *GetIPAMIpnatParams) (*GetIPAMIpnatOK, erro
 
   GET method retrieves all IPs. (Added in v5.9.3) By default the limit is maximum 1000 IPs per call. Use total_count and offset if over 1000 IPs.
 */
-func (a *Client) GetIPAMIps(params *GetIPAMIpsParams) (*GetIPAMIpsOK, error) {
+func (a *Client) GetIPAMIps(params *GetIPAMIpsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMIpsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMIpsParams()
@@ -584,6 +596,7 @@ func (a *Client) GetIPAMIps(params *GetIPAMIpsParams) (*GetIPAMIpsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMIpsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -605,7 +618,7 @@ func (a *Client) GetIPAMIps(params *GetIPAMIpsParams) (*GetIPAMIpsOK, error) {
 
   Get all IPs in a Subnet
 */
-func (a *Client) GetIPAMIpsSubnetID(params *GetIPAMIpsSubnetIDParams) (*GetIPAMIpsSubnetIDOK, error) {
+func (a *Client) GetIPAMIpsSubnetID(params *GetIPAMIpsSubnetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMIpsSubnetIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMIpsSubnetIDParams()
@@ -620,6 +633,7 @@ func (a *Client) GetIPAMIpsSubnetID(params *GetIPAMIpsSubnetIDParams) (*GetIPAMI
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMIpsSubnetIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -641,7 +655,7 @@ func (a *Client) GetIPAMIpsSubnetID(params *GetIPAMIpsSubnetIDParams) (*GetIPAMI
 
   Get all MAC Addresses
 */
-func (a *Client) GetIPAMMacs(params *GetIPAMMacsParams) (*GetIPAMMacsOK, error) {
+func (a *Client) GetIPAMMacs(params *GetIPAMMacsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMMacsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMMacsParams()
@@ -656,6 +670,7 @@ func (a *Client) GetIPAMMacs(params *GetIPAMMacsParams) (*GetIPAMMacsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMMacsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -677,7 +692,7 @@ func (a *Client) GetIPAMMacs(params *GetIPAMMacsParams) (*GetIPAMMacsOK, error) 
 
   Get MAC Address with ID
 */
-func (a *Client) GetIPAMMacsID(params *GetIPAMMacsIDParams) (*GetIPAMMacsIDOK, error) {
+func (a *Client) GetIPAMMacsID(params *GetIPAMMacsIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMMacsIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMMacsIDParams()
@@ -692,6 +707,7 @@ func (a *Client) GetIPAMMacsID(params *GetIPAMMacsIDParams) (*GetIPAMMacsIDOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMMacsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -713,7 +729,7 @@ func (a *Client) GetIPAMMacsID(params *GetIPAMMacsIDParams) (*GetIPAMMacsIDOK, e
 
   Find Specific IP Address
 */
-func (a *Client) GetIPAMSearch(params *GetIPAMSearchParams) (*GetIPAMSearchOK, error) {
+func (a *Client) GetIPAMSearch(params *GetIPAMSearchParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSearchOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMSearchParams()
@@ -728,6 +744,7 @@ func (a *Client) GetIPAMSearch(params *GetIPAMSearchParams) (*GetIPAMSearchOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMSearchReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -749,7 +766,7 @@ func (a *Client) GetIPAMSearch(params *GetIPAMSearchParams) (*GetIPAMSearchOK, e
 
   GET method retrieves the subnet with the specified subnet id.
 */
-func (a *Client) GetIPAMSubnetID(params *GetIPAMSubnetIDParams) (*GetIPAMSubnetIDOK, error) {
+func (a *Client) GetIPAMSubnetID(params *GetIPAMSubnetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSubnetIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMSubnetIDParams()
@@ -764,6 +781,7 @@ func (a *Client) GetIPAMSubnetID(params *GetIPAMSubnetIDParams) (*GetIPAMSubnetI
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMSubnetIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -785,7 +803,7 @@ func (a *Client) GetIPAMSubnetID(params *GetIPAMSubnetIDParams) (*GetIPAMSubnetI
 
   Suggest next available IP Address
 */
-func (a *Client) GetIPAMSuggestIP(params *GetIPAMSuggestIPParams) (*GetIPAMSuggestIPOK, error) {
+func (a *Client) GetIPAMSuggestIP(params *GetIPAMSuggestIPParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSuggestIPOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMSuggestIPParams()
@@ -800,6 +818,7 @@ func (a *Client) GetIPAMSuggestIP(params *GetIPAMSuggestIPParams) (*GetIPAMSugge
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMSuggestIPReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -821,7 +840,7 @@ func (a *Client) GetIPAMSuggestIP(params *GetIPAMSuggestIPParams) (*GetIPAMSugge
 
   Suggest next available Subnet
 */
-func (a *Client) GetIPAMSuggestSubnetID(params *GetIPAMSuggestSubnetIDParams) (*GetIPAMSuggestSubnetIDOK, error) {
+func (a *Client) GetIPAMSuggestSubnetID(params *GetIPAMSuggestSubnetIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSuggestSubnetIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMSuggestSubnetIDParams()
@@ -836,6 +855,7 @@ func (a *Client) GetIPAMSuggestSubnetID(params *GetIPAMSuggestSubnetIDParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMSuggestSubnetIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -857,7 +877,7 @@ func (a *Client) GetIPAMSuggestSubnetID(params *GetIPAMSuggestSubnetIDParams) (*
 
   Get all Switch Templates
 */
-func (a *Client) GetIPAMSwitchTemplates(params *GetIPAMSwitchTemplatesParams) (*GetIPAMSwitchTemplatesOK, error) {
+func (a *Client) GetIPAMSwitchTemplates(params *GetIPAMSwitchTemplatesParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSwitchTemplatesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMSwitchTemplatesParams()
@@ -872,6 +892,7 @@ func (a *Client) GetIPAMSwitchTemplates(params *GetIPAMSwitchTemplatesParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMSwitchTemplatesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -893,7 +914,7 @@ func (a *Client) GetIPAMSwitchTemplates(params *GetIPAMSwitchTemplatesParams) (*
 
   Get all Switch Ports
 */
-func (a *Client) GetIPAMSwitchports(params *GetIPAMSwitchportsParams) (*GetIPAMSwitchportsOK, error) {
+func (a *Client) GetIPAMSwitchports(params *GetIPAMSwitchportsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMSwitchportsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMSwitchportsParams()
@@ -908,6 +929,7 @@ func (a *Client) GetIPAMSwitchports(params *GetIPAMSwitchportsParams) (*GetIPAMS
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMSwitchportsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -929,7 +951,7 @@ func (a *Client) GetIPAMSwitchports(params *GetIPAMSwitchportsParams) (*GetIPAMS
 
   Get Tap Ports
 */
-func (a *Client) GetIPAMTapPorts(params *GetIPAMTapPortsParams) (*GetIPAMTapPortsOK, error) {
+func (a *Client) GetIPAMTapPorts(params *GetIPAMTapPortsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMTapPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMTapPortsParams()
@@ -944,6 +966,7 @@ func (a *Client) GetIPAMTapPorts(params *GetIPAMTapPortsParams) (*GetIPAMTapPort
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMTapPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -965,7 +988,7 @@ func (a *Client) GetIPAMTapPorts(params *GetIPAMTapPortsParams) (*GetIPAMTapPort
 
   Get all Subnet Categories
 */
-func (a *Client) GetIPAMsubnetcategory(params *GetIPAMsubnetcategoryParams) (*GetIPAMsubnetcategoryOK, error) {
+func (a *Client) GetIPAMsubnetcategory(params *GetIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMsubnetcategoryOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMsubnetcategoryParams()
@@ -980,6 +1003,7 @@ func (a *Client) GetIPAMsubnetcategory(params *GetIPAMsubnetcategoryParams) (*Ge
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMsubnetcategoryReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1001,7 +1025,7 @@ func (a *Client) GetIPAMsubnetcategory(params *GetIPAMsubnetcategoryParams) (*Ge
 
   Get all Subnets - Filter parameters are below.
 */
-func (a *Client) GetIPAMsubnets(params *GetIPAMsubnetsParams) (*GetIPAMsubnetsOK, error) {
+func (a *Client) GetIPAMsubnets(params *GetIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMsubnetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMsubnetsParams()
@@ -1016,6 +1040,7 @@ func (a *Client) GetIPAMsubnets(params *GetIPAMsubnetsParams) (*GetIPAMsubnetsOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMsubnetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1037,7 +1062,7 @@ func (a *Client) GetIPAMsubnets(params *GetIPAMsubnetsParams) (*GetIPAMsubnetsOK
 
   Get all VLANs
 */
-func (a *Client) GetIPAMvlans(params *GetIPAMvlansParams) (*GetIPAMvlansOK, error) {
+func (a *Client) GetIPAMvlans(params *GetIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMvlansOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMvlansParams()
@@ -1052,6 +1077,7 @@ func (a *Client) GetIPAMvlans(params *GetIPAMvlansParams) (*GetIPAMvlansOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMvlansReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1073,7 +1099,7 @@ func (a *Client) GetIPAMvlans(params *GetIPAMvlansParams) (*GetIPAMvlansOK, erro
 
   GET method retrieves VLAN by specific VLAN ID.
 */
-func (a *Client) GetIPAMvlansID(params *GetIPAMvlansIDParams) (*GetIPAMvlansIDOK, error) {
+func (a *Client) GetIPAMvlansID(params *GetIPAMvlansIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMvlansIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMvlansIDParams()
@@ -1088,6 +1114,7 @@ func (a *Client) GetIPAMvlansID(params *GetIPAMvlansIDParams) (*GetIPAMvlansIDOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMvlansIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1109,7 +1136,7 @@ func (a *Client) GetIPAMvlansID(params *GetIPAMvlansIDParams) (*GetIPAMvlansIDOK
 
   Get all VRF Groups
 */
-func (a *Client) GetIPAMvrfgroup(params *GetIPAMvrfgroupParams) (*GetIPAMvrfgroupOK, error) {
+func (a *Client) GetIPAMvrfgroup(params *GetIPAMvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*GetIPAMvrfgroupOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIPAMvrfgroupParams()
@@ -1124,6 +1151,7 @@ func (a *Client) GetIPAMvrfgroup(params *GetIPAMvrfgroupParams) (*GetIPAMvrfgrou
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetIPAMvrfgroupReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1145,7 +1173,7 @@ func (a *Client) GetIPAMvrfgroup(params *GetIPAMvrfgroupParams) (*GetIPAMvrfgrou
 
   Create / Update DNS Records
 */
-func (a *Client) PostIPAMDNSRecords(params *PostIPAMDNSRecordsParams) (*PostIPAMDNSRecordsOK, error) {
+func (a *Client) PostIPAMDNSRecords(params *PostIPAMDNSRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMDNSRecordsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMDNSRecordsParams()
@@ -1160,6 +1188,7 @@ func (a *Client) PostIPAMDNSRecords(params *PostIPAMDNSRecordsParams) (*PostIPAM
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMDNSRecordsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1181,7 +1210,7 @@ func (a *Client) PostIPAMDNSRecords(params *PostIPAMDNSRecordsParams) (*PostIPAM
 
   Create / Update DNS Zones
 */
-func (a *Client) PostIPAMDNSZones(params *PostIPAMDNSZonesParams) (*PostIPAMDNSZonesOK, error) {
+func (a *Client) PostIPAMDNSZones(params *PostIPAMDNSZonesParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMDNSZonesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMDNSZonesParams()
@@ -1196,6 +1225,7 @@ func (a *Client) PostIPAMDNSZones(params *PostIPAMDNSZonesParams) (*PostIPAMDNSZ
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMDNSZonesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1217,7 +1247,7 @@ func (a *Client) PostIPAMDNSZones(params *PostIPAMDNSZonesParams) (*PostIPAMDNSZ
 
   Create IP NAT
 */
-func (a *Client) PostIPAMIpnat(params *PostIPAMIpnatParams) (*PostIPAMIpnatOK, error) {
+func (a *Client) PostIPAMIpnat(params *PostIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMIpnatOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMIpnatParams()
@@ -1232,6 +1262,7 @@ func (a *Client) PostIPAMIpnat(params *PostIPAMIpnatParams) (*PostIPAMIpnatOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMIpnatReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1253,7 +1284,7 @@ func (a *Client) PostIPAMIpnat(params *PostIPAMIpnatParams) (*PostIPAMIpnatOK, e
 
   Create / Update IP Addresses
 */
-func (a *Client) PostIPAMIps(params *PostIPAMIpsParams) (*PostIPAMIpsOK, error) {
+func (a *Client) PostIPAMIps(params *PostIPAMIpsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMIpsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMIpsParams()
@@ -1268,6 +1299,7 @@ func (a *Client) PostIPAMIps(params *PostIPAMIpsParams) (*PostIPAMIpsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMIpsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1289,7 +1321,7 @@ func (a *Client) PostIPAMIps(params *PostIPAMIpsParams) (*PostIPAMIpsOK, error) 
 
   Create / Update MAC Addresses. Deprecated since v12.0. Please use /switchports/ for more detailed information.
 */
-func (a *Client) PostIPAMMacs(params *PostIPAMMacsParams) (*PostIPAMMacsOK, error) {
+func (a *Client) PostIPAMMacs(params *PostIPAMMacsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMMacsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMMacsParams()
@@ -1304,6 +1336,7 @@ func (a *Client) PostIPAMMacs(params *PostIPAMMacsParams) (*PostIPAMMacsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMMacsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1325,7 +1358,7 @@ func (a *Client) PostIPAMMacs(params *PostIPAMMacsParams) (*PostIPAMMacsOK, erro
 
   Create Child Subnet. Required parameters: <ul><li>mask_bits</li> <li>parent_subnet_id <b>OR</b> vrf_group <b>OR</b> vrf_group_id</li>
 */
-func (a *Client) PostIPAMSubnetsCreateChild(params *PostIPAMSubnetsCreateChildParams) (*PostIPAMSubnetsCreateChildOK, error) {
+func (a *Client) PostIPAMSubnetsCreateChild(params *PostIPAMSubnetsCreateChildParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMSubnetsCreateChildOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMSubnetsCreateChildParams()
@@ -1340,6 +1373,7 @@ func (a *Client) PostIPAMSubnetsCreateChild(params *PostIPAMSubnetsCreateChildPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMSubnetsCreateChildReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1361,7 +1395,7 @@ func (a *Client) PostIPAMSubnetsCreateChild(params *PostIPAMSubnetsCreateChildPa
 
   Create or update using Switch Templates. Required parameters: <ul><li>device <b>OR</b> device_id</li> <li>switch_template_id</li>
 */
-func (a *Client) PostIPAMSwitches(params *PostIPAMSwitchesParams) (*PostIPAMSwitchesOK, error) {
+func (a *Client) PostIPAMSwitches(params *PostIPAMSwitchesParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMSwitchesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMSwitchesParams()
@@ -1376,6 +1410,7 @@ func (a *Client) PostIPAMSwitches(params *PostIPAMSwitchesParams) (*PostIPAMSwit
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMSwitchesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1397,7 +1432,7 @@ func (a *Client) PostIPAMSwitches(params *PostIPAMSwitchesParams) (*PostIPAMSwit
 
   Create / Update Switch Ports. <b>port</b> or <b>hwaddress</b> are required.
 */
-func (a *Client) PostIPAMSwitchports(params *PostIPAMSwitchportsParams) (*PostIPAMSwitchportsOK, error) {
+func (a *Client) PostIPAMSwitchports(params *PostIPAMSwitchportsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMSwitchportsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMSwitchportsParams()
@@ -1412,6 +1447,7 @@ func (a *Client) PostIPAMSwitchports(params *PostIPAMSwitchportsParams) (*PostIP
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMSwitchportsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1433,7 +1469,7 @@ func (a *Client) PostIPAMSwitchports(params *PostIPAMSwitchportsParams) (*PostIP
 
   Create / Update TAP Ports. Required parameters: <ul><li>id <b>OR</b> name</li>
 */
-func (a *Client) PostIPAMTapPorts(params *PostIPAMTapPortsParams) (*PostIPAMTapPortsOK, error) {
+func (a *Client) PostIPAMTapPorts(params *PostIPAMTapPortsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMTapPortsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMTapPortsParams()
@@ -1448,6 +1484,7 @@ func (a *Client) PostIPAMTapPorts(params *PostIPAMTapPortsParams) (*PostIPAMTapP
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMTapPortsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1467,7 +1504,7 @@ func (a *Client) PostIPAMTapPorts(params *PostIPAMTapPortsParams) (*PostIPAMTapP
 /*
   PostIPAMsubnetcategory Create Subnet Category.
 */
-func (a *Client) PostIPAMsubnetcategory(params *PostIPAMsubnetcategoryParams) (*PostIPAMsubnetcategoryOK, error) {
+func (a *Client) PostIPAMsubnetcategory(params *PostIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMsubnetcategoryOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMsubnetcategoryParams()
@@ -1482,6 +1519,7 @@ func (a *Client) PostIPAMsubnetcategory(params *PostIPAMsubnetcategoryParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMsubnetcategoryReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1503,7 +1541,7 @@ func (a *Client) PostIPAMsubnetcategory(params *PostIPAMsubnetcategoryParams) (*
 
   Create / Update Subnets
 */
-func (a *Client) PostIPAMsubnets(params *PostIPAMsubnetsParams) (*PostIPAMsubnetsOK, error) {
+func (a *Client) PostIPAMsubnets(params *PostIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMsubnetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMsubnetsParams()
@@ -1518,6 +1556,7 @@ func (a *Client) PostIPAMsubnets(params *PostIPAMsubnetsParams) (*PostIPAMsubnet
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMsubnetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1539,7 +1578,7 @@ func (a *Client) PostIPAMsubnets(params *PostIPAMsubnetsParams) (*PostIPAMsubnet
 
   Create VLANS
 */
-func (a *Client) PostIPAMvlans(params *PostIPAMvlansParams) (*PostIPAMvlansOK, error) {
+func (a *Client) PostIPAMvlans(params *PostIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMvlansOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMvlansParams()
@@ -1554,6 +1593,7 @@ func (a *Client) PostIPAMvlans(params *PostIPAMvlansParams) (*PostIPAMvlansOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMvlansReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1575,7 +1615,7 @@ func (a *Client) PostIPAMvlans(params *PostIPAMvlansParams) (*PostIPAMvlansOK, e
 
   Smart Merge VLANS
 */
-func (a *Client) PostIPAMvlansSmartMergeAll(params *PostIPAMvlansSmartMergeAllParams) (*PostIPAMvlansSmartMergeAllOK, error) {
+func (a *Client) PostIPAMvlansSmartMergeAll(params *PostIPAMvlansSmartMergeAllParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMvlansSmartMergeAllOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMvlansSmartMergeAllParams()
@@ -1590,6 +1630,7 @@ func (a *Client) PostIPAMvlansSmartMergeAll(params *PostIPAMvlansSmartMergeAllPa
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMvlansSmartMergeAllReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1611,7 +1652,7 @@ func (a *Client) PostIPAMvlansSmartMergeAll(params *PostIPAMvlansSmartMergeAllPa
 
   Create/Update VRF Group
 */
-func (a *Client) PostIPAMvrfgroup(params *PostIPAMvrfgroupParams) (*PostIPAMvrfgroupOK, error) {
+func (a *Client) PostIPAMvrfgroup(params *PostIPAMvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*PostIPAMvrfgroupOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostIPAMvrfgroupParams()
@@ -1626,6 +1667,7 @@ func (a *Client) PostIPAMvrfgroup(params *PostIPAMvrfgroupParams) (*PostIPAMvrfg
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostIPAMvrfgroupReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1647,7 +1689,7 @@ func (a *Client) PostIPAMvrfgroup(params *PostIPAMvrfgroupParams) (*PostIPAMvrfg
 
   Subnet Custom Fields
 */
-func (a *Client) PutIPAMCustomFIipAddress(params *PutIPAMCustomFIipAddressParams) (*PutIPAMCustomFIipAddressOK, error) {
+func (a *Client) PutIPAMCustomFIipAddress(params *PutIPAMCustomFIipAddressParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIipAddressOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMCustomFIipAddressParams()
@@ -1662,6 +1704,7 @@ func (a *Client) PutIPAMCustomFIipAddress(params *PutIPAMCustomFIipAddressParams
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMCustomFIipAddressReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1683,7 +1726,7 @@ func (a *Client) PutIPAMCustomFIipAddress(params *PutIPAMCustomFIipAddressParams
 
   Subnet Custom Fields
 */
-func (a *Client) PutIPAMCustomFIsubnet(params *PutIPAMCustomFIsubnetParams) (*PutIPAMCustomFIsubnetOK, error) {
+func (a *Client) PutIPAMCustomFIsubnet(params *PutIPAMCustomFIsubnetParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIsubnetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMCustomFIsubnetParams()
@@ -1698,6 +1741,7 @@ func (a *Client) PutIPAMCustomFIsubnet(params *PutIPAMCustomFIsubnetParams) (*Pu
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMCustomFIsubnetReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1719,7 +1763,7 @@ func (a *Client) PutIPAMCustomFIsubnet(params *PutIPAMCustomFIsubnetParams) (*Pu
 
   Required parameters: <ul><li>id <b>OR</b> port <b>AND</b> device_name</li> <li>key</li>
 */
-func (a *Client) PutIPAMCustomFIswitchport(params *PutIPAMCustomFIswitchportParams) (*PutIPAMCustomFIswitchportOK, error) {
+func (a *Client) PutIPAMCustomFIswitchport(params *PutIPAMCustomFIswitchportParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIswitchportOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMCustomFIswitchportParams()
@@ -1734,6 +1778,7 @@ func (a *Client) PutIPAMCustomFIswitchport(params *PutIPAMCustomFIswitchportPara
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMCustomFIswitchportReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1755,7 +1800,7 @@ func (a *Client) PutIPAMCustomFIswitchport(params *PutIPAMCustomFIswitchportPara
 
   Create/update custom fields for VRF groups. Required parameters: <ul><li>name <b>OR</b> ID</li> <li>key</li>
 */
-func (a *Client) PutIPAMCustomFIvrfgroup(params *PutIPAMCustomFIvrfgroupParams) (*PutIPAMCustomFIvrfgroupOK, error) {
+func (a *Client) PutIPAMCustomFIvrfgroup(params *PutIPAMCustomFIvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMCustomFIvrfgroupOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMCustomFIvrfgroupParams()
@@ -1770,6 +1815,7 @@ func (a *Client) PutIPAMCustomFIvrfgroup(params *PutIPAMCustomFIvrfgroupParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMCustomFIvrfgroupReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1791,7 +1837,7 @@ func (a *Client) PutIPAMCustomFIvrfgroup(params *PutIPAMCustomFIvrfgroupParams) 
 
   Update IP NAT
 */
-func (a *Client) PutIPAMIpnat(params *PutIPAMIpnatParams) (*PutIPAMIpnatOK, error) {
+func (a *Client) PutIPAMIpnat(params *PutIPAMIpnatParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMIpnatOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMIpnatParams()
@@ -1806,6 +1852,7 @@ func (a *Client) PutIPAMIpnat(params *PutIPAMIpnatParams) (*PutIPAMIpnatOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMIpnatReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1827,7 +1874,7 @@ func (a *Client) PutIPAMIpnat(params *PutIPAMIpnatParams) (*PutIPAMIpnatOK, erro
 
   Update a Specific Subnet Category
 */
-func (a *Client) PutIPAMsubnetcategory(params *PutIPAMsubnetcategoryParams) (*PutIPAMsubnetcategoryOK, error) {
+func (a *Client) PutIPAMsubnetcategory(params *PutIPAMsubnetcategoryParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMsubnetcategoryOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMsubnetcategoryParams()
@@ -1842,6 +1889,7 @@ func (a *Client) PutIPAMsubnetcategory(params *PutIPAMsubnetcategoryParams) (*Pu
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMsubnetcategoryReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1863,7 +1911,7 @@ func (a *Client) PutIPAMsubnetcategory(params *PutIPAMsubnetcategoryParams) (*Pu
 
   Update a Specific Subnet
 */
-func (a *Client) PutIPAMsubnets(params *PutIPAMsubnetsParams) (*PutIPAMsubnetsOK, error) {
+func (a *Client) PutIPAMsubnets(params *PutIPAMsubnetsParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMsubnetsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMsubnetsParams()
@@ -1878,6 +1926,7 @@ func (a *Client) PutIPAMsubnets(params *PutIPAMsubnetsParams) (*PutIPAMsubnetsOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMsubnetsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1899,7 +1948,7 @@ func (a *Client) PutIPAMsubnets(params *PutIPAMsubnetsParams) (*PutIPAMsubnetsOK
 
   Update VLANS
 */
-func (a *Client) PutIPAMvlans(params *PutIPAMvlansParams) (*PutIPAMvlansOK, error) {
+func (a *Client) PutIPAMvlans(params *PutIPAMvlansParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMvlansOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMvlansParams()
@@ -1914,6 +1963,7 @@ func (a *Client) PutIPAMvlans(params *PutIPAMvlansParams) (*PutIPAMvlansOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMvlansReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -1935,7 +1985,7 @@ func (a *Client) PutIPAMvlans(params *PutIPAMvlansParams) (*PutIPAMvlansOK, erro
 
   Update a Specific VRF Group
 */
-func (a *Client) PutIPAMvrfgroup(params *PutIPAMvrfgroupParams) (*PutIPAMvrfgroupOK, error) {
+func (a *Client) PutIPAMvrfgroup(params *PutIPAMvrfgroupParams, authInfo runtime.ClientAuthInfoWriter) (*PutIPAMvrfgroupOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutIPAMvrfgroupParams()
@@ -1950,6 +2000,7 @@ func (a *Client) PutIPAMvrfgroup(params *PutIPAMvrfgroupParams) (*PutIPAMvrfgrou
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutIPAMvrfgroupReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

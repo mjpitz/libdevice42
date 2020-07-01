@@ -27,7 +27,7 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	GetReports(params *GetReportsParams) (*GetReportsOK, error)
+	GetReports(params *GetReportsParams, authInfo runtime.ClientAuthInfoWriter) (*GetReportsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -35,7 +35,7 @@ type ClientService interface {
 /*
   GetReports Run a report and retrieve results
 */
-func (a *Client) GetReports(params *GetReportsParams) (*GetReportsOK, error) {
+func (a *Client) GetReports(params *GetReportsParams, authInfo runtime.ClientAuthInfoWriter) (*GetReportsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetReportsParams()
@@ -50,6 +50,7 @@ func (a *Client) GetReports(params *GetReportsParams) (*GetReportsOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetReportsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

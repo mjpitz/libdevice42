@@ -14,7 +14,7 @@ func main() {
 		Schemes: []string{"https"},
 	})
 
-	results, err := d42.Devices.GetDevices(&devices.GetDevicesParams{})
+	results, err := d42.Devices.GetDevices(&devices.GetDevicesParams{}, nil)
 
 	if err != nil {
 		log.Fatal(err.Error())

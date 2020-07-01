@@ -27,13 +27,13 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteBuildings(params *DeleteBuildingsParams) (*DeleteBuildingsOK, error)
+	DeleteBuildings(params *DeleteBuildingsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteBuildingsOK, error)
 
-	GetBuildings(params *GetBuildingsParams) (*GetBuildingsOK, error)
+	GetBuildings(params *GetBuildingsParams, authInfo runtime.ClientAuthInfoWriter) (*GetBuildingsOK, error)
 
-	PostBuildings(params *PostBuildingsParams) (*PostBuildingsOK, error)
+	PostBuildings(params *PostBuildingsParams, authInfo runtime.ClientAuthInfoWriter) (*PostBuildingsOK, error)
 
-	PutCustomFieldsBuilding(params *PutCustomFieldsBuildingParams) (*PutCustomFieldsBuildingOK, error)
+	PutCustomFieldsBuilding(params *PutCustomFieldsBuildingParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsBuildingOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -43,7 +43,7 @@ type ClientService interface {
 
   This API is used to delete the building with the building id supplied as the required argument.
 */
-func (a *Client) DeleteBuildings(params *DeleteBuildingsParams) (*DeleteBuildingsOK, error) {
+func (a *Client) DeleteBuildings(params *DeleteBuildingsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteBuildingsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteBuildingsParams()
@@ -58,6 +58,7 @@ func (a *Client) DeleteBuildings(params *DeleteBuildingsParams) (*DeleteBuilding
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteBuildingsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -79,7 +80,7 @@ func (a *Client) DeleteBuildings(params *DeleteBuildingsParams) (*DeleteBuilding
 
   Get All Buildings
 */
-func (a *Client) GetBuildings(params *GetBuildingsParams) (*GetBuildingsOK, error) {
+func (a *Client) GetBuildings(params *GetBuildingsParams, authInfo runtime.ClientAuthInfoWriter) (*GetBuildingsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetBuildingsParams()
@@ -94,6 +95,7 @@ func (a *Client) GetBuildings(params *GetBuildingsParams) (*GetBuildingsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetBuildingsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -115,7 +117,7 @@ func (a *Client) GetBuildings(params *GetBuildingsParams) (*GetBuildingsOK, erro
 
   Create/Update Building
 */
-func (a *Client) PostBuildings(params *PostBuildingsParams) (*PostBuildingsOK, error) {
+func (a *Client) PostBuildings(params *PostBuildingsParams, authInfo runtime.ClientAuthInfoWriter) (*PostBuildingsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostBuildingsParams()
@@ -130,6 +132,7 @@ func (a *Client) PostBuildings(params *PostBuildingsParams) (*PostBuildingsOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostBuildingsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -151,7 +154,7 @@ func (a *Client) PostBuildings(params *PostBuildingsParams) (*PostBuildingsOK, e
 
   Create or update custom fields for buildings. "ID" or "name" of building is needed even when value is not being changed
 */
-func (a *Client) PutCustomFieldsBuilding(params *PutCustomFieldsBuildingParams) (*PutCustomFieldsBuildingOK, error) {
+func (a *Client) PutCustomFieldsBuilding(params *PutCustomFieldsBuildingParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsBuildingOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldsBuildingParams()
@@ -166,6 +169,7 @@ func (a *Client) PutCustomFieldsBuilding(params *PutCustomFieldsBuildingParams) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldsBuildingReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

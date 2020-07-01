@@ -27,17 +27,17 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteDeviceOs(params *DeleteDeviceOsParams) (*DeleteDeviceOsOK, error)
+	DeleteDeviceOs(params *DeleteDeviceOsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceOsOK, error)
 
-	DeleteOperatingSystems(params *DeleteOperatingSystemsParams) (*DeleteOperatingSystemsOK, error)
+	DeleteOperatingSystems(params *DeleteOperatingSystemsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteOperatingSystemsOK, error)
 
-	GetDeviceOs(params *GetDeviceOsParams) (*GetDeviceOsOK, error)
+	GetDeviceOs(params *GetDeviceOsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDeviceOsOK, error)
 
-	GetOperatingSystems(params *GetOperatingSystemsParams) (*GetOperatingSystemsOK, error)
+	GetOperatingSystems(params *GetOperatingSystemsParams, authInfo runtime.ClientAuthInfoWriter) (*GetOperatingSystemsOK, error)
 
-	PostDeviceOs(params *PostDeviceOsParams) (*PostDeviceOsOK, error)
+	PostDeviceOs(params *PostDeviceOsParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceOsOK, error)
 
-	PostOperatingSystems(params *PostOperatingSystemsParams) (*PostOperatingSystemsOK, error)
+	PostOperatingSystems(params *PostOperatingSystemsParams, authInfo runtime.ClientAuthInfoWriter) (*PostOperatingSystemsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -47,7 +47,7 @@ type ClientService interface {
 
   This API is used to delete the operating system with the operating system id supplied as the required argument.
 */
-func (a *Client) DeleteDeviceOs(params *DeleteDeviceOsParams) (*DeleteDeviceOsOK, error) {
+func (a *Client) DeleteDeviceOs(params *DeleteDeviceOsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDeviceOsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDeviceOsParams()
@@ -62,6 +62,7 @@ func (a *Client) DeleteDeviceOs(params *DeleteDeviceOsParams) (*DeleteDeviceOsOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteDeviceOsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -83,7 +84,7 @@ func (a *Client) DeleteDeviceOs(params *DeleteDeviceOsParams) (*DeleteDeviceOsOK
 
   This API is used to delete the operating system with the operating system id supplied as the required argument.
 */
-func (a *Client) DeleteOperatingSystems(params *DeleteOperatingSystemsParams) (*DeleteOperatingSystemsOK, error) {
+func (a *Client) DeleteOperatingSystems(params *DeleteOperatingSystemsParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteOperatingSystemsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteOperatingSystemsParams()
@@ -98,6 +99,7 @@ func (a *Client) DeleteOperatingSystems(params *DeleteOperatingSystemsParams) (*
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteOperatingSystemsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -119,7 +121,7 @@ func (a *Client) DeleteOperatingSystems(params *DeleteOperatingSystemsParams) (*
 
   This call will get information about operating systems and the devices they’re discovered on.
 */
-func (a *Client) GetDeviceOs(params *GetDeviceOsParams) (*GetDeviceOsOK, error) {
+func (a *Client) GetDeviceOs(params *GetDeviceOsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDeviceOsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDeviceOsParams()
@@ -134,6 +136,7 @@ func (a *Client) GetDeviceOs(params *GetDeviceOsParams) (*GetDeviceOsOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetDeviceOsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -155,7 +158,7 @@ func (a *Client) GetDeviceOs(params *GetDeviceOsParams) (*GetDeviceOsOK, error) 
 
   Get all operating systems
 */
-func (a *Client) GetOperatingSystems(params *GetOperatingSystemsParams) (*GetOperatingSystemsOK, error) {
+func (a *Client) GetOperatingSystems(params *GetOperatingSystemsParams, authInfo runtime.ClientAuthInfoWriter) (*GetOperatingSystemsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetOperatingSystemsParams()
@@ -170,6 +173,7 @@ func (a *Client) GetOperatingSystems(params *GetOperatingSystemsParams) (*GetOpe
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetOperatingSystemsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -191,7 +195,7 @@ func (a *Client) GetOperatingSystems(params *GetOperatingSystemsParams) (*GetOpe
 
   Create/Update operating systems on devices
 */
-func (a *Client) PostDeviceOs(params *PostDeviceOsParams) (*PostDeviceOsOK, error) {
+func (a *Client) PostDeviceOs(params *PostDeviceOsParams, authInfo runtime.ClientAuthInfoWriter) (*PostDeviceOsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDeviceOsParams()
@@ -206,6 +210,7 @@ func (a *Client) PostDeviceOs(params *PostDeviceOsParams) (*PostDeviceOsOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostDeviceOsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -227,7 +232,7 @@ func (a *Client) PostDeviceOs(params *PostDeviceOsParams) (*PostDeviceOsOK, erro
 
   Create/update OS
 */
-func (a *Client) PostOperatingSystems(params *PostOperatingSystemsParams) (*PostOperatingSystemsOK, error) {
+func (a *Client) PostOperatingSystems(params *PostOperatingSystemsParams, authInfo runtime.ClientAuthInfoWriter) (*PostOperatingSystemsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostOperatingSystemsParams()
@@ -242,6 +247,7 @@ func (a *Client) PostOperatingSystems(params *PostOperatingSystemsParams) (*Post
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostOperatingSystemsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

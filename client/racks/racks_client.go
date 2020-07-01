@@ -27,15 +27,15 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteRacksID(params *DeleteRacksIDParams) (*DeleteRacksIDOK, error)
+	DeleteRacksID(params *DeleteRacksIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteRacksIDOK, error)
 
-	GetRacks(params *GetRacksParams) (*GetRacksOK, error)
+	GetRacks(params *GetRacksParams, authInfo runtime.ClientAuthInfoWriter) (*GetRacksOK, error)
 
-	GetRacksID(params *GetRacksIDParams) (*GetRacksIDOK, error)
+	GetRacksID(params *GetRacksIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetRacksIDOK, error)
 
-	PostRacks(params *PostRacksParams) (*PostRacksOK, error)
+	PostRacks(params *PostRacksParams, authInfo runtime.ClientAuthInfoWriter) (*PostRacksOK, error)
 
-	PutCustomFieldsRack(params *PutCustomFieldsRackParams) (*PutCustomFieldsRackOK, error)
+	PutCustomFieldsRack(params *PutCustomFieldsRackParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsRackOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -45,7 +45,7 @@ type ClientService interface {
 
   Delete Rack
 */
-func (a *Client) DeleteRacksID(params *DeleteRacksIDParams) (*DeleteRacksIDOK, error) {
+func (a *Client) DeleteRacksID(params *DeleteRacksIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteRacksIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteRacksIDParams()
@@ -60,6 +60,7 @@ func (a *Client) DeleteRacksID(params *DeleteRacksIDParams) (*DeleteRacksIDOK, e
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteRacksIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -81,7 +82,7 @@ func (a *Client) DeleteRacksID(params *DeleteRacksIDParams) (*DeleteRacksIDOK, e
 
   This API will retrieve basic information about all racks.
 */
-func (a *Client) GetRacks(params *GetRacksParams) (*GetRacksOK, error) {
+func (a *Client) GetRacks(params *GetRacksParams, authInfo runtime.ClientAuthInfoWriter) (*GetRacksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetRacksParams()
@@ -96,6 +97,7 @@ func (a *Client) GetRacks(params *GetRacksParams) (*GetRacksOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetRacksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -117,7 +119,7 @@ func (a *Client) GetRacks(params *GetRacksParams) (*GetRacksOK, error) {
 
   Get a Specific Rack
 */
-func (a *Client) GetRacksID(params *GetRacksIDParams) (*GetRacksIDOK, error) {
+func (a *Client) GetRacksID(params *GetRacksIDParams, authInfo runtime.ClientAuthInfoWriter) (*GetRacksIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetRacksIDParams()
@@ -132,6 +134,7 @@ func (a *Client) GetRacksID(params *GetRacksIDParams) (*GetRacksIDOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetRacksIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -153,7 +156,7 @@ func (a *Client) GetRacksID(params *GetRacksIDParams) (*GetRacksIDOK, error) {
 
   Create / Update Racks. Creating a new rack requires both <ul><li>name</li><li>size</li></ul><p> However, if updating a rack, you can use either</p> <ul><li>rack_id</li></ul> <p>or all of</p> <ul><li>name</li><li>room</li> <li>building</li></ul><p> If using room/building name, first combination of room name or room and building name will be used.</p>
 */
-func (a *Client) PostRacks(params *PostRacksParams) (*PostRacksOK, error) {
+func (a *Client) PostRacks(params *PostRacksParams, authInfo runtime.ClientAuthInfoWriter) (*PostRacksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostRacksParams()
@@ -168,6 +171,7 @@ func (a *Client) PostRacks(params *PostRacksParams) (*PostRacksOK, error) {
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostRacksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -189,7 +193,7 @@ func (a *Client) PostRacks(params *PostRacksParams) (*PostRacksOK, error) {
 
   Create or update custom fields for racks. "ID" or "name" of rack is needed even when value is not being changed.
 */
-func (a *Client) PutCustomFieldsRack(params *PutCustomFieldsRackParams) (*PutCustomFieldsRackOK, error) {
+func (a *Client) PutCustomFieldsRack(params *PutCustomFieldsRackParams, authInfo runtime.ClientAuthInfoWriter) (*PutCustomFieldsRackOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutCustomFieldsRackParams()
@@ -204,6 +208,7 @@ func (a *Client) PutCustomFieldsRack(params *PutCustomFieldsRackParams) (*PutCus
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PutCustomFieldsRackReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

@@ -27,11 +27,11 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DeleteEndUsers(params *DeleteEndUsersParams) (*DeleteEndUsersOK, error)
+	DeleteEndUsers(params *DeleteEndUsersParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteEndUsersOK, error)
 
-	GetEndusers(params *GetEndusersParams) (*GetEndusersOK, error)
+	GetEndusers(params *GetEndusersParams, authInfo runtime.ClientAuthInfoWriter) (*GetEndusersOK, error)
 
-	PostEndUsers(params *PostEndUsersParams) (*PostEndUsersOK, error)
+	PostEndUsers(params *PostEndUsersParams, authInfo runtime.ClientAuthInfoWriter) (*PostEndUsersOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,7 +41,7 @@ type ClientService interface {
 
   This API is used to delete the end user with the end user id supplied as the required argument.
 */
-func (a *Client) DeleteEndUsers(params *DeleteEndUsersParams) (*DeleteEndUsersOK, error) {
+func (a *Client) DeleteEndUsers(params *DeleteEndUsersParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteEndUsersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteEndUsersParams()
@@ -56,6 +56,7 @@ func (a *Client) DeleteEndUsers(params *DeleteEndUsersParams) (*DeleteEndUsersOK
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &DeleteEndUsersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -77,7 +78,7 @@ func (a *Client) DeleteEndUsers(params *DeleteEndUsersParams) (*DeleteEndUsersOK
 
   Get End Users
 */
-func (a *Client) GetEndusers(params *GetEndusersParams) (*GetEndusersOK, error) {
+func (a *Client) GetEndusers(params *GetEndusersParams, authInfo runtime.ClientAuthInfoWriter) (*GetEndusersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetEndusersParams()
@@ -92,6 +93,7 @@ func (a *Client) GetEndusers(params *GetEndusersParams) (*GetEndusersOK, error) 
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &GetEndusersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -113,7 +115,7 @@ func (a *Client) GetEndusers(params *GetEndusersParams) (*GetEndusersOK, error) 
 
   Create / Update End Users
 */
-func (a *Client) PostEndUsers(params *PostEndUsersParams) (*PostEndUsersOK, error) {
+func (a *Client) PostEndUsers(params *PostEndUsersParams, authInfo runtime.ClientAuthInfoWriter) (*PostEndUsersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostEndUsersParams()
@@ -128,6 +130,7 @@ func (a *Client) PostEndUsers(params *PostEndUsersParams) (*PostEndUsersOK, erro
 		Schemes:            []string{"http", "https"},
 		Params:             params,
 		Reader:             &PostEndUsersReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
