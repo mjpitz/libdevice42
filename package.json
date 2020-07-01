@@ -1,6 +1,6 @@
 {
   "name": "@mjpitz/libdevice42",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Golang client library for Device42",
   "repository": {
     "type": "git",
