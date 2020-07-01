@@ -43,11 +43,11 @@ type ClientService interface {
 
 	GetIgnoredService(params *GetIgnoredServiceParams) (*GetIgnoredServiceOK, error)
 
-	GetListenerConnectionStatsV2(params *GetListenerConnectionStatsParams) (*GetListenerConnectionStatsOK, error)
-
 	GetListenerConnectionStatsByID(params *GetListenerConnectionStatsByIDParams) (*GetListenerConnectionStatsByIDOK, error)
 
-	GetListenerConnectionStatsV1(params *GetListenerConnectionStatsParams) (*GetListenerConnectionStatsOK, error)
+	GetListenerConnectionStatsV2(params *GetListenerConnectionStatsV2Params) (*GetListenerConnectionStatsV2OK, error)
+
+	GetListenerConnectionStatsV1(params *GetListenerConnectionStatsV1Params) (*GetListenerConnectionStatsV1OK, error)
 
 	GetNetworkShares(params *GetNetworkSharesParams) (*GetNetworkSharesOK, error)
 
@@ -383,42 +383,6 @@ func (a *Client) GetIgnoredService(params *GetIgnoredServiceParams) (*GetIgnored
 }
 
 /*
-  GetListenerConnectionStats retrieves all listener connection statistics
-
-  Get Listener Connection Statistics
-*/
-func (a *Client) GetListenerConnectionStatsV2(params *GetListenerConnectionStatsParams) (*GetListenerConnectionStatsOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetListenerConnectionStatsParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "getListenerConnectionStats",
-		Method:             "GET",
-		PathPattern:        "/api/2.0/listener_connection_stats/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json", "application/x-www-form-urlencoded"},
-		Schemes:            []string{"http", "https"},
-		Params:             params,
-		Reader:             &GetListenerConnectionStatsReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetListenerConnectionStatsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for getListenerConnectionStats: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
   GetListenerConnectionStatsByID retrieves listener connection statistics by service port ID
 
   Get Listener Connection Statistics By ID
@@ -455,36 +419,72 @@ func (a *Client) GetListenerConnectionStatsByID(params *GetListenerConnectionSta
 }
 
 /*
-  GetListenerConnectionStats Get Listener Connection Statistics
+  GetListenerConnectionStatsV2 retrieves all listener connection statistics
+
+  Get Listener Connection Statistics
 */
-func (a *Client) GetListenerConnectionStatsV1(params *GetListenerConnectionStatsParams) (*GetListenerConnectionStatsOK, error) {
+func (a *Client) GetListenerConnectionStatsV2(params *GetListenerConnectionStatsV2Params) (*GetListenerConnectionStatsV2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetListenerConnectionStatsParams()
+		params = NewGetListenerConnectionStatsV2Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "getListener_connection_stats",
+		ID:                 "getListenerConnectionStatsV2",
 		Method:             "GET",
-		PathPattern:        "/api/1.0/listener_connection_stats/",
+		PathPattern:        "/api/2.0/listener_connection_stats/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json", "application/x-www-form-urlencoded"},
 		Schemes:            []string{"http", "https"},
 		Params:             params,
-		Reader:             &GetListenerConnectionStatsReader{formats: a.formats},
+		Reader:             &GetListenerConnectionStatsV2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetListenerConnectionStatsOK)
+	success, ok := result.(*GetListenerConnectionStatsV2OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for getListener_connection_stats: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for getListenerConnectionStatsV2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  GetListenerConnectionStatsV1 Get Listener Connection Statistics
+*/
+func (a *Client) GetListenerConnectionStatsV1(params *GetListenerConnectionStatsV1Params) (*GetListenerConnectionStatsV1OK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetListenerConnectionStatsV1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "getListener_connection_stats_v1",
+		Method:             "GET",
+		PathPattern:        "/api/1.0/listener_connection_stats/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json", "application/x-www-form-urlencoded"},
+		Schemes:            []string{"http", "https"},
+		Params:             params,
+		Reader:             &GetListenerConnectionStatsV1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetListenerConnectionStatsV1OK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getListener_connection_stats_v1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
