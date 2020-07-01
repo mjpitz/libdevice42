@@ -9,12 +9,27 @@ It uses [go-swagger](https://github.com/go-swagger/go-swagger) to generate the a
 package main
 
 import (
-	"github.com/go-openapi/strfmt"
-    "github.com/mjpitz/libdevice42/client"
+	"fmt"
+	"github.com/mjpitz/libdevice42/client"
+	"github.com/mjpitz/libdevice42/client/devices"
+	"log"
 )
 
 func main() {
-	strfmt.Registry{}
-    client := client.NewHTTPClient()
+	d42 := client.NewHTTPClientWithConfig(nil, &client.TransportConfig{
+		Host: "api.device42.com",
+		BasePath: "/",
+		Schemes: []string{"https"},
+	})
+
+	results, err := d42.Devices.GetDevices(&devices.GetDevicesParams{})
+
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+
+	for _, device := range results.GetPayload().Devices {
+		fmt.Println(fmt.Sprintf("%v", device))
+	}
 }
 ```
